@@ -93,6 +93,31 @@ curl "http://localhost:8000/health"
 curl "http://localhost:8000/recommendations?student_id=S001&k=5"
 ```
 
+## Agent Lab (demo)
+Front-end pages:
+- `frontend/agents.html` hub
+- `frontend/concierge.html` librarian concierge
+- `frontend/onboarding.html` student onboarding
+- `frontend/holds.html` availability & holds
+- `frontend/gaps.html` collection gap analyst
+- `frontend/feedback.html` feedback loop
+
+Agent endpoints:
+- `POST /agents/concierge`
+- `GET /agents/onboarding/{student_id}`
+- `POST /agents/onboarding`
+- `GET /agents/availability`
+- `GET /agents/holds`
+- `POST /agents/holds`
+- `POST /agents/holds/{hold_id}/cancel`
+- `GET /agents/collection-gaps`
+- `POST /agents/feedback`
+- `GET /agents/feedback`
+- `GET /agents/feedback/insights`
+- `GET /agents/feedback/recommendations`
+
+Agent state persistence lives in `data/agent_state.json`.
+
 ## How the POC works
 - Build a student → books map from the loan history.
 - Count how often pairs of books appear together.
