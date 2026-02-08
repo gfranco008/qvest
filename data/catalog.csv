@@ -1,0 +1,11 @@
+book_id,title,author,genre,reading_level,keywords
+B001,Moon Over Oak Street,Elena Brooks,Adventure,4-5,friendship;quest;outdoors
+B002,The Circuit Riders,Malik Hayes,Science Fiction,6-7,robots;invention;teamwork
+B003,Hidden in the Stacks,Nina Patel,Mystery,5-6,library;clues;curiosity
+B004,Volcano Science Lab,James Ortega,Nonfiction,6-8,science;earth;experiments
+B005,The Last Lighthouse,Sofia Kim,Historical Fiction,6-7,history;coast;family
+B006,Garden of Stories,Lucia Perez,Fantasy,4-6,magic;gardens;creativity
+B007,Codebreakers Club,Amy Chen,STEM,6-8,math;puzzles;coding
+B008,The Brave Map,Diego Ruiz,Adventure,5-6,exploration;maps;courage
+B009,Whispering Winds,Harper Lee,Poetry,5-7,poems;nature;feelings
+B010,Neighborhood Heroes,Jordan Smith,Realistic Fiction,4-6,community;kindness;school

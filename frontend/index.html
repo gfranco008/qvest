@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QVest Reading POC</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Library Discovery Lab</p>
+        <h1>QVest Reading Momentum</h1>
+        <p class="lead">
+          A proof-of-concept recommender that blends lending history with
+          librarian intuition to keep students engaged and curious.
+        </p>
+      </header>
+
+      <section class="panel">
+        <div>
+          <h2>Try it</h2>
+          <p class="muted">Select a student to generate a personalized book list.</p>
+        </div>
+        <div class="controls">
+          <label>
+            Student
+            <select id="studentSelect"></select>
+          </label>
+          <label>
+            Recommendations
+            <input id="countInput" type="number" min="1" max="10" value="5" />
+          </label>
+          <button id="runButton">Generate</button>
+        </div>
+      </section>
+
+      <section class="results" id="results"></section>
+
+      <section class="panel note">
+        <h3>How it works</h3>
+        <p>
+          The engine builds a similarity graph from borrowing patterns and blends
+          it with trending titles when a student has little history.
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
