@@ -1,19 +1,1001 @@
-student_id,book_id,borrowed_at
-S001,B001,2025-09-01
-S001,B008,2025-09-12
-S001,B010,2025-10-03
-S002,B002,2025-09-05
-S002,B007,2025-09-16
-S002,B004,2025-10-01
-S003,B003,2025-09-02
-S003,B001,2025-09-20
-S003,B008,2025-10-06
-S004,B005,2025-09-10
-S004,B004,2025-09-25
-S004,B009,2025-10-08
-S005,B010,2025-09-04
-S005,B001,2025-09-18
-S005,B006,2025-10-02
-S006,B007,2025-09-07
-S006,B002,2025-09-21
-S006,B004,2025-10-04
+transaction_id,student_id,book_id,checkout_date,return_date,renewals,recommended_by,grade,recommendation_reason,student_feedback
+T0001,S0198,B0151,2025-09-23,2025-09-28,2,TEACH-01,7,Supports reading goal,Loved the story
+T0002,S0066,B0255,2025-08-10,2025-08-28,2,TEACH-01,7,Supports reading goal,Read aloud at home
+T0003,S0087,B0229,2025-08-16,2025-08-28,2,LBR-01,7,Popular among peers,Finished quickly
+T0004,S0088,B0046,2025-08-14,2025-08-28,0,LBR-01,8,Aligned to science unit,Found it challenging
+T0005,S0144,B0113,2025-10-22,2025-10-28,2,SYSTEM,6,Series continuation,Shared with friends
+T0006,S0274,B0252,2025-08-26,2025-08-28,1,LBR-01,6,Recommended by librarian,Asked for another
+T0007,S0176,B0194,2025-11-21,,2,LBR-03,8,Supports reading goal,Finished quickly
+T0008,S0115,B0133,2025-08-10,2025-08-18,0,SYSTEM,8,Aligned to science unit,Finished quickly
+T0009,S0060,B0294,2025-10-05,2025-10-25,1,LBR-03,8,Recommended by librarian,Loved the story
+T0010,S0160,B0032,2025-09-28,2025-09-28,1,LBR-02,7,Supports reading goal,Enjoyed the characters
+T0011,S0065,B0267,2025-09-04,2025-09-17,0,TEACH-01,8,Supports reading goal,Read aloud at home
+T0012,S0162,B0075,2025-10-27,,1,LBR-03,7,Popular among peers,Wanted more on topic
+T0013,S0075,B0018,2025-10-10,2025-10-25,2,SYSTEM,6,Aligned to science unit,Read aloud at home
+T0014,S0111,B0254,2025-10-23,2025-10-28,0,LBR-02,4,Popular among peers,Finished quickly
+T0015,S0116,B0027,2025-09-28,2025-09-28,2,LBR-03,4,Aligned to science unit,Shared with friends
+T0016,S0012,B0281,2025-11-11,,2,LBR-03,5,Aligned to science unit,Found it challenging
+T0017,S0201,B0037,2025-10-10,2025-10-28,0,TEACH-01,4,Matches interest tags,Asked for another
+T0018,S0068,B0166,2025-08-28,2025-08-28,2,LBR-02,8,Matches interest tags,Shared with friends
+T0019,S0296,B0071,2025-11-23,2025-11-28,1,LBR-01,7,Popular among peers,Finished quickly
+T0020,S0101,B0005,2025-10-24,,2,SYSTEM,7,Series continuation,Shared with friends
+T0021,S0193,B0219,2025-09-02,2025-09-10,1,LBR-03,7,Popular among peers,Loved the story
+T0022,S0061,B0264,2025-10-19,2025-10-28,0,LBR-03,6,Popular among peers,Loved the story
+T0023,S0061,B0124,2025-11-16,2025-11-27,2,TEACH-01,6,Popular among peers,Found it challenging
+T0024,S0046,B0238,2025-11-09,,2,LBR-03,6,Aligned to science unit,Loved the story
+T0025,S0062,B0060,2025-08-04,2025-08-18,2,TEACH-01,6,Popular among peers,Loved the story
+T0026,S0294,B0294,2025-11-09,,2,SYSTEM,7,Supports reading goal,Shared with friends
+T0027,S0197,B0248,2025-11-10,,0,SYSTEM,4,Aligned to science unit,Asked for another
+T0028,S0276,B0095,2025-11-27,2025-11-28,0,LBR-03,6,Recommended by librarian,Read aloud at home
+T0029,S0033,B0266,2025-08-25,2025-08-28,0,SYSTEM,7,Popular among peers,Shared with friends
+T0030,S0003,B0285,2025-11-26,2025-11-28,0,SYSTEM,7,Popular among peers,Finished quickly
+T0031,S0083,B0045,2025-10-28,,0,SYSTEM,7,Read-alike based on history,Wanted more on topic
+T0032,S0187,B0279,2025-09-14,2025-09-28,0,LBR-01,4,Aligned to science unit,Loved the story
+T0033,S0266,B0151,2025-11-05,2025-11-21,1,LBR-02,4,Recommended by librarian,Enjoyed the characters
+T0034,S0276,B0262,2025-09-23,2025-09-28,2,SYSTEM,6,Popular among peers,Loved the story
+T0035,S0097,B0073,2025-10-28,2025-10-28,0,LBR-01,5,Recommended by librarian,Finished quickly
+T0036,S0184,B0143,2025-09-24,2025-09-28,1,SYSTEM,5,Recommended by librarian,Wanted more on topic
+T0037,S0134,B0196,2025-09-13,2025-09-27,0,LBR-02,7,Series continuation,Found it challenging
+T0038,S0074,B0275,2025-09-03,2025-09-20,2,LBR-02,7,Series continuation,Finished quickly
+T0039,S0191,B0289,2025-09-14,2025-09-28,0,LBR-02,8,Supports reading goal,Found it challenging
+T0040,S0195,B0014,2025-09-03,2025-09-14,0,TEACH-01,4,Read-alike based on history,Found it challenging
+T0041,S0034,B0169,2025-08-12,2025-08-28,1,LBR-02,5,Popular among peers,Finished quickly
+T0042,S0141,B0006,2025-08-13,2025-08-23,1,SYSTEM,7,Supports reading goal,Asked for another
+T0043,S0090,B0270,2025-10-19,,1,SYSTEM,7,Recommended by librarian,Enjoyed the characters
+T0044,S0293,B0145,2025-10-20,2025-10-28,0,LBR-01,5,Aligned to science unit,Found it challenging
+T0045,S0093,B0177,2025-11-16,,0,LBR-02,4,Read-alike based on history,Shared with friends
+T0046,S0065,B0074,2025-11-19,2025-11-28,1,SYSTEM,8,Series continuation,Enjoyed the characters
+T0047,S0128,B0215,2025-11-06,,1,LBR-03,5,Recommended by librarian,Wanted more on topic
+T0048,S0142,B0220,2025-09-10,2025-09-27,0,LBR-02,5,Matches interest tags,Enjoyed the characters
+T0049,S0047,B0041,2025-08-24,2025-08-28,0,LBR-01,7,Recommended by librarian,Loved the story
+T0050,S0044,B0147,2025-11-26,2025-11-28,0,LBR-03,4,Series continuation,Shared with friends
+T0051,S0246,B0255,2025-08-13,2025-08-20,2,LBR-01,7,Supports reading goal,Loved the story
+T0052,S0218,B0274,2025-10-08,2025-10-26,2,TEACH-01,7,Series continuation,Loved the story
+T0053,S0230,B0087,2025-09-06,2025-09-14,1,LBR-01,5,Recommended by librarian,Enjoyed the characters
+T0054,S0027,B0217,2025-11-13,2025-11-22,1,SYSTEM,8,Aligned to science unit,Finished quickly
+T0055,S0277,B0061,2025-10-10,2025-10-24,1,LBR-02,4,Popular among peers,Loved the story
+T0056,S0292,B0202,2025-09-10,2025-09-28,2,TEACH-01,5,Supports reading goal,Loved the story
+T0057,S0238,B0250,2025-08-12,2025-08-19,2,LBR-03,7,Aligned to science unit,Wanted more on topic
+T0058,S0182,B0055,2025-08-12,2025-08-28,2,LBR-01,8,Matches interest tags,Enjoyed the characters
+T0059,S0005,B0052,2025-11-16,,0,TEACH-01,7,Recommended by librarian,Shared with friends
+T0060,S0211,B0064,2025-11-01,2025-11-10,2,LBR-02,8,Popular among peers,Read aloud at home
+T0061,S0203,B0192,2025-10-12,,0,TEACH-01,8,Supports reading goal,Wanted more on topic
+T0062,S0056,B0225,2025-11-06,2025-11-15,1,LBR-03,8,Read-alike based on history,Enjoyed the characters
+T0063,S0102,B0057,2025-09-10,2025-09-17,0,LBR-03,6,Matches interest tags,Enjoyed the characters
+T0064,S0017,B0083,2025-09-16,2025-09-28,1,SYSTEM,5,Matches interest tags,Read aloud at home
+T0065,S0282,B0254,2025-09-11,2025-09-28,1,TEACH-01,6,Series continuation,Found it challenging
+T0066,S0068,B0057,2025-08-26,2025-08-28,0,LBR-01,8,Aligned to science unit,Loved the story
+T0067,S0122,B0027,2025-10-14,2025-10-28,2,SYSTEM,8,Matches interest tags,Read aloud at home
+T0068,S0149,B0145,2025-11-03,2025-11-22,1,LBR-01,8,Recommended by librarian,Shared with friends
+T0069,S0262,B0096,2025-09-09,2025-09-28,0,LBR-02,7,Series continuation,Finished quickly
+T0070,S0220,B0102,2025-11-23,,0,TEACH-01,8,Recommended by librarian,Shared with friends
+T0071,S0097,B0077,2025-09-04,2025-09-13,1,SYSTEM,5,Aligned to science unit,Finished quickly
+T0072,S0075,B0219,2025-08-20,2025-08-28,0,SYSTEM,6,Matches interest tags,Found it challenging
+T0073,S0269,B0157,2025-09-08,2025-09-20,1,LBR-03,6,Read-alike based on history,Found it challenging
+T0074,S0027,B0156,2025-08-09,2025-08-21,1,LBR-02,8,Series continuation,Found it challenging
+T0075,S0127,B0164,2025-08-06,2025-08-13,0,SYSTEM,6,Series continuation,Enjoyed the characters
+T0076,S0109,B0147,2025-11-09,2025-11-28,2,SYSTEM,5,Matches interest tags,Shared with friends
+T0077,S0130,B0252,2025-10-11,2025-10-22,0,SYSTEM,5,Series continuation,Loved the story
+T0078,S0283,B0067,2025-10-12,2025-10-28,1,TEACH-01,5,Recommended by librarian,Enjoyed the characters
+T0079,S0122,B0142,2025-09-19,2025-09-28,0,SYSTEM,8,Popular among peers,Asked for another
+T0080,S0022,B0098,2025-09-23,,0,SYSTEM,7,Recommended by librarian,Enjoyed the characters
+T0081,S0155,B0243,2025-09-18,2025-09-28,0,SYSTEM,5,Popular among peers,Finished quickly
+T0082,S0215,B0282,2025-10-25,2025-10-28,2,LBR-02,4,Aligned to science unit,Read aloud at home
+T0083,S0061,B0224,2025-08-16,2025-08-28,2,TEACH-01,6,Supports reading goal,Loved the story
+T0084,S0086,B0141,2025-09-10,2025-09-17,2,SYSTEM,5,Supports reading goal,Finished quickly
+T0085,S0204,B0254,2025-08-06,2025-08-20,2,LBR-03,5,Recommended by librarian,Found it challenging
+T0086,S0206,B0140,2025-09-06,2025-09-13,0,TEACH-01,6,Popular among peers,Loved the story
+T0087,S0263,B0234,2025-10-10,2025-10-28,0,LBR-02,4,Series continuation,Wanted more on topic
+T0088,S0283,B0061,2025-09-08,2025-09-15,2,LBR-01,5,Aligned to science unit,Loved the story
+T0089,S0076,B0143,2025-09-09,2025-09-28,0,LBR-01,5,Supports reading goal,Finished quickly
+T0090,S0274,B0060,2025-08-21,2025-08-28,2,TEACH-01,6,Aligned to science unit,Enjoyed the characters
+T0091,S0043,B0282,2025-10-24,2025-10-28,1,TEACH-01,6,Aligned to science unit,Enjoyed the characters
+T0092,S0030,B0006,2025-10-08,,1,LBR-01,6,Aligned to science unit,Loved the story
+T0093,S0276,B0299,2025-08-24,2025-08-28,2,LBR-03,6,Series continuation,Wanted more on topic
+T0094,S0283,B0106,2025-11-08,,1,LBR-01,5,Recommended by librarian,Found it challenging
+T0095,S0080,B0229,2025-09-24,,1,LBR-02,8,Popular among peers,Read aloud at home
+T0096,S0048,B0254,2025-09-15,2025-09-24,0,LBR-01,4,Recommended by librarian,Read aloud at home
+T0097,S0093,B0145,2025-08-10,2025-08-19,0,LBR-03,4,Series continuation,Finished quickly
+T0098,S0036,B0074,2025-08-14,2025-08-24,1,LBR-03,7,Read-alike based on history,Shared with friends
+T0099,S0007,B0052,2025-11-13,2025-11-20,0,SYSTEM,7,Supports reading goal,Loved the story
+T0100,S0068,B0128,2025-08-09,2025-08-18,2,TEACH-01,8,Read-alike based on history,Loved the story
+T0101,S0055,B0278,2025-10-28,2025-10-28,0,LBR-01,8,Popular among peers,Read aloud at home
+T0102,S0289,B0228,2025-09-10,2025-09-22,1,LBR-01,6,Popular among peers,Loved the story
+T0103,S0279,B0137,2025-08-01,2025-08-21,0,SYSTEM,5,Recommended by librarian,Wanted more on topic
+T0104,S0053,B0262,2025-11-05,2025-11-12,0,SYSTEM,6,Popular among peers,Found it challenging
+T0105,S0198,B0076,2025-10-21,2025-10-28,0,LBR-03,7,Series continuation,Asked for another
+T0106,S0252,B0087,2025-08-08,2025-08-16,1,LBR-02,7,Read-alike based on history,Enjoyed the characters
+T0107,S0061,B0185,2025-08-02,2025-08-18,0,LBR-01,6,Matches interest tags,Enjoyed the characters
+T0108,S0093,B0218,2025-09-22,2025-09-28,1,TEACH-01,4,Supports reading goal,Wanted more on topic
+T0109,S0179,B0054,2025-10-16,2025-10-28,1,LBR-02,8,Supports reading goal,Asked for another
+T0110,S0002,B0077,2025-09-11,2025-09-20,1,LBR-03,4,Series continuation,Read aloud at home
+T0111,S0035,B0058,2025-11-24,2025-11-28,0,SYSTEM,5,Aligned to science unit,Shared with friends
+T0112,S0094,B0198,2025-10-11,2025-10-25,1,LBR-03,8,Series continuation,Found it challenging
+T0113,S0171,B0071,2025-09-13,2025-09-26,2,LBR-03,5,Recommended by librarian,Read aloud at home
+T0114,S0273,B0275,2025-09-13,2025-09-21,2,LBR-03,6,Recommended by librarian,Finished quickly
+T0115,S0045,B0121,2025-10-01,2025-10-11,0,LBR-02,8,Recommended by librarian,Read aloud at home
+T0116,S0069,B0057,2025-08-12,2025-08-24,0,LBR-02,6,Matches interest tags,Shared with friends
+T0117,S0283,B0216,2025-09-07,2025-09-27,0,SYSTEM,5,Series continuation,Shared with friends
+T0118,S0061,B0074,2025-11-24,,2,LBR-03,6,Aligned to science unit,Loved the story
+T0119,S0055,B0298,2025-08-16,2025-08-28,2,LBR-01,8,Read-alike based on history,Shared with friends
+T0120,S0188,B0073,2025-08-08,2025-08-16,0,TEACH-01,8,Supports reading goal,Found it challenging
+T0121,S0077,B0094,2025-11-24,2025-11-28,2,TEACH-01,7,Series continuation,Wanted more on topic
+T0122,S0241,B0211,2025-10-15,2025-10-28,2,SYSTEM,5,Aligned to science unit,Asked for another
+T0123,S0080,B0031,2025-08-20,2025-08-28,0,TEACH-01,8,Popular among peers,Loved the story
+T0124,S0203,B0217,2025-11-18,2025-11-28,1,TEACH-01,8,Recommended by librarian,Wanted more on topic
+T0125,S0117,B0217,2025-09-09,2025-09-17,2,LBR-03,8,Popular among peers,Finished quickly
+T0126,S0206,B0029,2025-09-13,2025-09-22,2,TEACH-01,6,Recommended by librarian,Asked for another
+T0127,S0240,B0245,2025-10-21,2025-10-28,1,LBR-03,7,Popular among peers,Loved the story
+T0128,S0191,B0218,2025-09-09,2025-09-17,0,SYSTEM,8,Aligned to science unit,Enjoyed the characters
+T0129,S0015,B0123,2025-10-06,2025-10-21,0,SYSTEM,4,Popular among peers,Loved the story
+T0130,S0159,B0097,2025-09-21,2025-09-28,0,LBR-01,7,Aligned to science unit,Asked for another
+T0131,S0292,B0290,2025-08-19,2025-08-28,1,SYSTEM,5,Read-alike based on history,Enjoyed the characters
+T0132,S0048,B0159,2025-08-12,2025-08-28,1,LBR-03,4,Recommended by librarian,Finished quickly
+T0133,S0162,B0201,2025-10-05,2025-10-23,2,SYSTEM,7,Aligned to science unit,Found it challenging
+T0134,S0258,B0052,2025-09-01,2025-09-17,1,LBR-03,6,Recommended by librarian,Loved the story
+T0135,S0149,B0083,2025-09-22,,0,SYSTEM,8,Series continuation,Finished quickly
+T0136,S0111,B0073,2025-09-17,2025-09-28,2,TEACH-01,4,Series continuation,Enjoyed the characters
+T0137,S0230,B0068,2025-10-10,2025-10-22,2,LBR-03,5,Read-alike based on history,Found it challenging
+T0138,S0123,B0107,2025-08-05,2025-08-21,2,LBR-03,6,Read-alike based on history,Loved the story
+T0139,S0074,B0159,2025-08-16,2025-08-24,1,LBR-02,7,Popular among peers,Wanted more on topic
+T0140,S0083,B0035,2025-10-19,2025-10-28,1,SYSTEM,7,Read-alike based on history,Shared with friends
+T0141,S0236,B0133,2025-11-09,,1,LBR-01,5,Read-alike based on history,Read aloud at home
+T0142,S0021,B0187,2025-10-13,2025-10-26,2,LBR-01,8,Matches interest tags,Enjoyed the characters
+T0143,S0263,B0161,2025-10-03,2025-10-20,1,TEACH-01,4,Matches interest tags,Wanted more on topic
+T0144,S0022,B0030,2025-09-23,2025-09-28,2,SYSTEM,7,Popular among peers,Asked for another
+T0145,S0149,B0193,2025-09-19,2025-09-28,0,LBR-01,8,Matches interest tags,Read aloud at home
+T0146,S0048,B0179,2025-11-15,2025-11-28,2,LBR-03,4,Read-alike based on history,Asked for another
+T0147,S0093,B0056,2025-11-25,,0,LBR-03,4,Aligned to science unit,Asked for another
+T0148,S0163,B0176,2025-11-07,2025-11-25,2,LBR-03,5,Read-alike based on history,Wanted more on topic
+T0149,S0233,B0020,2025-09-16,2025-09-25,2,LBR-01,8,Aligned to science unit,Loved the story
+T0150,S0195,B0032,2025-10-26,2025-10-28,1,LBR-01,4,Read-alike based on history,Finished quickly
+T0151,S0012,B0217,2025-10-09,2025-10-26,0,SYSTEM,5,Popular among peers,Asked for another
+T0152,S0141,B0208,2025-08-10,2025-08-28,2,LBR-03,7,Supports reading goal,Found it challenging
+T0153,S0269,B0110,2025-10-06,2025-10-26,0,SYSTEM,6,Matches interest tags,Enjoyed the characters
+T0154,S0153,B0085,2025-09-12,,1,LBR-03,5,Recommended by librarian,Shared with friends
+T0155,S0224,B0182,2025-11-27,,2,TEACH-01,4,Popular among peers,Asked for another
+T0156,S0297,B0075,2025-10-22,2025-10-28,2,LBR-02,6,Read-alike based on history,Shared with friends
+T0157,S0235,B0076,2025-11-28,,0,LBR-03,5,Aligned to science unit,Loved the story
+T0158,S0231,B0065,2025-11-21,,0,SYSTEM,4,Popular among peers,Finished quickly
+T0159,S0216,B0280,2025-09-20,2025-09-28,0,LBR-02,6,Popular among peers,Finished quickly
+T0160,S0296,B0008,2025-10-27,2025-10-28,0,LBR-02,7,Aligned to science unit,Asked for another
+T0161,S0256,B0234,2025-11-14,2025-11-26,1,TEACH-01,4,Matches interest tags,Enjoyed the characters
+T0162,S0059,B0091,2025-11-14,,0,TEACH-01,4,Recommended by librarian,Shared with friends
+T0163,S0278,B0224,2025-11-10,2025-11-28,2,LBR-03,4,Series continuation,Wanted more on topic
+T0164,S0051,B0045,2025-08-03,2025-08-20,0,TEACH-01,8,Matches interest tags,Asked for another
+T0165,S0255,B0279,2025-08-21,2025-08-28,2,TEACH-01,7,Supports reading goal,Loved the story
+T0166,S0149,B0216,2025-09-08,2025-09-27,1,TEACH-01,8,Matches interest tags,Asked for another
+T0167,S0101,B0241,2025-08-12,2025-08-28,1,LBR-03,7,Supports reading goal,Found it challenging
+T0168,S0004,B0192,2025-09-17,2025-09-28,1,LBR-02,8,Aligned to science unit,Found it challenging
+T0169,S0124,B0003,2025-11-02,,0,LBR-01,4,Supports reading goal,Enjoyed the characters
+T0170,S0266,B0163,2025-10-06,2025-10-22,1,LBR-01,4,Recommended by librarian,Found it challenging
+T0171,S0099,B0202,2025-08-26,2025-08-28,2,LBR-03,4,Popular among peers,Found it challenging
+T0172,S0089,B0207,2025-10-17,2025-10-26,1,LBR-01,7,Read-alike based on history,Shared with friends
+T0173,S0259,B0061,2025-11-27,,2,LBR-02,4,Supports reading goal,Shared with friends
+T0174,S0166,B0105,2025-08-03,2025-08-10,1,SYSTEM,4,Series continuation,Shared with friends
+T0175,S0015,B0279,2025-08-19,2025-08-28,0,LBR-01,4,Matches interest tags,Enjoyed the characters
+T0176,S0096,B0123,2025-09-10,2025-09-20,2,LBR-01,8,Series continuation,Found it challenging
+T0177,S0134,B0027,2025-10-03,2025-10-24,0,SYSTEM,7,Series continuation,Asked for another
+T0178,S0057,B0236,2025-08-04,2025-08-13,1,LBR-02,4,Popular among peers,Asked for another
+T0179,S0040,B0254,2025-10-27,2025-10-28,1,SYSTEM,8,Matches interest tags,Loved the story
+T0180,S0212,B0038,2025-11-21,2025-11-28,0,LBR-03,6,Matches interest tags,Enjoyed the characters
+T0181,S0231,B0083,2025-09-10,2025-09-17,0,TEACH-01,4,Series continuation,Loved the story
+T0182,S0061,B0176,2025-10-16,2025-10-28,2,TEACH-01,6,Read-alike based on history,Shared with friends
+T0183,S0268,B0131,2025-08-07,2025-08-23,0,TEACH-01,7,Read-alike based on history,Shared with friends
+T0184,S0111,B0187,2025-08-07,2025-08-14,1,LBR-01,4,Popular among peers,Asked for another
+T0185,S0065,B0138,2025-10-16,2025-10-26,0,LBR-02,8,Series continuation,Wanted more on topic
+T0186,S0240,B0254,2025-11-17,,0,LBR-02,7,Popular among peers,Finished quickly
+T0187,S0144,B0202,2025-08-19,2025-08-28,2,LBR-02,6,Popular among peers,Finished quickly
+T0188,S0250,B0222,2025-11-14,2025-11-28,2,LBR-02,6,Supports reading goal,Enjoyed the characters
+T0189,S0056,B0197,2025-11-07,2025-11-23,1,LBR-02,8,Series continuation,Asked for another
+T0190,S0231,B0086,2025-08-17,2025-08-28,2,LBR-03,4,Aligned to science unit,Enjoyed the characters
+T0191,S0204,B0016,2025-08-06,2025-08-25,1,LBR-03,5,Supports reading goal,Shared with friends
+T0192,S0184,B0126,2025-08-07,2025-08-24,1,LBR-02,5,Popular among peers,Enjoyed the characters
+T0193,S0063,B0005,2025-10-23,2025-10-28,2,LBR-02,7,Popular among peers,Read aloud at home
+T0194,S0291,B0165,2025-09-18,2025-09-26,1,LBR-02,7,Recommended by librarian,Finished quickly
+T0195,S0270,B0112,2025-08-18,2025-08-28,2,TEACH-01,4,Supports reading goal,Asked for another
+T0196,S0294,B0216,2025-11-11,2025-11-28,1,LBR-01,7,Popular among peers,Loved the story
+T0197,S0253,B0256,2025-08-09,2025-08-22,0,SYSTEM,5,Matches interest tags,Shared with friends
+T0198,S0168,B0197,2025-09-19,2025-09-26,1,SYSTEM,5,Series continuation,Loved the story
+T0199,S0237,B0146,2025-09-27,2025-09-28,0,TEACH-01,8,Recommended by librarian,Loved the story
+T0200,S0173,B0009,2025-08-16,,1,LBR-02,4,Aligned to science unit,Enjoyed the characters
+T0201,S0178,B0205,2025-08-18,,1,LBR-03,4,Recommended by librarian,Loved the story
+T0202,S0202,B0153,2025-11-16,2025-11-28,2,SYSTEM,8,Supports reading goal,Enjoyed the characters
+T0203,S0053,B0015,2025-09-02,2025-09-22,0,LBR-01,6,Read-alike based on history,Enjoyed the characters
+T0204,S0224,B0116,2025-09-03,2025-09-13,2,LBR-02,4,Supports reading goal,Loved the story
+T0205,S0027,B0133,2025-08-04,2025-08-11,1,SYSTEM,8,Aligned to science unit,Enjoyed the characters
+T0206,S0195,B0139,2025-09-05,2025-09-21,1,SYSTEM,4,Popular among peers,Enjoyed the characters
+T0207,S0076,B0300,2025-11-21,2025-11-28,2,SYSTEM,5,Recommended by librarian,Finished quickly
+T0208,S0296,B0245,2025-11-09,,2,LBR-03,7,Popular among peers,Asked for another
+T0209,S0136,B0152,2025-08-12,2025-08-27,0,LBR-01,5,Series continuation,Asked for another
+T0210,S0039,B0254,2025-08-07,2025-08-14,2,LBR-01,7,Matches interest tags,Found it challenging
+T0211,S0097,B0250,2025-08-11,2025-08-21,2,TEACH-01,5,Recommended by librarian,Enjoyed the characters
+T0212,S0160,B0233,2025-09-28,2025-09-28,0,LBR-01,7,Popular among peers,Enjoyed the characters
+T0213,S0198,B0232,2025-09-25,2025-09-28,0,SYSTEM,7,Aligned to science unit,Found it challenging
+T0214,S0085,B0158,2025-08-05,2025-08-19,0,SYSTEM,7,Popular among peers,Loved the story
+T0215,S0236,B0096,2025-10-01,2025-10-15,2,TEACH-01,5,Matches interest tags,Enjoyed the characters
+T0216,S0136,B0061,2025-08-12,2025-08-25,0,LBR-01,5,Matches interest tags,Found it challenging
+T0217,S0261,B0171,2025-08-15,2025-08-26,1,SYSTEM,4,Read-alike based on history,Found it challenging
+T0218,S0217,B0100,2025-10-07,2025-10-20,0,TEACH-01,8,Aligned to science unit,Read aloud at home
+T0219,S0266,B0222,2025-08-22,2025-08-28,2,LBR-01,4,Read-alike based on history,Finished quickly
+T0220,S0059,B0028,2025-08-19,2025-08-28,0,SYSTEM,4,Recommended by librarian,Asked for another
+T0221,S0142,B0116,2025-11-13,2025-11-26,0,LBR-01,5,Series continuation,Wanted more on topic
+T0222,S0254,B0106,2025-09-26,2025-09-28,1,LBR-02,7,Series continuation,Wanted more on topic
+T0223,S0002,B0049,2025-09-17,,2,TEACH-01,4,Matches interest tags,Wanted more on topic
+T0224,S0123,B0088,2025-10-22,2025-10-28,0,LBR-01,6,Aligned to science unit,Read aloud at home
+T0225,S0073,B0007,2025-11-14,2025-11-26,0,LBR-01,7,Aligned to science unit,Asked for another
+T0226,S0088,B0005,2025-10-16,2025-10-28,0,LBR-03,8,Supports reading goal,Finished quickly
+T0227,S0242,B0057,2025-08-27,2025-08-28,2,LBR-02,4,Supports reading goal,Finished quickly
+T0228,S0269,B0258,2025-09-25,2025-09-28,0,SYSTEM,6,Aligned to science unit,Enjoyed the characters
+T0229,S0232,B0252,2025-10-18,2025-10-28,2,LBR-03,6,Aligned to science unit,Enjoyed the characters
+T0230,S0235,B0007,2025-10-10,2025-10-28,1,TEACH-01,5,Supports reading goal,Read aloud at home
+T0231,S0058,B0139,2025-08-05,2025-08-18,0,LBR-01,7,Aligned to science unit,Read aloud at home
+T0232,S0016,B0126,2025-11-12,,2,SYSTEM,7,Popular among peers,Found it challenging
+T0233,S0056,B0141,2025-11-17,2025-11-26,1,LBR-02,8,Aligned to science unit,Found it challenging
+T0234,S0214,B0142,2025-10-07,2025-10-14,2,TEACH-01,5,Series continuation,Enjoyed the characters
+T0235,S0063,B0222,2025-11-19,2025-11-28,1,LBR-02,7,Read-alike based on history,Loved the story
+T0236,S0256,B0076,2025-11-22,2025-11-28,2,LBR-02,4,Recommended by librarian,Shared with friends
+T0237,S0156,B0250,2025-10-03,2025-10-22,1,SYSTEM,4,Matches interest tags,Loved the story
+T0238,S0112,B0145,2025-08-02,2025-08-16,1,SYSTEM,5,Matches interest tags,Enjoyed the characters
+T0239,S0001,B0026,2025-10-05,2025-10-17,1,TEACH-01,7,Series continuation,Shared with friends
+T0240,S0045,B0139,2025-09-24,2025-09-28,1,TEACH-01,8,Read-alike based on history,Wanted more on topic
+T0241,S0113,B0017,2025-11-12,2025-11-22,2,LBR-03,6,Matches interest tags,Found it challenging
+T0242,S0051,B0134,2025-10-20,2025-10-28,0,TEACH-01,8,Matches interest tags,Enjoyed the characters
+T0243,S0297,B0072,2025-09-09,2025-09-18,1,TEACH-01,6,Popular among peers,Wanted more on topic
+T0244,S0157,B0044,2025-10-19,,2,LBR-03,5,Recommended by librarian,Shared with friends
+T0245,S0193,B0224,2025-08-05,2025-08-20,1,LBR-02,7,Recommended by librarian,Enjoyed the characters
+T0246,S0240,B0182,2025-11-15,2025-11-28,1,LBR-03,7,Read-alike based on history,Loved the story
+T0247,S0216,B0046,2025-09-20,2025-09-28,1,LBR-01,6,Recommended by librarian,Enjoyed the characters
+T0248,S0066,B0279,2025-10-02,2025-10-21,1,LBR-01,7,Matches interest tags,Loved the story
+T0249,S0237,B0266,2025-11-27,2025-11-28,0,SYSTEM,8,Aligned to science unit,Asked for another
+T0250,S0171,B0050,2025-10-19,2025-10-28,2,LBR-02,5,Supports reading goal,Loved the story
+T0251,S0063,B0300,2025-08-23,2025-08-28,2,LBR-01,7,Recommended by librarian,Read aloud at home
+T0252,S0070,B0115,2025-09-10,2025-09-27,1,SYSTEM,4,Supports reading goal,Read aloud at home
+T0253,S0103,B0059,2025-08-01,2025-08-10,2,SYSTEM,8,Recommended by librarian,Asked for another
+T0254,S0127,B0105,2025-08-16,2025-08-23,2,LBR-03,6,Matches interest tags,Loved the story
+T0255,S0063,B0154,2025-11-16,2025-11-25,0,TEACH-01,7,Aligned to science unit,Read aloud at home
+T0256,S0064,B0222,2025-09-21,2025-09-28,0,LBR-01,4,Supports reading goal,Finished quickly
+T0257,S0088,B0262,2025-09-16,2025-09-28,1,LBR-02,8,Series continuation,Asked for another
+T0258,S0253,B0189,2025-10-13,2025-10-26,2,SYSTEM,5,Matches interest tags,Found it challenging
+T0259,S0218,B0076,2025-08-10,2025-08-24,0,TEACH-01,7,Matches interest tags,Loved the story
+T0260,S0298,B0156,2025-08-21,2025-08-28,2,TEACH-01,5,Matches interest tags,Loved the story
+T0261,S0182,B0072,2025-11-24,2025-11-28,1,SYSTEM,8,Popular among peers,Enjoyed the characters
+T0262,S0257,B0258,2025-09-12,2025-09-28,2,TEACH-01,5,Matches interest tags,Asked for another
+T0263,S0090,B0078,2025-10-21,2025-10-28,2,LBR-02,7,Matches interest tags,Shared with friends
+T0264,S0143,B0156,2025-11-03,2025-11-24,2,LBR-03,6,Matches interest tags,Read aloud at home
+T0265,S0093,B0295,2025-10-05,2025-10-23,1,TEACH-01,4,Recommended by librarian,Enjoyed the characters
+T0266,S0300,B0207,2025-08-02,2025-08-09,2,LBR-01,7,Popular among peers,Asked for another
+T0267,S0055,B0256,2025-11-11,2025-11-28,0,LBR-01,8,Read-alike based on history,Shared with friends
+T0268,S0197,B0216,2025-08-02,2025-08-18,1,SYSTEM,4,Read-alike based on history,Asked for another
+T0269,S0227,B0192,2025-08-06,2025-08-18,0,LBR-03,8,Matches interest tags,Shared with friends
+T0270,S0294,B0285,2025-09-07,2025-09-18,1,LBR-03,7,Series continuation,Wanted more on topic
+T0271,S0116,B0104,2025-09-14,,2,LBR-01,4,Read-alike based on history,Loved the story
+T0272,S0050,B0105,2025-08-26,2025-08-28,0,LBR-02,7,Supports reading goal,Found it challenging
+T0273,S0291,B0280,2025-08-11,2025-08-20,2,TEACH-01,7,Matches interest tags,Finished quickly
+T0274,S0107,B0293,2025-11-17,2025-11-28,1,TEACH-01,5,Recommended by librarian,Shared with friends
+T0275,S0035,B0225,2025-11-21,2025-11-28,0,TEACH-01,5,Read-alike based on history,Shared with friends
+T0276,S0265,B0153,2025-08-04,2025-08-18,0,SYSTEM,4,Recommended by librarian,Enjoyed the characters
+T0277,S0012,B0115,2025-10-27,2025-10-28,1,LBR-02,5,Read-alike based on history,Shared with friends
+T0278,S0148,B0039,2025-09-28,,2,TEACH-01,6,Aligned to science unit,Found it challenging
+T0279,S0030,B0280,2025-08-19,2025-08-28,1,SYSTEM,6,Read-alike based on history,Enjoyed the characters
+T0280,S0216,B0134,2025-09-11,2025-09-28,0,LBR-01,6,Popular among peers,Enjoyed the characters
+T0281,S0032,B0121,2025-11-03,2025-11-22,2,TEACH-01,7,Series continuation,Loved the story
+T0282,S0178,B0037,2025-11-20,,2,SYSTEM,4,Recommended by librarian,Read aloud at home
+T0283,S0067,B0139,2025-08-04,2025-08-11,1,TEACH-01,6,Popular among peers,Enjoyed the characters
+T0284,S0221,B0245,2025-10-26,2025-10-28,0,SYSTEM,8,Read-alike based on history,Loved the story
+T0285,S0101,B0274,2025-11-22,2025-11-28,2,SYSTEM,7,Recommended by librarian,Read aloud at home
+T0286,S0027,B0199,2025-11-23,,1,LBR-03,8,Recommended by librarian,Shared with friends
+T0287,S0060,B0225,2025-08-20,2025-08-28,1,LBR-02,8,Popular among peers,Enjoyed the characters
+T0288,S0224,B0030,2025-09-08,2025-09-16,2,SYSTEM,4,Popular among peers,Found it challenging
+T0289,S0275,B0291,2025-08-26,2025-08-28,2,LBR-01,6,Supports reading goal,Loved the story
+T0290,S0040,B0030,2025-09-15,2025-09-24,1,SYSTEM,8,Aligned to science unit,Enjoyed the characters
+T0291,S0126,B0150,2025-09-20,2025-09-28,1,SYSTEM,4,Series continuation,Asked for another
+T0292,S0040,B0129,2025-09-16,2025-09-28,2,LBR-02,8,Supports reading goal,Finished quickly
+T0293,S0228,B0155,2025-10-25,2025-10-28,1,LBR-01,6,Recommended by librarian,Wanted more on topic
+T0294,S0164,B0278,2025-08-02,2025-08-14,1,TEACH-01,4,Matches interest tags,Wanted more on topic
+T0295,S0041,B0105,2025-09-27,,0,LBR-02,4,Series continuation,Finished quickly
+T0296,S0063,B0191,2025-09-02,2025-09-12,2,LBR-03,7,Series continuation,Read aloud at home
+T0297,S0059,B0011,2025-11-27,2025-11-28,1,LBR-02,4,Recommended by librarian,Found it challenging
+T0298,S0154,B0044,2025-08-09,2025-08-28,2,LBR-03,5,Matches interest tags,Loved the story
+T0299,S0196,B0197,2025-11-02,2025-11-12,0,LBR-03,6,Popular among peers,Found it challenging
+T0300,S0273,B0027,2025-10-02,2025-10-17,1,SYSTEM,6,Recommended by librarian,Enjoyed the characters
+T0301,S0274,B0188,2025-12-19,,0,LBR-02,6,Matches interest tags,Enjoyed the characters
+T0302,S0158,B0201,2025-09-25,2025-09-28,1,SYSTEM,7,Matches interest tags,Found it challenging
+T0303,S0034,B0259,2025-10-13,,2,LBR-02,5,Series continuation,Loved the story
+T0304,S0181,B0061,2025-11-08,2025-11-17,1,TEACH-01,4,Matches interest tags,Wanted more on topic
+T0305,S0103,B0281,2025-08-21,2025-08-28,2,TEACH-01,8,Supports reading goal,Loved the story
+T0306,S0037,B0209,2025-12-02,,0,LBR-01,4,Popular among peers,Asked for another
+T0307,S0146,B0101,2025-11-24,,2,LBR-02,6,Read-alike based on history,Enjoyed the characters
+T0308,S0222,B0293,2025-09-18,2025-09-25,2,LBR-02,5,Supports reading goal,Finished quickly
+T0309,S0093,B0271,2025-12-17,2025-12-26,2,SYSTEM,4,Series continuation,Read aloud at home
+T0310,S0299,B0234,2025-08-26,2025-08-28,1,TEACH-01,8,Supports reading goal,Enjoyed the characters
+T0311,S0286,B0292,2025-10-09,2025-10-17,2,LBR-01,6,Read-alike based on history,Shared with friends
+T0312,S0162,B0041,2025-09-15,2025-09-28,1,SYSTEM,7,Recommended by librarian,Shared with friends
+T0313,S0219,B0179,2025-12-23,,0,LBR-03,7,Aligned to science unit,Shared with friends
+T0314,S0029,B0237,2025-10-13,2025-10-21,0,LBR-02,5,Series continuation,Wanted more on topic
+T0315,S0110,B0099,2025-09-16,2025-09-28,2,LBR-03,6,Recommended by librarian,Wanted more on topic
+T0316,S0082,B0114,2025-10-13,2025-10-28,0,TEACH-01,6,Matches interest tags,Shared with friends
+T0317,S0241,B0165,2025-08-01,2025-08-16,2,LBR-01,5,Series continuation,Found it challenging
+T0318,S0158,B0280,2025-10-25,,1,LBR-01,7,Aligned to science unit,Read aloud at home
+T0319,S0298,B0195,2025-11-05,2025-11-21,1,LBR-01,5,Matches interest tags,Asked for another
+T0320,S0236,B0002,2025-10-03,2025-10-23,1,LBR-03,5,Recommended by librarian,Found it challenging
+T0321,S0072,B0020,2025-12-19,,0,LBR-03,6,Read-alike based on history,Finished quickly
+T0322,S0155,B0027,2025-11-26,,0,LBR-02,5,Recommended by librarian,Enjoyed the characters
+T0323,S0142,B0297,2025-08-22,2025-08-28,2,LBR-01,5,Recommended by librarian,Loved the story
+T0324,S0287,B0255,2025-10-01,2025-10-10,0,LBR-03,4,Read-alike based on history,Read aloud at home
+T0325,S0235,B0011,2025-09-26,2025-09-28,0,LBR-01,5,Supports reading goal,Finished quickly
+T0326,S0022,B0226,2025-11-23,,1,LBR-02,7,Supports reading goal,Enjoyed the characters
+T0327,S0013,B0219,2025-10-26,2025-10-28,0,LBR-01,8,Read-alike based on history,Loved the story
+T0328,S0154,B0100,2025-09-22,2025-09-28,0,SYSTEM,5,Popular among peers,Found it challenging
+T0329,S0296,B0126,2025-08-14,2025-08-24,2,LBR-03,7,Aligned to science unit,Read aloud at home
+T0330,S0243,B0100,2025-08-03,2025-08-11,2,LBR-01,6,Aligned to science unit,Wanted more on topic
+T0331,S0298,B0194,2025-08-01,2025-08-22,2,LBR-01,5,Read-alike based on history,Asked for another
+T0332,S0204,B0143,2025-12-18,,1,LBR-01,5,Series continuation,Loved the story
+T0333,S0213,B0154,2025-11-12,2025-11-19,2,LBR-02,7,Read-alike based on history,Loved the story
+T0334,S0046,B0028,2025-10-26,,2,LBR-03,6,Matches interest tags,Read aloud at home
+T0335,S0089,B0007,2025-11-22,2025-11-28,0,LBR-01,7,Read-alike based on history,Found it challenging
+T0336,S0097,B0046,2025-12-21,,0,LBR-03,5,Popular among peers,Asked for another
+T0337,S0115,B0257,2025-09-14,2025-09-21,1,TEACH-01,8,Recommended by librarian,Wanted more on topic
+T0338,S0054,B0165,2025-10-02,2025-10-20,1,LBR-02,5,Supports reading goal,Enjoyed the characters
+T0339,S0013,B0185,2025-12-19,,2,LBR-01,8,Read-alike based on history,Loved the story
+T0340,S0032,B0206,2025-12-13,2025-12-20,1,SYSTEM,7,Series continuation,Loved the story
+T0341,S0223,B0234,2025-08-11,2025-08-27,2,TEACH-01,6,Matches interest tags,Finished quickly
+T0342,S0046,B0236,2025-12-22,2025-12-28,1,LBR-02,6,Read-alike based on history,Shared with friends
+T0343,S0075,B0056,2025-09-26,2025-09-28,1,LBR-01,6,Popular among peers,Finished quickly
+T0344,S0136,B0198,2025-11-11,2025-11-19,1,TEACH-01,5,Popular among peers,Shared with friends
+T0345,S0242,B0138,2025-12-26,2025-12-28,2,LBR-02,4,Matches interest tags,Wanted more on topic
+T0346,S0078,B0056,2025-09-05,2025-09-23,2,LBR-01,8,Popular among peers,Loved the story
+T0347,S0002,B0029,2025-09-26,,0,LBR-02,4,Popular among peers,Asked for another
+T0348,S0264,B0217,2025-12-17,,1,LBR-03,5,Read-alike based on history,Finished quickly
+T0349,S0095,B0185,2025-09-23,2025-09-28,2,SYSTEM,4,Series continuation,Finished quickly
+T0350,S0052,B0152,2025-12-11,2025-12-22,1,LBR-02,6,Read-alike based on history,Wanted more on topic
+T0351,S0216,B0165,2025-10-23,2025-10-28,2,TEACH-01,6,Supports reading goal,Wanted more on topic
+T0352,S0275,B0142,2025-08-11,2025-08-28,0,LBR-01,6,Matches interest tags,Read aloud at home
+T0353,S0256,B0291,2025-10-06,,1,TEACH-01,4,Series continuation,Loved the story
+T0354,S0226,B0038,2025-12-07,,2,TEACH-01,5,Matches interest tags,Wanted more on topic
+T0355,S0107,B0269,2025-11-22,2025-11-28,2,LBR-03,5,Recommended by librarian,Read aloud at home
+T0356,S0066,B0201,2025-11-24,2025-11-28,0,SYSTEM,7,Aligned to science unit,Enjoyed the characters
+T0357,S0067,B0129,2025-12-09,,2,LBR-02,6,Read-alike based on history,Asked for another
+T0358,S0096,B0067,2025-10-22,,0,TEACH-01,8,Read-alike based on history,Shared with friends
+T0359,S0259,B0199,2025-10-22,2025-10-28,2,SYSTEM,4,Supports reading goal,Wanted more on topic
+T0360,S0048,B0198,2025-11-20,2025-11-28,1,SYSTEM,4,Read-alike based on history,Loved the story
+T0361,S0293,B0121,2025-09-08,2025-09-26,0,SYSTEM,5,Series continuation,Loved the story
+T0362,S0024,B0300,2025-12-20,,2,LBR-02,8,Supports reading goal,Shared with friends
+T0363,S0176,B0127,2025-10-20,,1,LBR-02,8,Aligned to science unit,Found it challenging
+T0364,S0174,B0092,2025-08-18,2025-08-28,1,SYSTEM,6,Matches interest tags,Found it challenging
+T0365,S0205,B0118,2025-11-25,,0,LBR-01,5,Read-alike based on history,Shared with friends
+T0366,S0207,B0137,2025-12-19,2025-12-28,1,LBR-03,5,Popular among peers,Asked for another
+T0367,S0001,B0275,2025-10-11,2025-10-25,0,LBR-02,7,Recommended by librarian,Finished quickly
+T0368,S0269,B0245,2025-11-04,2025-11-16,0,SYSTEM,6,Supports reading goal,Finished quickly
+T0369,S0259,B0136,2025-12-15,2025-12-26,1,LBR-01,4,Recommended by librarian,Loved the story
+T0370,S0161,B0237,2025-11-20,,2,SYSTEM,8,Supports reading goal,Finished quickly
+T0371,S0248,B0278,2025-09-16,2025-09-28,2,LBR-02,6,Aligned to science unit,Shared with friends
+T0372,S0242,B0273,2025-10-28,2025-10-28,2,LBR-03,4,Recommended by librarian,Found it challenging
+T0373,S0223,B0017,2025-09-11,2025-09-28,0,TEACH-01,6,Matches interest tags,Enjoyed the characters
+T0374,S0055,B0288,2025-09-08,2025-09-20,1,LBR-01,8,Series continuation,Read aloud at home
+T0375,S0113,B0170,2025-08-16,2025-08-27,0,SYSTEM,6,Recommended by librarian,Asked for another
+T0376,S0110,B0118,2025-09-17,2025-09-28,1,TEACH-01,6,Series continuation,Found it challenging
+T0377,S0049,B0018,2025-08-05,2025-08-22,0,TEACH-01,5,Series continuation,Loved the story
+T0378,S0184,B0288,2025-11-17,2025-11-28,0,LBR-01,5,Read-alike based on history,Enjoyed the characters
+T0379,S0257,B0068,2025-10-18,2025-10-28,1,LBR-02,5,Recommended by librarian,Read aloud at home
+T0380,S0132,B0054,2025-11-10,,0,SYSTEM,6,Popular among peers,Wanted more on topic
+T0381,S0142,B0044,2025-09-08,2025-09-17,2,LBR-01,5,Read-alike based on history,Shared with friends
+T0382,S0186,B0138,2025-08-06,2025-08-23,1,TEACH-01,5,Matches interest tags,Wanted more on topic
+T0383,S0220,B0013,2025-11-23,2025-11-28,0,LBR-02,8,Matches interest tags,Wanted more on topic
+T0384,S0136,B0195,2025-08-20,2025-08-28,2,LBR-02,5,Supports reading goal,Shared with friends
+T0385,S0162,B0260,2025-12-11,,1,LBR-03,7,Popular among peers,Found it challenging
+T0386,S0144,B0225,2025-12-05,,1,LBR-02,6,Supports reading goal,Loved the story
+T0387,S0300,B0161,2025-11-25,2025-11-28,1,TEACH-01,7,Recommended by librarian,Shared with friends
+T0388,S0159,B0153,2025-09-28,2025-09-28,1,LBR-03,7,Series continuation,Shared with friends
+T0389,S0172,B0124,2025-10-28,2025-10-28,2,TEACH-01,5,Read-alike based on history,Enjoyed the characters
+T0390,S0231,B0119,2025-12-11,,2,LBR-03,4,Recommended by librarian,Found it challenging
+T0391,S0119,B0066,2025-09-12,2025-09-23,0,LBR-01,7,Series continuation,Wanted more on topic
+T0392,S0287,B0246,2025-11-22,,0,LBR-02,4,Series continuation,Wanted more on topic
+T0393,S0168,B0014,2025-09-17,2025-09-28,0,LBR-02,5,Series continuation,Loved the story
+T0394,S0078,B0047,2025-12-07,,1,LBR-01,8,Series continuation,Enjoyed the characters
+T0395,S0211,B0088,2025-09-07,2025-09-17,0,TEACH-01,8,Recommended by librarian,Enjoyed the characters
+T0396,S0096,B0295,2025-11-26,,1,SYSTEM,8,Series continuation,Wanted more on topic
+T0397,S0057,B0294,2025-10-13,2025-10-28,0,LBR-03,4,Aligned to science unit,Read aloud at home
+T0398,S0215,B0163,2025-10-22,2025-10-28,2,LBR-01,4,Matches interest tags,Wanted more on topic
+T0399,S0219,B0266,2025-08-15,2025-08-27,1,LBR-03,7,Aligned to science unit,Read aloud at home
+T0400,S0036,B0255,2025-10-04,2025-10-18,1,TEACH-01,7,Aligned to science unit,Loved the story
+T0401,S0115,B0232,2025-11-04,,2,SYSTEM,8,Read-alike based on history,Asked for another
+T0402,S0109,B0244,2025-11-25,,1,LBR-02,5,Popular among peers,Enjoyed the characters
+T0403,S0147,B0281,2025-08-11,2025-08-25,0,TEACH-01,7,Supports reading goal,Loved the story
+T0404,S0001,B0067,2025-08-12,2025-08-22,2,LBR-02,7,Recommended by librarian,Enjoyed the characters
+T0405,S0134,B0262,2025-11-27,2025-11-28,0,TEACH-01,7,Popular among peers,Wanted more on topic
+T0406,S0007,B0120,2025-11-18,2025-11-28,0,SYSTEM,7,Matches interest tags,Found it challenging
+T0407,S0126,B0180,2025-12-21,,1,LBR-02,4,Popular among peers,Enjoyed the characters
+T0408,S0101,B0039,2025-09-08,2025-09-20,2,SYSTEM,7,Recommended by librarian,Asked for another
+T0409,S0211,B0046,2025-09-06,2025-09-18,0,LBR-01,8,Popular among peers,Found it challenging
+T0410,S0110,B0198,2025-08-08,2025-08-23,0,LBR-01,6,Recommended by librarian,Enjoyed the characters
+T0411,S0187,B0156,2025-09-26,2025-09-28,1,LBR-02,4,Supports reading goal,Asked for another
+T0412,S0020,B0034,2025-11-23,2025-11-28,0,SYSTEM,8,Recommended by librarian,Asked for another
+T0413,S0288,B0188,2025-09-21,2025-09-28,2,LBR-03,4,Matches interest tags,Wanted more on topic
+T0414,S0005,B0002,2025-09-27,2025-09-28,0,LBR-02,7,Supports reading goal,Loved the story
+T0415,S0245,B0071,2025-09-25,2025-09-28,0,LBR-01,7,Aligned to science unit,Shared with friends
+T0416,S0224,B0135,2025-11-16,2025-11-28,0,SYSTEM,4,Supports reading goal,Shared with friends
+T0417,S0114,B0008,2025-09-13,2025-09-20,0,LBR-01,5,Series continuation,Wanted more on topic
+T0418,S0282,B0088,2025-09-09,2025-09-28,1,LBR-01,6,Recommended by librarian,Loved the story
+T0419,S0139,B0161,2025-11-23,2025-11-28,2,LBR-03,8,Read-alike based on history,Found it challenging
+T0420,S0225,B0164,2025-08-09,2025-08-28,1,SYSTEM,6,Read-alike based on history,Wanted more on topic
+T0421,S0232,B0140,2025-10-21,2025-10-28,1,LBR-01,6,Supports reading goal,Finished quickly
+T0422,S0104,B0019,2025-08-08,,2,LBR-02,7,Aligned to science unit,Wanted more on topic
+T0423,S0171,B0092,2025-09-15,2025-09-28,1,LBR-01,5,Read-alike based on history,Shared with friends
+T0424,S0053,B0052,2025-11-15,2025-11-22,2,LBR-03,6,Read-alike based on history,Enjoyed the characters
+T0425,S0257,B0003,2025-11-02,2025-11-15,2,SYSTEM,5,Matches interest tags,Finished quickly
+T0426,S0220,B0166,2025-12-09,,2,LBR-02,8,Aligned to science unit,Finished quickly
+T0427,S0238,B0021,2025-09-24,2025-09-28,2,TEACH-01,7,Popular among peers,Enjoyed the characters
+T0428,S0228,B0116,2025-08-03,2025-08-18,2,SYSTEM,6,Recommended by librarian,Loved the story
+T0429,S0089,B0071,2025-11-26,,2,LBR-02,7,Recommended by librarian,Asked for another
+T0430,S0117,B0230,2025-11-14,,2,LBR-02,8,Matches interest tags,Shared with friends
+T0431,S0123,B0175,2025-12-05,2025-12-17,1,LBR-01,6,Aligned to science unit,Finished quickly
+T0432,S0175,B0070,2025-10-21,2025-10-28,1,LBR-03,6,Supports reading goal,Asked for another
+T0433,S0260,B0122,2025-09-21,2025-09-28,1,LBR-01,4,Matches interest tags,Wanted more on topic
+T0434,S0110,B0185,2025-09-05,2025-09-18,0,LBR-03,6,Supports reading goal,Asked for another
+T0435,S0223,B0107,2025-11-21,2025-11-28,1,SYSTEM,6,Supports reading goal,Loved the story
+T0436,S0012,B0225,2025-10-21,2025-10-28,0,LBR-02,5,Popular among peers,Shared with friends
+T0437,S0175,B0066,2025-12-22,2025-12-28,2,TEACH-01,6,Aligned to science unit,Wanted more on topic
+T0438,S0146,B0253,2025-12-26,2025-12-28,1,LBR-02,6,Aligned to science unit,Loved the story
+T0439,S0138,B0179,2025-12-09,2025-12-28,1,TEACH-01,4,Recommended by librarian,Shared with friends
+T0440,S0112,B0199,2025-09-05,2025-09-20,0,LBR-01,5,Read-alike based on history,Finished quickly
+T0441,S0161,B0296,2025-10-14,,1,LBR-01,8,Recommended by librarian,Finished quickly
+T0442,S0159,B0008,2025-10-23,2025-10-28,1,LBR-03,7,Read-alike based on history,Enjoyed the characters
+T0443,S0116,B0035,2025-12-24,,1,LBR-02,4,Popular among peers,Finished quickly
+T0444,S0132,B0150,2025-09-21,2025-09-28,0,TEACH-01,6,Recommended by librarian,Asked for another
+T0445,S0158,B0027,2025-09-23,2025-09-28,0,TEACH-01,7,Matches interest tags,Loved the story
+T0446,S0263,B0200,2025-09-15,2025-09-22,2,LBR-01,4,Series continuation,Loved the story
+T0447,S0122,B0181,2025-09-07,2025-09-14,2,LBR-03,8,Aligned to science unit,Shared with friends
+T0448,S0280,B0269,2025-12-22,,2,LBR-03,7,Aligned to science unit,Enjoyed the characters
+T0449,S0057,B0245,2025-09-16,2025-09-28,0,TEACH-01,4,Series continuation,Shared with friends
+T0450,S0299,B0178,2025-10-12,2025-10-19,1,SYSTEM,8,Supports reading goal,Wanted more on topic
+T0451,S0213,B0045,2025-08-07,2025-08-15,1,LBR-02,7,Recommended by librarian,Asked for another
+T0452,S0164,B0282,2025-12-24,,1,SYSTEM,4,Matches interest tags,Found it challenging
+T0453,S0170,B0090,2025-11-08,2025-11-26,0,SYSTEM,6,Supports reading goal,Read aloud at home
+T0454,S0003,B0089,2025-08-09,2025-08-18,0,SYSTEM,7,Read-alike based on history,Read aloud at home
+T0455,S0290,B0146,2025-10-21,2025-10-28,2,TEACH-01,5,Recommended by librarian,Finished quickly
+T0456,S0075,B0096,2025-09-01,2025-09-09,0,LBR-01,6,Read-alike based on history,Read aloud at home
+T0457,S0046,B0118,2025-09-06,2025-09-19,0,LBR-03,6,Matches interest tags,Finished quickly
+T0458,S0099,B0074,2025-10-24,2025-10-28,2,LBR-01,4,Series continuation,Enjoyed the characters
+T0459,S0100,B0142,2025-12-13,,2,TEACH-01,6,Matches interest tags,Found it challenging
+T0460,S0206,B0056,2025-08-09,2025-08-20,2,SYSTEM,6,Popular among peers,Read aloud at home
+T0461,S0216,B0156,2025-10-28,2025-10-28,0,SYSTEM,6,Read-alike based on history,Found it challenging
+T0462,S0104,B0049,2025-08-02,2025-08-18,1,LBR-01,7,Recommended by librarian,Read aloud at home
+T0463,S0144,B0099,2025-08-01,2025-08-11,0,LBR-02,6,Read-alike based on history,Asked for another
+T0464,S0225,B0010,2025-11-26,2025-11-28,2,SYSTEM,6,Aligned to science unit,Wanted more on topic
+T0465,S0171,B0297,2025-10-18,2025-10-28,0,LBR-01,5,Recommended by librarian,Found it challenging
+T0466,S0021,B0038,2025-11-06,2025-11-17,1,LBR-01,8,Series continuation,Shared with friends
+T0467,S0058,B0151,2025-12-03,,0,LBR-02,7,Recommended by librarian,Finished quickly
+T0468,S0192,B0288,2025-11-23,,0,LBR-01,4,Aligned to science unit,Finished quickly
+T0469,S0168,B0064,2025-10-11,2025-10-28,0,TEACH-01,5,Read-alike based on history,Loved the story
+T0470,S0051,B0182,2025-10-12,2025-10-26,1,TEACH-01,8,Series continuation,Enjoyed the characters
+T0471,S0278,B0274,2025-10-24,2025-10-28,1,LBR-02,4,Popular among peers,Finished quickly
+T0472,S0075,B0040,2025-08-04,2025-08-24,2,LBR-02,6,Recommended by librarian,Loved the story
+T0473,S0166,B0250,2025-10-20,,2,LBR-02,4,Series continuation,Finished quickly
+T0474,S0025,B0275,2025-11-27,2025-11-28,2,LBR-02,7,Read-alike based on history,Asked for another
+T0475,S0164,B0285,2025-11-13,2025-11-28,0,LBR-02,4,Recommended by librarian,Loved the story
+T0476,S0276,B0076,2025-09-25,2025-09-28,2,LBR-03,6,Recommended by librarian,Finished quickly
+T0477,S0123,B0120,2025-11-22,2025-11-28,1,LBR-01,6,Matches interest tags,Asked for another
+T0478,S0196,B0195,2025-09-02,2025-09-14,2,LBR-02,6,Popular among peers,Found it challenging
+T0479,S0086,B0155,2025-10-18,2025-10-25,0,SYSTEM,5,Supports reading goal,Enjoyed the characters
+T0480,S0155,B0022,2025-09-13,2025-09-28,0,LBR-03,5,Popular among peers,Enjoyed the characters
+T0481,S0002,B0014,2025-11-18,2025-11-28,1,LBR-02,4,Read-alike based on history,Asked for another
+T0482,S0113,B0017,2025-11-14,2025-11-28,1,LBR-03,6,Aligned to science unit,Asked for another
+T0483,S0261,B0142,2025-10-26,2025-10-28,1,SYSTEM,4,Popular among peers,Finished quickly
+T0484,S0010,B0273,2025-08-27,2025-08-28,2,LBR-02,8,Series continuation,Wanted more on topic
+T0485,S0285,B0131,2025-10-22,2025-10-28,1,LBR-02,4,Read-alike based on history,Wanted more on topic
+T0486,S0188,B0007,2025-12-25,,2,LBR-01,8,Series continuation,Asked for another
+T0487,S0054,B0078,2025-11-27,2025-11-28,1,SYSTEM,5,Read-alike based on history,Found it challenging
+T0488,S0280,B0103,2025-09-26,2025-09-28,2,TEACH-01,7,Read-alike based on history,Found it challenging
+T0489,S0046,B0223,2025-10-21,,1,SYSTEM,6,Series continuation,Finished quickly
+T0490,S0253,B0167,2025-10-24,,1,LBR-01,5,Popular among peers,Read aloud at home
+T0491,S0197,B0173,2025-12-04,,0,LBR-02,4,Read-alike based on history,Shared with friends
+T0492,S0199,B0266,2025-08-09,2025-08-27,1,LBR-02,5,Aligned to science unit,Shared with friends
+T0493,S0080,B0059,2025-08-05,2025-08-19,0,LBR-01,8,Read-alike based on history,Read aloud at home
+T0494,S0189,B0035,2025-11-02,2025-11-20,0,TEACH-01,7,Series continuation,Asked for another
+T0495,S0206,B0231,2025-08-08,2025-08-20,2,LBR-01,6,Read-alike based on history,Wanted more on topic
+T0496,S0193,B0129,2025-08-08,2025-08-16,0,LBR-01,7,Series continuation,Finished quickly
+T0497,S0267,B0131,2025-11-13,,0,SYSTEM,5,Popular among peers,Wanted more on topic
+T0498,S0115,B0252,2025-09-11,2025-09-28,2,LBR-01,8,Read-alike based on history,Read aloud at home
+T0499,S0255,B0262,2025-11-25,2025-11-28,2,TEACH-01,7,Read-alike based on history,Wanted more on topic
+T0500,S0238,B0222,2025-10-20,2025-10-28,0,TEACH-01,7,Series continuation,Enjoyed the characters
+T0501,S0062,B0245,2025-08-22,2025-08-28,0,LBR-02,6,Aligned to science unit,Wanted more on topic
+T0502,S0289,B0185,2025-12-02,2025-12-13,2,LBR-01,6,Popular among peers,Asked for another
+T0503,S0055,B0130,2025-08-16,,1,SYSTEM,8,Matches interest tags,Enjoyed the characters
+T0504,S0286,B0030,2025-11-21,2025-11-28,0,LBR-01,6,Supports reading goal,Finished quickly
+T0505,S0024,B0240,2025-10-02,2025-10-21,2,SYSTEM,8,Matches interest tags,Shared with friends
+T0506,S0106,B0119,2025-08-01,2025-08-16,2,SYSTEM,5,Matches interest tags,Loved the story
+T0507,S0220,B0104,2025-08-11,2025-08-25,0,SYSTEM,8,Matches interest tags,Shared with friends
+T0508,S0171,B0095,2025-09-11,2025-09-27,0,TEACH-01,5,Aligned to science unit,Wanted more on topic
+T0509,S0278,B0166,2025-10-14,2025-10-27,2,TEACH-01,4,Read-alike based on history,Wanted more on topic
+T0510,S0002,B0220,2025-11-05,,2,TEACH-01,4,Series continuation,Enjoyed the characters
+T0511,S0173,B0198,2025-12-19,,2,LBR-02,4,Supports reading goal,Loved the story
+T0512,S0168,B0004,2025-08-07,2025-08-23,2,LBR-02,5,Supports reading goal,Loved the story
+T0513,S0068,B0163,2025-09-17,2025-09-28,1,LBR-02,8,Recommended by librarian,Finished quickly
+T0514,S0037,B0096,2025-08-01,2025-08-10,1,LBR-02,4,Matches interest tags,Wanted more on topic
+T0515,S0072,B0216,2025-11-18,2025-11-28,1,TEACH-01,6,Matches interest tags,Loved the story
+T0516,S0129,B0073,2025-10-04,2025-10-11,1,SYSTEM,5,Read-alike based on history,Read aloud at home
+T0517,S0039,B0244,2025-11-22,2025-11-28,1,TEACH-01,7,Matches interest tags,Asked for another
+T0518,S0244,B0061,2025-10-14,2025-10-28,2,LBR-03,7,Supports reading goal,Found it challenging
+T0519,S0165,B0266,2025-09-08,2025-09-25,2,LBR-01,7,Series continuation,Found it challenging
+T0520,S0008,B0029,2025-08-14,2025-08-28,1,LBR-03,6,Supports reading goal,Found it challenging
+T0521,S0075,B0176,2025-09-04,2025-09-17,2,LBR-02,6,Recommended by librarian,Wanted more on topic
+T0522,S0231,B0076,2025-11-22,2025-11-28,2,SYSTEM,4,Supports reading goal,Shared with friends
+T0523,S0185,B0290,2025-08-27,2025-08-28,2,LBR-03,4,Recommended by librarian,Asked for another
+T0524,S0043,B0261,2025-09-04,2025-09-24,1,TEACH-01,6,Matches interest tags,Read aloud at home
+T0525,S0211,B0090,2025-09-05,2025-09-13,0,SYSTEM,8,Matches interest tags,Found it challenging
+T0526,S0033,B0120,2025-12-16,2025-12-25,1,LBR-02,7,Read-alike based on history,Loved the story
+T0527,S0166,B0044,2025-08-05,2025-08-16,0,TEACH-01,4,Aligned to science unit,Shared with friends
+T0528,S0029,B0038,2025-11-25,2025-11-28,0,SYSTEM,5,Series continuation,Asked for another
+T0529,S0236,B0022,2025-12-11,2025-12-26,2,TEACH-01,5,Matches interest tags,Finished quickly
+T0530,S0272,B0123,2025-08-22,2025-08-28,0,LBR-02,4,Popular among peers,Finished quickly
+T0531,S0219,B0164,2025-08-10,2025-08-25,0,LBR-01,7,Recommended by librarian,Finished quickly
+T0532,S0242,B0093,2025-11-26,,0,TEACH-01,4,Series continuation,Asked for another
+T0533,S0243,B0288,2025-08-06,2025-08-21,1,TEACH-01,6,Matches interest tags,Wanted more on topic
+T0534,S0034,B0024,2025-08-22,2025-08-28,2,LBR-03,5,Recommended by librarian,Found it challenging
+T0535,S0293,B0002,2025-09-13,2025-09-28,1,TEACH-01,5,Read-alike based on history,Read aloud at home
+T0536,S0063,B0031,2025-11-21,,1,LBR-01,7,Recommended by librarian,Shared with friends
+T0537,S0068,B0059,2025-09-02,2025-09-18,0,LBR-02,8,Popular among peers,Asked for another
+T0538,S0034,B0160,2025-10-21,,2,LBR-02,5,Read-alike based on history,Shared with friends
+T0539,S0263,B0042,2025-10-18,2025-10-28,0,LBR-01,4,Read-alike based on history,Finished quickly
+T0540,S0221,B0043,2025-11-14,,2,LBR-03,8,Series continuation,Shared with friends
+T0541,S0271,B0009,2025-08-01,2025-08-20,0,LBR-01,6,Recommended by librarian,Enjoyed the characters
+T0542,S0024,B0253,2025-11-01,2025-11-09,1,LBR-03,8,Read-alike based on history,Shared with friends
+T0543,S0288,B0189,2025-09-23,2025-09-28,1,LBR-02,4,Series continuation,Asked for another
+T0544,S0028,B0142,2025-08-10,2025-08-26,1,TEACH-01,5,Matches interest tags,Wanted more on topic
+T0545,S0023,B0037,2025-11-04,2025-11-23,2,SYSTEM,8,Recommended by librarian,Wanted more on topic
+T0546,S0172,B0122,2025-08-11,2025-08-19,2,LBR-03,5,Popular among peers,Asked for another
+T0547,S0006,B0145,2025-09-28,2025-09-28,2,LBR-02,4,Aligned to science unit,Shared with friends
+T0548,S0259,B0229,2025-09-19,2025-09-28,2,LBR-02,4,Read-alike based on history,Read aloud at home
+T0549,S0146,B0268,2025-11-21,,1,LBR-01,6,Aligned to science unit,Finished quickly
+T0550,S0069,B0030,2025-09-12,2025-09-19,0,TEACH-01,6,Matches interest tags,Found it challenging
+T0551,S0091,B0017,2025-12-20,,1,TEACH-01,5,Aligned to science unit,Found it challenging
+T0552,S0182,B0192,2025-08-15,2025-08-28,1,LBR-03,8,Series continuation,Finished quickly
+T0553,S0057,B0195,2025-08-28,2025-08-28,0,TEACH-01,4,Matches interest tags,Finished quickly
+T0554,S0031,B0003,2025-08-25,2025-08-28,2,LBR-01,8,Popular among peers,Found it challenging
+T0555,S0065,B0136,2025-09-14,2025-09-25,0,SYSTEM,8,Aligned to science unit,Finished quickly
+T0556,S0092,B0102,2025-11-01,2025-11-14,2,LBR-03,7,Aligned to science unit,Shared with friends
+T0557,S0020,B0207,2025-11-23,,0,LBR-02,8,Recommended by librarian,Read aloud at home
+T0558,S0184,B0139,2025-08-21,2025-08-28,0,TEACH-01,5,Matches interest tags,Loved the story
+T0559,S0029,B0114,2025-11-24,,0,SYSTEM,5,Supports reading goal,Shared with friends
+T0560,S0183,B0017,2025-11-06,2025-11-25,2,LBR-02,5,Aligned to science unit,Read aloud at home
+T0561,S0219,B0120,2025-11-02,2025-11-18,1,SYSTEM,7,Recommended by librarian,Enjoyed the characters
+T0562,S0155,B0149,2025-08-22,2025-08-28,0,LBR-01,5,Matches interest tags,Asked for another
+T0563,S0001,B0186,2025-08-10,2025-08-18,2,LBR-01,7,Aligned to science unit,Asked for another
+T0564,S0138,B0226,2025-08-09,2025-08-20,0,LBR-03,4,Recommended by librarian,Enjoyed the characters
+T0565,S0258,B0169,2025-10-14,2025-10-21,0,LBR-02,6,Aligned to science unit,Read aloud at home
+T0566,S0247,B0170,2025-11-28,2025-11-28,2,LBR-01,6,Series continuation,Asked for another
+T0567,S0196,B0078,2025-11-03,2025-11-15,1,LBR-01,6,Recommended by librarian,Asked for another
+T0568,S0234,B0157,2025-08-13,2025-08-28,2,LBR-02,8,Supports reading goal,Wanted more on topic
+T0569,S0126,B0118,2025-11-14,2025-11-25,2,LBR-03,4,Popular among peers,Found it challenging
+T0570,S0268,B0119,2025-08-24,2025-08-28,2,LBR-03,7,Popular among peers,Finished quickly
+T0571,S0058,B0129,2025-08-15,2025-08-28,1,LBR-03,7,Read-alike based on history,Read aloud at home
+T0572,S0215,B0022,2025-12-27,2025-12-28,0,SYSTEM,4,Recommended by librarian,Loved the story
+T0573,S0033,B0198,2025-11-13,2025-11-24,2,TEACH-01,7,Series continuation,Enjoyed the characters
+T0574,S0177,B0171,2025-11-10,2025-11-28,1,SYSTEM,8,Popular among peers,Enjoyed the characters
+T0575,S0264,B0014,2025-11-24,,0,LBR-03,5,Popular among peers,Enjoyed the characters
+T0576,S0103,B0122,2025-12-25,,0,LBR-03,8,Matches interest tags,Finished quickly
+T0577,S0056,B0133,2025-08-25,2025-08-28,1,LBR-02,8,Aligned to science unit,Shared with friends
+T0578,S0042,B0144,2025-09-02,2025-09-19,1,LBR-03,7,Series continuation,Enjoyed the characters
+T0579,S0177,B0277,2025-10-19,2025-10-28,2,SYSTEM,8,Popular among peers,Found it challenging
+T0580,S0044,B0246,2025-10-21,2025-10-28,2,LBR-02,4,Matches interest tags,Loved the story
+T0581,S0219,B0247,2025-10-03,,1,SYSTEM,7,Popular among peers,Asked for another
+T0582,S0124,B0036,2025-08-07,2025-08-25,0,LBR-02,4,Aligned to science unit,Loved the story
+T0583,S0235,B0169,2025-09-02,2025-09-16,2,LBR-01,5,Supports reading goal,Shared with friends
+T0584,S0049,B0190,2025-10-11,2025-10-20,0,SYSTEM,5,Supports reading goal,Enjoyed the characters
+T0585,S0213,B0063,2025-12-15,2025-12-28,1,LBR-01,7,Aligned to science unit,Read aloud at home
+T0586,S0284,B0112,2025-10-25,2025-10-28,1,TEACH-01,7,Series continuation,Enjoyed the characters
+T0587,S0266,B0278,2025-08-20,2025-08-28,2,LBR-03,4,Series continuation,Wanted more on topic
+T0588,S0150,B0030,2025-10-19,2025-10-28,0,TEACH-01,8,Recommended by librarian,Enjoyed the characters
+T0589,S0049,B0153,2025-09-28,2025-09-28,2,LBR-02,5,Popular among peers,Enjoyed the characters
+T0590,S0045,B0253,2025-11-07,2025-11-16,1,SYSTEM,8,Matches interest tags,Asked for another
+T0591,S0131,B0139,2025-12-17,,1,LBR-02,5,Series continuation,Read aloud at home
+T0592,S0244,B0092,2025-10-21,2025-10-28,2,SYSTEM,7,Recommended by librarian,Shared with friends
+T0593,S0103,B0190,2025-11-19,2025-11-27,2,SYSTEM,8,Read-alike based on history,Shared with friends
+T0594,S0243,B0013,2025-08-23,2025-08-28,2,LBR-01,6,Read-alike based on history,Read aloud at home
+T0595,S0220,B0007,2025-09-06,2025-09-16,0,TEACH-01,8,Popular among peers,Read aloud at home
+T0596,S0014,B0240,2025-10-26,2025-10-28,0,LBR-03,4,Recommended by librarian,Asked for another
+T0597,S0083,B0156,2025-08-11,2025-08-26,2,SYSTEM,7,Supports reading goal,Shared with friends
+T0598,S0212,B0213,2025-08-26,2025-08-28,2,LBR-02,6,Aligned to science unit,Found it challenging
+T0599,S0264,B0084,2025-09-17,2025-09-27,0,LBR-01,5,Popular among peers,Shared with friends
+T0600,S0015,B0292,2025-12-10,,1,LBR-01,4,Popular among peers,Shared with friends
+T0601,S0148,B0256,2025-12-13,,2,LBR-02,6,Series continuation,Finished quickly
+T0602,S0169,B0002,2025-08-20,2025-08-28,0,LBR-01,5,Read-alike based on history,Finished quickly
+T0603,S0122,B0112,2025-12-14,,2,LBR-02,8,Matches interest tags,Read aloud at home
+T0604,S0064,B0059,2025-09-15,,0,TEACH-01,4,Recommended by librarian,Enjoyed the characters
+T0605,S0194,B0164,2025-09-07,2025-09-23,0,LBR-03,7,Read-alike based on history,Asked for another
+T0606,S0033,B0010,2025-09-17,2025-09-26,2,SYSTEM,7,Series continuation,Finished quickly
+T0607,S0009,B0285,2025-10-18,2025-10-28,1,SYSTEM,7,Read-alike based on history,Read aloud at home
+T0608,S0008,B0008,2025-12-16,2025-12-23,2,SYSTEM,6,Series continuation,Shared with friends
+T0609,S0223,B0138,2025-10-25,2025-10-28,2,SYSTEM,6,Recommended by librarian,Found it challenging
+T0610,S0279,B0263,2025-08-11,2025-08-28,1,LBR-02,5,Popular among peers,Shared with friends
+T0611,S0236,B0106,2025-09-08,2025-09-28,1,LBR-03,5,Recommended by librarian,Loved the story
+T0612,S0055,B0196,2025-12-03,,0,LBR-01,8,Aligned to science unit,Wanted more on topic
+T0613,S0163,B0004,2025-10-11,2025-10-23,0,LBR-03,5,Series continuation,Asked for another
+T0614,S0263,B0185,2025-11-22,2025-11-28,2,LBR-02,4,Read-alike based on history,Wanted more on topic
+T0615,S0058,B0195,2025-12-20,,0,LBR-01,7,Popular among peers,Enjoyed the characters
+T0616,S0239,B0290,2025-11-02,,1,LBR-01,7,Aligned to science unit,Loved the story
+T0617,S0144,B0068,2025-12-08,2025-12-18,1,SYSTEM,6,Read-alike based on history,Read aloud at home
+T0618,S0293,B0013,2025-09-24,2025-09-28,0,LBR-01,5,Popular among peers,Shared with friends
+T0619,S0249,B0183,2025-09-17,2025-09-28,0,LBR-03,7,Matches interest tags,Found it challenging
+T0620,S0244,B0148,2025-10-09,,2,SYSTEM,7,Series continuation,Wanted more on topic
+T0621,S0098,B0183,2025-10-25,,2,LBR-01,7,Recommended by librarian,Found it challenging
+T0622,S0185,B0113,2025-11-03,2025-11-22,1,SYSTEM,4,Recommended by librarian,Shared with friends
+T0623,S0141,B0134,2025-08-26,2025-08-28,2,TEACH-01,7,Matches interest tags,Loved the story
+T0624,S0132,B0086,2025-11-03,2025-11-23,0,LBR-03,6,Supports reading goal,Enjoyed the characters
+T0625,S0267,B0234,2025-09-19,2025-09-26,0,LBR-03,5,Recommended by librarian,Wanted more on topic
+T0626,S0265,B0289,2025-10-17,,0,LBR-01,4,Series continuation,Asked for another
+T0627,S0094,B0089,2025-11-27,,1,LBR-03,8,Popular among peers,Shared with friends
+T0628,S0118,B0181,2025-10-07,2025-10-26,2,LBR-03,5,Recommended by librarian,Wanted more on topic
+T0629,S0065,B0130,2025-08-11,2025-08-23,2,LBR-03,8,Series continuation,Finished quickly
+T0630,S0085,B0065,2025-10-18,2025-10-28,2,LBR-01,7,Matches interest tags,Found it challenging
+T0631,S0041,B0012,2025-09-04,2025-09-23,2,TEACH-01,4,Popular among peers,Enjoyed the characters
+T0632,S0056,B0025,2025-08-13,2025-08-27,1,LBR-03,8,Aligned to science unit,Asked for another
+T0633,S0118,B0073,2025-12-24,2025-12-28,0,LBR-01,5,Series continuation,Read aloud at home
+T0634,S0084,B0212,2025-10-10,2025-10-19,0,SYSTEM,6,Aligned to science unit,Wanted more on topic
+T0635,S0130,B0039,2025-08-10,2025-08-20,0,LBR-02,5,Recommended by librarian,Found it challenging
+T0636,S0066,B0178,2025-08-03,2025-08-24,0,LBR-02,7,Read-alike based on history,Finished quickly
+T0637,S0059,B0161,2025-08-25,2025-08-28,1,TEACH-01,4,Series continuation,Loved the story
+T0638,S0248,B0271,2025-12-19,,1,LBR-02,6,Popular among peers,Asked for another
+T0639,S0129,B0123,2025-11-07,2025-11-23,1,TEACH-01,5,Aligned to science unit,Loved the story
+T0640,S0290,B0180,2025-10-03,2025-10-21,0,TEACH-01,5,Read-alike based on history,Read aloud at home
+T0641,S0225,B0092,2025-10-21,2025-10-28,2,LBR-03,6,Read-alike based on history,Loved the story
+T0642,S0228,B0092,2025-08-25,2025-08-28,0,SYSTEM,6,Read-alike based on history,Asked for another
+T0643,S0026,B0037,2025-09-08,2025-09-21,2,LBR-03,5,Supports reading goal,Enjoyed the characters
+T0644,S0271,B0043,2025-09-25,2025-09-28,2,LBR-01,6,Matches interest tags,Read aloud at home
+T0645,S0086,B0134,2025-09-24,2025-09-28,0,LBR-02,5,Recommended by librarian,Read aloud at home
+T0646,S0201,B0216,2025-10-19,2025-10-28,0,LBR-01,4,Matches interest tags,Wanted more on topic
+T0647,S0062,B0158,2025-10-28,2025-10-28,2,LBR-01,6,Matches interest tags,Wanted more on topic
+T0648,S0067,B0300,2025-09-21,2025-09-28,2,LBR-02,6,Matches interest tags,Asked for another
+T0649,S0289,B0196,2025-10-18,2025-10-28,1,TEACH-01,6,Supports reading goal,Loved the story
+T0650,S0212,B0272,2025-11-04,,2,LBR-02,6,Supports reading goal,Wanted more on topic
+T0651,S0229,B0038,2025-11-12,2025-11-22,2,LBR-02,8,Aligned to science unit,Wanted more on topic
+T0652,S0274,B0149,2025-11-03,,1,LBR-03,6,Aligned to science unit,Wanted more on topic
+T0653,S0134,B0261,2025-09-04,2025-09-22,2,SYSTEM,7,Series continuation,Found it challenging
+T0654,S0242,B0295,2025-09-09,2025-09-21,1,LBR-01,4,Read-alike based on history,Loved the story
+T0655,S0120,B0272,2025-08-03,2025-08-12,2,LBR-03,6,Read-alike based on history,Shared with friends
+T0656,S0019,B0140,2025-10-01,2025-10-20,1,LBR-03,8,Supports reading goal,Loved the story
+T0657,S0016,B0279,2025-08-27,2025-08-28,0,SYSTEM,7,Series continuation,Wanted more on topic
+T0658,S0254,B0164,2025-10-15,2025-10-24,0,LBR-01,7,Popular among peers,Read aloud at home
+T0659,S0214,B0291,2025-08-18,2025-08-28,2,LBR-01,5,Read-alike based on history,Asked for another
+T0660,S0094,B0047,2025-10-07,2025-10-21,2,LBR-03,8,Series continuation,Enjoyed the characters
+T0661,S0243,B0283,2025-09-03,,1,LBR-03,6,Series continuation,Wanted more on topic
+T0662,S0282,B0116,2025-10-25,2025-10-28,0,LBR-01,6,Recommended by librarian,Asked for another
+T0663,S0203,B0242,2025-09-27,2025-09-28,0,SYSTEM,8,Supports reading goal,Asked for another
+T0664,S0242,B0046,2025-09-05,2025-09-26,1,LBR-02,4,Series continuation,Shared with friends
+T0665,S0132,B0050,2025-10-10,2025-10-28,2,TEACH-01,6,Recommended by librarian,Read aloud at home
+T0666,S0167,B0018,2025-10-12,2025-10-28,2,LBR-01,4,Supports reading goal,Finished quickly
+T0667,S0096,B0026,2025-11-14,,1,LBR-01,8,Read-alike based on history,Shared with friends
+T0668,S0297,B0261,2025-10-18,2025-10-25,0,TEACH-01,6,Recommended by librarian,Wanted more on topic
+T0669,S0259,B0002,2025-11-10,,0,SYSTEM,4,Popular among peers,Shared with friends
+T0670,S0016,B0092,2025-09-27,2025-09-28,2,LBR-01,7,Popular among peers,Loved the story
+T0671,S0299,B0170,2025-12-01,,2,LBR-03,8,Aligned to science unit,Found it challenging
+T0672,S0210,B0099,2025-11-01,,1,TEACH-01,4,Read-alike based on history,Finished quickly
+T0673,S0219,B0244,2025-09-22,2025-09-28,2,LBR-02,7,Supports reading goal,Found it challenging
+T0674,S0128,B0049,2025-09-16,2025-09-28,2,LBR-02,5,Matches interest tags,Loved the story
+T0675,S0214,B0218,2025-08-24,2025-08-28,0,SYSTEM,5,Recommended by librarian,Finished quickly
+T0676,S0092,B0012,2025-08-12,2025-08-28,2,LBR-01,7,Supports reading goal,Finished quickly
+T0677,S0296,B0252,2025-08-17,2025-08-28,0,LBR-03,7,Recommended by librarian,Asked for another
+T0678,S0091,B0176,2025-10-13,2025-10-28,0,TEACH-01,5,Aligned to science unit,Found it challenging
+T0679,S0130,B0054,2025-10-24,2025-10-28,0,TEACH-01,5,Recommended by librarian,Found it challenging
+T0680,S0098,B0285,2025-10-28,2025-10-28,0,LBR-01,7,Read-alike based on history,Asked for another
+T0681,S0186,B0216,2025-11-11,2025-11-20,1,LBR-02,5,Recommended by librarian,Wanted more on topic
+T0682,S0068,B0228,2025-11-13,,2,LBR-01,8,Popular among peers,Shared with friends
+T0683,S0129,B0230,2025-11-06,2025-11-24,2,LBR-01,5,Supports reading goal,Shared with friends
+T0684,S0020,B0284,2025-08-25,2025-08-28,1,LBR-01,8,Series continuation,Found it challenging
+T0685,S0081,B0143,2025-12-18,2025-12-28,0,TEACH-01,8,Aligned to science unit,Finished quickly
+T0686,S0246,B0026,2025-09-15,2025-09-23,2,LBR-03,7,Recommended by librarian,Read aloud at home
+T0687,S0016,B0053,2025-08-18,2025-08-28,2,LBR-02,7,Popular among peers,Found it challenging
+T0688,S0176,B0261,2025-12-21,2025-12-28,0,TEACH-01,8,Aligned to science unit,Enjoyed the characters
+T0689,S0184,B0188,2025-08-24,2025-08-28,2,LBR-03,5,Popular among peers,Enjoyed the characters
+T0690,S0273,B0141,2025-10-05,2025-10-24,1,LBR-03,6,Aligned to science unit,Read aloud at home
+T0691,S0060,B0192,2025-08-21,2025-08-28,0,SYSTEM,8,Series continuation,Finished quickly
+T0692,S0219,B0161,2025-12-12,,0,LBR-01,7,Aligned to science unit,Enjoyed the characters
+T0693,S0028,B0271,2025-08-10,2025-08-25,0,SYSTEM,5,Aligned to science unit,Shared with friends
+T0694,S0088,B0224,2025-11-19,,1,LBR-02,8,Recommended by librarian,Shared with friends
+T0695,S0198,B0287,2025-09-04,2025-09-20,1,LBR-03,7,Series continuation,Shared with friends
+T0696,S0174,B0074,2025-11-17,2025-11-28,2,LBR-01,6,Recommended by librarian,Wanted more on topic
+T0697,S0271,B0247,2025-09-22,2025-09-28,2,LBR-03,6,Aligned to science unit,Shared with friends
+T0698,S0001,B0032,2025-12-01,2025-12-18,1,SYSTEM,7,Aligned to science unit,Wanted more on topic
+T0699,S0190,B0207,2025-10-06,2025-10-23,1,LBR-02,8,Recommended by librarian,Loved the story
+T0700,S0012,B0103,2025-12-07,2025-12-25,0,LBR-03,5,Recommended by librarian,Loved the story
+T0701,S0035,B0263,2025-10-26,2025-10-28,2,TEACH-01,5,Matches interest tags,Loved the story
+T0702,S0028,B0025,2025-12-27,,1,LBR-03,5,Supports reading goal,Shared with friends
+T0703,S0028,B0276,2025-08-05,,1,LBR-03,5,Series continuation,Finished quickly
+T0704,S0112,B0284,2025-11-14,,2,LBR-03,5,Popular among peers,Shared with friends
+T0705,S0011,B0241,2025-12-09,2025-12-19,1,TEACH-01,7,Recommended by librarian,Loved the story
+T0706,S0161,B0201,2025-12-20,,1,LBR-02,8,Aligned to science unit,Wanted more on topic
+T0707,S0069,B0229,2025-08-14,2025-08-25,2,TEACH-01,6,Popular among peers,Read aloud at home
+T0708,S0130,B0196,2025-09-23,2025-09-28,2,LBR-03,5,Popular among peers,Wanted more on topic
+T0709,S0110,B0154,2025-11-28,,1,SYSTEM,6,Supports reading goal,Wanted more on topic
+T0710,S0076,B0116,2025-11-04,2025-11-12,1,LBR-01,5,Aligned to science unit,Finished quickly
+T0711,S0038,B0278,2025-12-23,,2,TEACH-01,5,Popular among peers,Loved the story
+T0712,S0139,B0197,2025-11-20,,2,LBR-02,8,Recommended by librarian,Finished quickly
+T0713,S0123,B0024,2025-10-26,,2,LBR-03,6,Aligned to science unit,Asked for another
+T0714,S0169,B0150,2025-08-06,2025-08-24,2,SYSTEM,5,Aligned to science unit,Found it challenging
+T0715,S0017,B0182,2025-11-13,2025-11-28,0,SYSTEM,5,Aligned to science unit,Shared with friends
+T0716,S0170,B0253,2025-08-12,2025-08-26,0,SYSTEM,6,Matches interest tags,Enjoyed the characters
+T0717,S0252,B0240,2025-11-12,2025-11-20,2,SYSTEM,7,Supports reading goal,Loved the story
+T0718,S0009,B0082,2025-12-08,2025-12-18,1,LBR-02,7,Popular among peers,Loved the story
+T0719,S0261,B0178,2025-11-04,2025-11-25,0,LBR-02,4,Supports reading goal,Wanted more on topic
+T0720,S0064,B0193,2025-08-01,2025-08-22,0,LBR-03,4,Recommended by librarian,Read aloud at home
+T0721,S0265,B0138,2025-12-27,,0,SYSTEM,4,Read-alike based on history,Wanted more on topic
+T0722,S0246,B0062,2025-10-12,2025-10-20,0,LBR-02,7,Recommended by librarian,Finished quickly
+T0723,S0151,B0274,2025-10-08,2025-10-16,1,SYSTEM,6,Series continuation,Wanted more on topic
+T0724,S0099,B0182,2025-11-12,2025-11-28,1,SYSTEM,4,Popular among peers,Finished quickly
+T0725,S0120,B0165,2025-12-01,,1,TEACH-01,6,Series continuation,Asked for another
+T0726,S0098,B0267,2025-10-14,2025-10-23,0,LBR-02,7,Recommended by librarian,Found it challenging
+T0727,S0277,B0215,2025-08-08,2025-08-20,2,SYSTEM,4,Aligned to science unit,Loved the story
+T0728,S0176,B0178,2025-11-23,,1,TEACH-01,8,Matches interest tags,Shared with friends
+T0729,S0067,B0025,2025-09-03,2025-09-18,1,SYSTEM,6,Supports reading goal,Found it challenging
+T0730,S0138,B0219,2025-09-15,2025-09-23,2,LBR-02,4,Matches interest tags,Found it challenging
+T0731,S0110,B0255,2025-10-06,,1,TEACH-01,6,Recommended by librarian,Loved the story
+T0732,S0254,B0299,2025-09-11,,2,LBR-02,7,Popular among peers,Loved the story
+T0733,S0258,B0246,2025-09-19,2025-09-28,2,LBR-01,6,Read-alike based on history,Enjoyed the characters
+T0734,S0216,B0066,2025-12-26,2025-12-28,2,SYSTEM,6,Aligned to science unit,Read aloud at home
+T0735,S0076,B0287,2025-08-01,2025-08-15,0,LBR-02,5,Popular among peers,Enjoyed the characters
+T0736,S0051,B0162,2025-12-28,2025-12-28,0,SYSTEM,8,Read-alike based on history,Shared with friends
+T0737,S0158,B0076,2025-09-09,2025-09-26,0,TEACH-01,7,Series continuation,Loved the story
+T0738,S0193,B0202,2025-09-01,2025-09-13,1,LBR-01,7,Supports reading goal,Wanted more on topic
+T0739,S0031,B0183,2025-08-25,2025-08-28,0,LBR-01,8,Read-alike based on history,Read aloud at home
+T0740,S0119,B0115,2025-11-11,,1,TEACH-01,7,Aligned to science unit,Asked for another
+T0741,S0137,B0193,2025-11-18,,1,LBR-01,4,Supports reading goal,Loved the story
+T0742,S0123,B0015,2025-12-09,2025-12-28,2,LBR-02,6,Aligned to science unit,Found it challenging
+T0743,S0049,B0277,2025-11-03,,2,LBR-03,5,Read-alike based on history,Wanted more on topic
+T0744,S0196,B0109,2025-09-02,2025-09-19,0,SYSTEM,6,Aligned to science unit,Read aloud at home
+T0745,S0049,B0193,2025-10-27,2025-10-28,1,LBR-01,5,Series continuation,Found it challenging
+T0746,S0187,B0144,2025-11-25,,2,SYSTEM,4,Series continuation,Finished quickly
+T0747,S0183,B0124,2025-11-19,2025-11-27,2,LBR-01,5,Read-alike based on history,Shared with friends
+T0748,S0154,B0152,2025-12-22,,2,LBR-03,5,Popular among peers,Enjoyed the characters
+T0749,S0274,B0175,2025-08-06,2025-08-13,1,SYSTEM,6,Recommended by librarian,Finished quickly
+T0750,S0090,B0015,2025-12-18,2025-12-28,0,LBR-03,7,Matches interest tags,Loved the story
+T0751,S0145,B0123,2025-08-01,2025-08-13,1,SYSTEM,6,Popular among peers,Wanted more on topic
+T0752,S0047,B0233,2025-11-21,,1,TEACH-01,7,Supports reading goal,Shared with friends
+T0753,S0024,B0070,2025-12-17,,1,LBR-02,8,Series continuation,Enjoyed the characters
+T0754,S0016,B0147,2025-12-11,,1,LBR-03,7,Read-alike based on history,Shared with friends
+T0755,S0300,B0202,2025-09-12,2025-09-19,0,SYSTEM,7,Recommended by librarian,Finished quickly
+T0756,S0204,B0020,2025-09-23,2025-09-28,1,SYSTEM,5,Series continuation,Loved the story
+T0757,S0233,B0205,2025-08-01,2025-08-11,1,LBR-03,8,Matches interest tags,Asked for another
+T0758,S0210,B0116,2025-11-21,,0,LBR-02,4,Series continuation,Enjoyed the characters
+T0759,S0168,B0013,2025-11-28,2025-11-28,2,LBR-01,5,Read-alike based on history,Finished quickly
+T0760,S0050,B0267,2025-11-23,,2,SYSTEM,7,Matches interest tags,Found it challenging
+T0761,S0239,B0159,2025-12-01,2025-12-13,2,SYSTEM,7,Popular among peers,Wanted more on topic
+T0762,S0134,B0177,2025-09-14,2025-09-28,1,SYSTEM,7,Read-alike based on history,Enjoyed the characters
+T0763,S0194,B0082,2025-11-17,2025-11-28,1,LBR-02,7,Series continuation,Asked for another
+T0764,S0239,B0297,2025-09-07,2025-09-20,2,LBR-01,7,Read-alike based on history,Loved the story
+T0765,S0283,B0068,2025-12-17,2025-12-28,0,LBR-03,5,Aligned to science unit,Found it challenging
+T0766,S0203,B0110,2025-12-10,2025-12-28,0,LBR-03,8,Series continuation,Shared with friends
+T0767,S0202,B0285,2025-11-28,2025-11-28,1,LBR-01,8,Supports reading goal,Enjoyed the characters
+T0768,S0053,B0035,2025-09-06,2025-09-20,1,LBR-03,6,Matches interest tags,Asked for another
+T0769,S0020,B0118,2025-09-26,2025-09-28,1,LBR-02,8,Matches interest tags,Enjoyed the characters
+T0770,S0067,B0042,2025-11-25,,0,LBR-01,6,Popular among peers,Shared with friends
+T0771,S0051,B0237,2025-08-12,2025-08-19,2,SYSTEM,8,Aligned to science unit,Finished quickly
+T0772,S0223,B0053,2025-10-12,2025-10-25,0,LBR-03,6,Recommended by librarian,Shared with friends
+T0773,S0090,B0290,2025-09-12,2025-09-19,2,LBR-01,7,Read-alike based on history,Wanted more on topic
+T0774,S0274,B0258,2025-11-05,,2,LBR-03,6,Popular among peers,Finished quickly
+T0775,S0263,B0073,2025-08-10,2025-08-28,2,LBR-01,4,Recommended by librarian,Shared with friends
+T0776,S0093,B0143,2025-08-01,2025-08-15,0,LBR-01,4,Supports reading goal,Wanted more on topic
+T0777,S0279,B0108,2025-08-11,2025-08-28,1,SYSTEM,5,Recommended by librarian,Asked for another
+T0778,S0194,B0031,2025-09-19,2025-09-28,0,LBR-03,7,Matches interest tags,Asked for another
+T0779,S0296,B0292,2025-12-07,2025-12-16,0,SYSTEM,7,Series continuation,Finished quickly
+T0780,S0098,B0189,2025-11-27,2025-11-28,1,TEACH-01,7,Matches interest tags,Read aloud at home
+T0781,S0251,B0015,2025-12-14,2025-12-28,2,LBR-03,5,Popular among peers,Loved the story
+T0782,S0191,B0153,2025-11-27,,1,LBR-03,8,Supports reading goal,Read aloud at home
+T0783,S0281,B0231,2025-09-05,2025-09-12,0,LBR-01,5,Popular among peers,Read aloud at home
+T0784,S0121,B0121,2025-09-05,2025-09-16,2,TEACH-01,4,Series continuation,Finished quickly
+T0785,S0104,B0252,2025-11-01,2025-11-20,2,SYSTEM,7,Recommended by librarian,Shared with friends
+T0786,S0171,B0055,2025-08-23,2025-08-28,1,TEACH-01,5,Read-alike based on history,Asked for another
+T0787,S0256,B0143,2025-10-19,2025-10-26,1,LBR-03,4,Aligned to science unit,Shared with friends
+T0788,S0283,B0041,2025-08-14,2025-08-28,1,LBR-01,5,Supports reading goal,Enjoyed the characters
+T0789,S0061,B0159,2025-08-26,2025-08-28,2,SYSTEM,6,Recommended by librarian,Finished quickly
+T0790,S0249,B0231,2025-12-04,,2,LBR-01,7,Recommended by librarian,Finished quickly
+T0791,S0024,B0277,2025-08-26,2025-08-28,2,TEACH-01,8,Read-alike based on history,Enjoyed the characters
+T0792,S0249,B0113,2025-11-08,2025-11-27,0,LBR-01,7,Series continuation,Wanted more on topic
+T0793,S0166,B0107,2025-09-22,2025-09-28,0,SYSTEM,4,Supports reading goal,Enjoyed the characters
+T0794,S0262,B0010,2025-08-02,2025-08-17,0,LBR-02,7,Matches interest tags,Enjoyed the characters
+T0795,S0206,B0223,2025-08-26,2025-08-28,2,LBR-01,6,Read-alike based on history,Wanted more on topic
+T0796,S0122,B0158,2025-11-03,,0,TEACH-01,8,Series continuation,Finished quickly
+T0797,S0045,B0216,2025-11-05,2025-11-24,2,LBR-02,8,Supports reading goal,Shared with friends
+T0798,S0255,B0263,2025-11-01,,2,SYSTEM,7,Matches interest tags,Loved the story
+T0799,S0292,B0236,2025-11-03,2025-11-12,2,TEACH-01,5,Series continuation,Loved the story
+T0800,S0072,B0045,2025-08-25,2025-08-28,1,SYSTEM,6,Popular among peers,Found it challenging
+T0801,S0003,B0211,2025-11-18,,2,TEACH-01,7,Series continuation,Read aloud at home
+T0802,S0151,B0266,2025-12-27,2025-12-28,0,LBR-03,6,Recommended by librarian,Enjoyed the characters
+T0803,S0075,B0285,2025-10-19,2025-10-28,2,LBR-01,6,Popular among peers,Read aloud at home
+T0804,S0220,B0083,2025-08-09,2025-08-16,1,LBR-03,8,Supports reading goal,Shared with friends
+T0805,S0099,B0139,2025-08-20,2025-08-28,2,LBR-01,4,Supports reading goal,Asked for another
+T0806,S0131,B0020,2025-08-04,2025-08-18,1,LBR-02,5,Series continuation,Loved the story
+T0807,S0065,B0293,2025-12-14,2025-12-22,0,TEACH-01,8,Series continuation,Found it challenging
+T0808,S0046,B0211,2025-08-10,2025-08-26,1,LBR-02,6,Series continuation,Loved the story
+T0809,S0233,B0100,2025-12-22,,0,SYSTEM,8,Popular among peers,Enjoyed the characters
+T0810,S0234,B0224,2025-09-26,2025-09-28,1,LBR-02,8,Matches interest tags,Wanted more on topic
+T0811,S0267,B0220,2025-10-18,2025-10-28,1,LBR-02,5,Recommended by librarian,Shared with friends
+T0812,S0280,B0234,2025-09-26,2025-09-28,0,TEACH-01,7,Aligned to science unit,Found it challenging
+T0813,S0290,B0188,2025-10-12,2025-10-28,0,LBR-03,5,Read-alike based on history,Finished quickly
+T0814,S0237,B0237,2025-08-25,2025-08-28,1,LBR-02,8,Popular among peers,Asked for another
+T0815,S0125,B0020,2025-10-17,2025-10-26,0,TEACH-01,7,Aligned to science unit,Finished quickly
+T0816,S0002,B0032,2025-11-15,2025-11-26,0,SYSTEM,4,Popular among peers,Finished quickly
+T0817,S0011,B0118,2025-09-14,2025-09-28,1,LBR-02,7,Recommended by librarian,Read aloud at home
+T0818,S0080,B0102,2025-10-20,2025-10-28,2,LBR-01,8,Matches interest tags,Finished quickly
+T0819,S0172,B0208,2025-11-20,,1,SYSTEM,5,Series continuation,Read aloud at home
+T0820,S0225,B0022,2025-12-27,2025-12-28,1,SYSTEM,6,Recommended by librarian,Wanted more on topic
+T0821,S0166,B0096,2025-10-11,2025-10-20,0,TEACH-01,4,Aligned to science unit,Read aloud at home
+T0822,S0154,B0204,2025-11-11,,1,LBR-02,5,Aligned to science unit,Found it challenging
+T0823,S0092,B0119,2025-10-17,2025-10-28,0,SYSTEM,7,Recommended by librarian,Loved the story
+T0824,S0159,B0036,2025-09-19,,1,TEACH-01,7,Series continuation,Read aloud at home
+T0825,S0195,B0213,2025-09-12,,0,LBR-01,4,Series continuation,Wanted more on topic
+T0826,S0154,B0050,2025-11-04,,0,LBR-03,5,Read-alike based on history,Shared with friends
+T0827,S0196,B0161,2025-11-25,2025-11-28,1,SYSTEM,6,Popular among peers,Wanted more on topic
+T0828,S0235,B0271,2025-11-09,2025-11-19,1,LBR-03,5,Aligned to science unit,Finished quickly
+T0829,S0291,B0046,2025-12-05,2025-12-21,1,LBR-01,7,Popular among peers,Asked for another
+T0830,S0198,B0286,2025-08-08,2025-08-22,1,LBR-01,7,Recommended by librarian,Read aloud at home
+T0831,S0278,B0159,2025-11-08,2025-11-28,0,LBR-02,4,Series continuation,Shared with friends
+T0832,S0289,B0178,2025-08-03,2025-08-19,2,SYSTEM,6,Read-alike based on history,Found it challenging
+T0833,S0031,B0004,2025-12-17,2025-12-26,1,TEACH-01,8,Recommended by librarian,Shared with friends
+T0834,S0091,B0154,2025-10-06,2025-10-14,1,LBR-03,5,Recommended by librarian,Found it challenging
+T0835,S0077,B0271,2025-08-23,2025-08-28,2,LBR-01,7,Matches interest tags,Finished quickly
+T0836,S0191,B0235,2025-10-12,,0,LBR-02,8,Read-alike based on history,Asked for another
+T0837,S0176,B0154,2025-10-05,2025-10-15,0,LBR-03,8,Supports reading goal,Finished quickly
+T0838,S0217,B0088,2025-11-01,2025-11-18,2,TEACH-01,8,Aligned to science unit,Finished quickly
+T0839,S0185,B0187,2025-08-13,2025-08-28,0,TEACH-01,4,Supports reading goal,Enjoyed the characters
+T0840,S0190,B0180,2025-11-01,2025-11-14,0,TEACH-01,8,Read-alike based on history,Loved the story
+T0841,S0189,B0032,2025-11-27,2025-11-28,1,TEACH-01,7,Recommended by librarian,Asked for another
+T0842,S0026,B0020,2025-10-13,2025-10-27,0,SYSTEM,5,Aligned to science unit,Found it challenging
+T0843,S0052,B0127,2025-10-06,2025-10-22,2,LBR-01,6,Series continuation,Found it challenging
+T0844,S0249,B0212,2025-12-28,2025-12-28,2,SYSTEM,7,Read-alike based on history,Read aloud at home
+T0845,S0127,B0180,2025-12-12,2025-12-28,1,LBR-01,6,Supports reading goal,Found it challenging
+T0846,S0138,B0187,2025-12-03,,2,SYSTEM,4,Popular among peers,Enjoyed the characters
+T0847,S0084,B0260,2025-10-22,2025-10-28,1,SYSTEM,6,Matches interest tags,Enjoyed the characters
+T0848,S0251,B0007,2025-11-11,2025-11-23,0,LBR-02,5,Read-alike based on history,Shared with friends
+T0849,S0090,B0001,2025-10-02,2025-10-22,2,TEACH-01,7,Popular among peers,Loved the story
+T0850,S0191,B0119,2025-11-06,2025-11-27,0,LBR-01,8,Matches interest tags,Finished quickly
+T0851,S0211,B0198,2025-09-27,2025-09-28,2,TEACH-01,8,Series continuation,Shared with friends
+T0852,S0250,B0219,2025-12-24,2025-12-28,2,TEACH-01,6,Read-alike based on history,Asked for another
+T0853,S0147,B0089,2025-09-26,2025-09-28,1,SYSTEM,7,Series continuation,Finished quickly
+T0854,S0293,B0156,2025-11-20,2025-11-28,2,LBR-02,5,Recommended by librarian,Finished quickly
+T0855,S0234,B0125,2025-11-27,,2,SYSTEM,8,Aligned to science unit,Read aloud at home
+T0856,S0278,B0285,2025-10-03,2025-10-16,2,LBR-01,4,Matches interest tags,Shared with friends
+T0857,S0116,B0128,2025-12-11,,2,LBR-01,4,Popular among peers,Enjoyed the characters
+T0858,S0061,B0234,2025-11-23,,2,LBR-02,6,Matches interest tags,Found it challenging
+T0859,S0023,B0214,2025-10-25,2025-10-28,1,SYSTEM,8,Aligned to science unit,Enjoyed the characters
+T0860,S0114,B0155,2025-12-04,,0,LBR-01,5,Popular among peers,Loved the story
+T0861,S0138,B0204,2025-09-19,2025-09-26,2,LBR-02,4,Matches interest tags,Wanted more on topic
+T0862,S0246,B0198,2025-08-05,2025-08-24,0,LBR-02,7,Matches interest tags,Loved the story
+T0863,S0148,B0275,2025-10-03,2025-10-15,2,LBR-02,6,Aligned to science unit,Enjoyed the characters
+T0864,S0095,B0251,2025-12-28,,0,LBR-01,4,Popular among peers,Loved the story
+T0865,S0168,B0137,2025-08-15,2025-08-25,0,LBR-02,5,Recommended by librarian,Loved the story
+T0866,S0291,B0274,2025-09-21,2025-09-28,0,TEACH-01,7,Read-alike based on history,Finished quickly
+T0867,S0229,B0028,2025-10-18,2025-10-26,1,LBR-01,8,Popular among peers,Shared with friends
+T0868,S0236,B0292,2025-12-07,2025-12-16,0,LBR-02,5,Aligned to science unit,Wanted more on topic
+T0869,S0286,B0221,2025-10-05,2025-10-24,0,LBR-01,6,Popular among peers,Enjoyed the characters
+T0870,S0208,B0113,2025-12-15,,2,LBR-03,5,Aligned to science unit,Wanted more on topic
+T0871,S0108,B0195,2025-12-11,2025-12-28,2,SYSTEM,6,Popular among peers,Read aloud at home
+T0872,S0056,B0211,2025-08-16,2025-08-28,0,SYSTEM,8,Supports reading goal,Found it challenging
+T0873,S0010,B0067,2025-09-19,2025-09-27,0,LBR-01,8,Popular among peers,Enjoyed the characters
+T0874,S0027,B0115,2025-08-28,2025-08-28,1,TEACH-01,8,Aligned to science unit,Found it challenging
+T0875,S0234,B0186,2025-10-06,2025-10-26,0,LBR-02,8,Supports reading goal,Wanted more on topic
+T0876,S0029,B0062,2025-12-26,,1,LBR-02,5,Popular among peers,Loved the story
+T0877,S0249,B0200,2025-11-11,,0,LBR-01,7,Aligned to science unit,Asked for another
+T0878,S0210,B0096,2025-11-24,,0,LBR-02,4,Recommended by librarian,Finished quickly
+T0879,S0192,B0264,2025-10-11,2025-10-28,2,LBR-03,4,Aligned to science unit,Loved the story
+T0880,S0056,B0060,2025-10-28,,0,LBR-01,8,Series continuation,Found it challenging
+T0881,S0149,B0021,2025-11-02,,1,LBR-02,8,Matches interest tags,Read aloud at home
+T0882,S0197,B0166,2025-09-06,2025-09-18,2,SYSTEM,4,Aligned to science unit,Finished quickly
+T0883,S0142,B0214,2025-12-20,2025-12-28,2,LBR-02,5,Popular among peers,Loved the story
+T0884,S0138,B0227,2025-10-10,,1,TEACH-01,4,Aligned to science unit,Enjoyed the characters
+T0885,S0105,B0080,2025-08-16,2025-08-25,1,LBR-02,7,Popular among peers,Enjoyed the characters
+T0886,S0088,B0156,2025-11-26,,2,TEACH-01,8,Supports reading goal,Found it challenging
+T0887,S0061,B0223,2025-10-08,2025-10-28,1,LBR-02,6,Read-alike based on history,Shared with friends
+T0888,S0299,B0236,2025-08-11,2025-08-20,1,SYSTEM,8,Series continuation,Wanted more on topic
+T0889,S0208,B0169,2025-08-14,2025-08-23,0,LBR-03,5,Read-alike based on history,Shared with friends
+T0890,S0280,B0044,2025-09-24,2025-09-28,0,SYSTEM,7,Matches interest tags,Shared with friends
+T0891,S0294,B0113,2025-08-12,2025-08-28,0,SYSTEM,7,Matches interest tags,Shared with friends
+T0892,S0009,B0165,2025-10-25,2025-10-28,2,LBR-01,7,Aligned to science unit,Enjoyed the characters
+T0893,S0193,B0143,2025-08-08,2025-08-28,2,LBR-02,7,Matches interest tags,Read aloud at home
+T0894,S0165,B0192,2025-08-28,2025-08-28,2,LBR-01,7,Read-alike based on history,Finished quickly
+T0895,S0117,B0248,2025-08-22,2025-08-28,1,LBR-02,8,Supports reading goal,Found it challenging
+T0896,S0184,B0203,2025-08-05,2025-08-20,2,LBR-03,5,Supports reading goal,Found it challenging
+T0897,S0231,B0232,2025-08-03,2025-08-22,2,TEACH-01,4,Series continuation,Found it challenging
+T0898,S0265,B0012,2025-10-24,2025-10-28,2,LBR-03,4,Supports reading goal,Found it challenging
+T0899,S0024,B0135,2025-11-27,,0,LBR-02,8,Series continuation,Asked for another
+T0900,S0030,B0131,2025-11-02,2025-11-23,2,LBR-02,6,Popular among peers,Shared with friends
+T0901,S0184,B0233,2025-10-03,2025-10-11,1,LBR-02,5,Recommended by librarian,Wanted more on topic
+T0902,S0247,B0013,2025-12-02,2025-12-23,1,LBR-01,6,Popular among peers,Loved the story
+T0903,S0220,B0297,2025-11-24,2025-11-28,2,SYSTEM,8,Popular among peers,Enjoyed the characters
+T0904,S0095,B0193,2025-08-22,2025-08-28,1,LBR-03,4,Aligned to science unit,Shared with friends
+T0905,S0146,B0007,2025-12-19,2025-12-28,1,LBR-02,6,Matches interest tags,Finished quickly
+T0906,S0011,B0144,2025-11-21,2025-11-28,0,TEACH-01,7,Popular among peers,Enjoyed the characters
+T0907,S0229,B0287,2025-12-06,2025-12-15,1,LBR-02,8,Aligned to science unit,Finished quickly
+T0908,S0176,B0020,2025-11-02,2025-11-20,2,TEACH-01,8,Supports reading goal,Found it challenging
+T0909,S0276,B0106,2025-08-09,2025-08-24,0,LBR-02,6,Popular among peers,Shared with friends
+T0910,S0163,B0230,2025-09-24,2025-09-28,2,TEACH-01,5,Read-alike based on history,Read aloud at home
+T0911,S0254,B0218,2025-11-09,,0,LBR-03,7,Recommended by librarian,Read aloud at home
+T0912,S0227,B0003,2025-08-27,2025-08-28,0,LBR-03,8,Aligned to science unit,Found it challenging
+T0913,S0107,B0088,2025-09-10,2025-09-23,1,LBR-01,5,Matches interest tags,Shared with friends
+T0914,S0274,B0262,2025-11-26,2025-11-28,2,LBR-01,6,Matches interest tags,Wanted more on topic
+T0915,S0040,B0124,2025-11-20,,2,LBR-03,8,Aligned to science unit,Found it challenging
+T0916,S0194,B0202,2025-12-10,,1,LBR-01,7,Popular among peers,Wanted more on topic
+T0917,S0201,B0101,2025-09-04,2025-09-21,2,LBR-03,4,Aligned to science unit,Found it challenging
+T0918,S0260,B0025,2025-11-17,2025-11-28,2,TEACH-01,4,Recommended by librarian,Asked for another
+T0919,S0217,B0128,2025-11-25,2025-11-28,0,LBR-02,8,Read-alike based on history,Shared with friends
+T0920,S0162,B0072,2025-12-19,,0,LBR-01,7,Supports reading goal,Wanted more on topic
+T0921,S0144,B0242,2025-11-24,2025-11-28,0,LBR-03,6,Read-alike based on history,Wanted more on topic
+T0922,S0029,B0262,2025-09-22,2025-09-28,0,LBR-01,5,Popular among peers,Found it challenging
+T0923,S0102,B0285,2025-12-12,2025-12-28,2,TEACH-01,6,Series continuation,Read aloud at home
+T0924,S0202,B0020,2025-09-18,2025-09-28,0,TEACH-01,8,Read-alike based on history,Shared with friends
+T0925,S0100,B0046,2025-12-12,2025-12-28,2,LBR-01,6,Recommended by librarian,Wanted more on topic
+T0926,S0107,B0191,2025-12-01,2025-12-17,0,LBR-01,5,Supports reading goal,Found it challenging
+T0927,S0120,B0185,2025-09-09,2025-09-19,1,LBR-03,6,Aligned to science unit,Finished quickly
+T0928,S0252,B0016,2025-12-11,2025-12-28,2,LBR-03,7,Supports reading goal,Enjoyed the characters
+T0929,S0058,B0203,2025-10-27,,2,LBR-03,7,Recommended by librarian,Found it challenging
+T0930,S0152,B0010,2025-11-06,2025-11-24,1,LBR-03,4,Read-alike based on history,Asked for another
+T0931,S0297,B0140,2025-11-28,2025-11-28,0,LBR-02,6,Matches interest tags,Shared with friends
+T0932,S0089,B0115,2025-09-16,2025-09-28,2,LBR-01,7,Aligned to science unit,Wanted more on topic
+T0933,S0192,B0070,2025-11-12,2025-11-28,2,LBR-02,4,Matches interest tags,Asked for another
+T0934,S0088,B0062,2025-08-03,2025-08-16,1,LBR-01,8,Series continuation,Finished quickly
+T0935,S0131,B0199,2025-09-01,2025-09-13,1,LBR-03,5,Recommended by librarian,Found it challenging
+T0936,S0094,B0138,2025-10-01,2025-10-12,1,LBR-02,8,Popular among peers,Loved the story
+T0937,S0229,B0278,2025-11-20,2025-11-28,1,SYSTEM,8,Aligned to science unit,Shared with friends
+T0938,S0279,B0205,2025-08-16,2025-08-23,0,LBR-01,5,Series continuation,Finished quickly
+T0939,S0196,B0067,2025-10-01,2025-10-14,0,LBR-03,6,Series continuation,Found it challenging
+T0940,S0210,B0256,2025-12-13,2025-12-28,0,LBR-01,4,Recommended by librarian,Found it challenging
+T0941,S0162,B0157,2025-11-21,,1,TEACH-01,7,Popular among peers,Asked for another
+T0942,S0154,B0203,2025-10-18,2025-10-28,0,LBR-01,5,Aligned to science unit,Asked for another
+T0943,S0014,B0235,2025-09-16,2025-09-28,1,TEACH-01,4,Matches interest tags,Enjoyed the characters
+T0944,S0004,B0185,2025-09-18,2025-09-28,2,LBR-03,8,Aligned to science unit,Wanted more on topic
+T0945,S0278,B0215,2025-08-27,2025-08-28,0,TEACH-01,4,Series continuation,Wanted more on topic
+T0946,S0240,B0240,2025-12-17,,0,LBR-03,7,Series continuation,Loved the story
+T0947,S0044,B0282,2025-11-06,2025-11-22,0,SYSTEM,4,Supports reading goal,Shared with friends
+T0948,S0087,B0267,2025-09-24,2025-09-28,0,LBR-02,7,Recommended by librarian,Found it challenging
+T0949,S0042,B0298,2025-08-20,,1,LBR-03,7,Series continuation,Wanted more on topic
+T0950,S0001,B0015,2025-12-21,2025-12-28,0,LBR-01,7,Popular among peers,Shared with friends
+T0951,S0116,B0099,2025-09-21,2025-09-28,0,LBR-02,4,Supports reading goal,Found it challenging
+T0952,S0033,B0066,2025-09-23,2025-09-28,1,LBR-02,7,Matches interest tags,Found it challenging
+T0953,S0004,B0176,2025-12-04,2025-12-23,0,LBR-03,8,Popular among peers,Enjoyed the characters
+T0954,S0105,B0117,2025-09-22,2025-09-28,1,SYSTEM,7,Series continuation,Wanted more on topic
+T0955,S0260,B0154,2025-10-08,2025-10-15,1,LBR-02,4,Series continuation,Read aloud at home
+T0956,S0167,B0222,2025-09-27,2025-09-28,1,LBR-02,4,Matches interest tags,Shared with friends
+T0957,S0070,B0121,2025-12-26,,0,LBR-02,4,Popular among peers,Enjoyed the characters
+T0958,S0229,B0257,2025-12-01,,1,LBR-03,8,Recommended by librarian,Shared with friends
+T0959,S0238,B0145,2025-11-11,,1,LBR-03,7,Aligned to science unit,Read aloud at home
+T0960,S0227,B0113,2025-08-18,2025-08-28,2,LBR-01,8,Supports reading goal,Wanted more on topic
+T0961,S0286,B0013,2025-12-05,,1,LBR-01,6,Read-alike based on history,Finished quickly
+T0962,S0287,B0045,2025-10-24,2025-10-28,2,LBR-03,4,Supports reading goal,Finished quickly
+T0963,S0071,B0128,2025-08-24,2025-08-28,0,TEACH-01,8,Matches interest tags,Asked for another
+T0964,S0006,B0219,2025-12-22,2025-12-28,1,LBR-03,4,Series continuation,Enjoyed the characters
+T0965,S0045,B0261,2025-08-12,2025-08-21,0,TEACH-01,8,Matches interest tags,Asked for another
+T0966,S0198,B0108,2025-11-22,,1,LBR-02,7,Read-alike based on history,Finished quickly
+T0967,S0107,B0241,2025-11-01,2025-11-11,2,LBR-01,5,Supports reading goal,Read aloud at home
+T0968,S0141,B0077,2025-09-16,2025-09-23,1,SYSTEM,7,Read-alike based on history,Wanted more on topic
+T0969,S0039,B0008,2025-12-24,2025-12-28,2,SYSTEM,7,Series continuation,Read aloud at home
+T0970,S0137,B0196,2025-09-24,2025-09-28,2,LBR-03,4,Popular among peers,Shared with friends
+T0971,S0235,B0017,2025-08-24,2025-08-28,1,LBR-02,5,Recommended by librarian,Wanted more on topic
+T0972,S0228,B0080,2025-10-27,2025-10-28,2,LBR-02,6,Matches interest tags,Read aloud at home
+T0973,S0224,B0088,2025-10-21,2025-10-28,2,TEACH-01,4,Matches interest tags,Shared with friends
+T0974,S0212,B0115,2025-09-11,2025-09-22,2,TEACH-01,6,Matches interest tags,Shared with friends
+T0975,S0267,B0275,2025-08-12,2025-08-28,2,SYSTEM,5,Recommended by librarian,Loved the story
+T0976,S0166,B0279,2025-09-14,2025-09-27,1,SYSTEM,4,Aligned to science unit,Wanted more on topic
+T0977,S0184,B0175,2025-12-23,2025-12-28,1,LBR-02,5,Supports reading goal,Enjoyed the characters
+T0978,S0168,B0285,2025-09-19,2025-09-28,0,LBR-01,5,Matches interest tags,Shared with friends
+T0979,S0146,B0095,2025-12-19,,0,LBR-02,6,Aligned to science unit,Asked for another
+T0980,S0264,B0178,2025-08-26,2025-08-28,2,TEACH-01,5,Read-alike based on history,Loved the story
+T0981,S0128,B0018,2025-12-05,2025-12-18,1,LBR-03,5,Supports reading goal,Read aloud at home
+T0982,S0070,B0219,2025-12-23,2025-12-28,1,TEACH-01,4,Series continuation,Shared with friends
+T0983,S0021,B0156,2025-11-18,2025-11-28,0,SYSTEM,8,Aligned to science unit,Loved the story
+T0984,S0191,B0225,2025-11-23,2025-11-28,1,LBR-01,8,Supports reading goal,Wanted more on topic
+T0985,S0175,B0187,2025-10-17,2025-10-26,0,SYSTEM,6,Popular among peers,Enjoyed the characters
+T0986,S0237,B0101,2025-08-11,2025-08-26,2,SYSTEM,8,Recommended by librarian,Enjoyed the characters
+T0987,S0100,B0222,2025-09-14,2025-09-24,1,LBR-03,6,Supports reading goal,Found it challenging
+T0988,S0117,B0088,2025-08-11,2025-08-21,0,LBR-03,8,Popular among peers,Wanted more on topic
+T0989,S0262,B0095,2025-09-07,2025-09-16,1,LBR-03,7,Matches interest tags,Read aloud at home
+T0990,S0267,B0225,2025-08-24,2025-08-28,1,SYSTEM,5,Popular among peers,Asked for another
+T0991,S0216,B0194,2025-08-08,2025-08-27,0,LBR-01,6,Matches interest tags,Loved the story
+T0992,S0112,B0115,2025-10-11,2025-10-27,2,LBR-02,5,Popular among peers,Found it challenging
+T0993,S0122,B0264,2025-12-08,,2,SYSTEM,8,Read-alike based on history,Asked for another
+T0994,S0229,B0010,2025-10-12,2025-10-28,2,LBR-02,8,Aligned to science unit,Asked for another
+T0995,S0040,B0211,2025-11-13,2025-11-28,0,LBR-01,8,Popular among peers,Asked for another
+T0996,S0171,B0010,2025-12-20,,1,LBR-02,5,Read-alike based on history,Found it challenging
+T0997,S0081,B0105,2025-08-20,2025-08-28,2,LBR-01,8,Supports reading goal,Finished quickly
+T0998,S0171,B0109,2025-08-01,2025-08-11,2,LBR-03,5,Read-alike based on history,Shared with friends
+T0999,S0263,B0172,2025-11-15,2025-11-27,2,TEACH-01,4,Aligned to science unit,Shared with friends
+T1000,S0139,B0108,2025-08-12,2025-08-19,1,LBR-02,8,Read-alike based on history,Finished quickly

@@ -1,11 +1,301 @@
-book_id,title,author,genre,reading_level,keywords
-B001,Moon Over Oak Street,Elena Brooks,Adventure,4-5,friendship;quest;outdoors
-B002,The Circuit Riders,Malik Hayes,Science Fiction,6-7,robots;invention;teamwork
-B003,Hidden in the Stacks,Nina Patel,Mystery,5-6,library;clues;curiosity
-B004,Volcano Science Lab,James Ortega,Nonfiction,6-8,science;earth;experiments
-B005,The Last Lighthouse,Sofia Kim,Historical Fiction,6-7,history;coast;family
-B006,Garden of Stories,Lucia Perez,Fantasy,4-6,magic;gardens;creativity
-B007,Codebreakers Club,Amy Chen,STEM,6-8,math;puzzles;coding
-B008,The Brave Map,Diego Ruiz,Adventure,5-6,exploration;maps;courage
-B009,Whispering Winds,Harper Lee,Poetry,5-7,poems;nature;feelings
-B010,Neighborhood Heroes,Jordan Smith,Realistic Fiction,4-6,community;kindness;school
+book_id,title,author,genre,reading_level,keywords,publisher,publication_year,edition,series,language,subject_tags,audience,isbn,pages,format,availability
+B0001,Forgotten Garden,Alex Park,Historical Fiction,5-6,clues;invention;courage,Northwind Books,2024,1st,Discovery Files,English,adventure;outdoors;robots,Upper Elementary,9789703905715,221,Paperback,Available
+B0002,Secret Mountain,Casey Davis,Adventure,5-6,maps;coast;earth,Harborlight Press,2018,1st,Codebreakers,English,outdoors;math;friendship,Middle School,9788934927891,255,Hardcover,On Hold
+B0003,Secret River,Jordan Hall,STEM,4-5,creativity;science;feelings,Cityline Kids,2021,3rd,Stacks Mystery,English,friendship;science;math,Middle School,9785231494220,239,Hardcover,Checked Out
+B0004,Golden Forest,Drew Young,Fantasy,5-6,experiments;library;exploration,Harborlight Press,2017,3rd,Circuit Riders,English,library;exploration;mystery,Middle School,9783392080953,286,Hardcover,Available
+B0005,Crystal Map,Rowan Perez,STEM,6-7,outdoors;library;school,Cityline Kids,2021,1st,,Spanish,exploration;teamwork;poetry,Upper Elementary,9787805745017,418,Paperback,Checked Out
+B0006,Wandering Library,Quinn Ruiz,Science Fiction,4-5,community;robots;invention,Beacon Ridge Publishing,2022,3rd,Oak Street Adventures,Spanish,math;exploration;earth science,Middle School,9789639245200,178,Paperback,On Hold
+B0007,Stormy Garden,Casey Chen,Mystery,6-8,friendship;courage;kindness,Harborlight Press,2024,1st,Oak Street Adventures,Spanish,community;mystery;outdoors,Middle School,9784274958945,396,Hardcover,On Hold
+B0008,Stormy Forest,Alex Hayes,Fantasy,6-7,clues;quest;kindness,Cityline Kids,2017,1st,,English,teamwork;community;family,Middle School,9786004182187,390,Paperback,Available
+B0009,Wild River,Rowan Park,Nonfiction,6-7,history;exploration;coding,Willow & Pine,2023,3rd,,English,science;community;friendship,Middle School,9789680276057,403,Hardcover,On Hold
+B0010,Wandering Map,Jordan Park,Adventure,5-6,outdoors;kindness;quest,Willow & Pine,2017,3rd,Stacks Mystery,Spanish,poetry;mystery;earth science,Upper Elementary,9787769777475,244,Paperback,Checked Out
+B0011,Wandering Garden,Jordan Nguyen,STEM,6-7,coast;family;community,Maple Leaf Press,2017,1st,Discovery Files,Spanish,robots;science;community,Upper Elementary,9787598297060,191,Paperback,Available
+B0012,Golden Forest,Riley Young,Science Fiction,6-8,nature;community;creativity,Northwind Books,2016,3rd,Explorer Series,English,science;library;mystery,Middle School,9783067418686,325,Hardcover,Available
+B0013,Curious Map,Avery Kim,Poetry,6-7,coast;maps;courage,Riverglass Press,2023,1st,Stacks Mystery,Spanish,mystery;friendship;history,Upper Elementary,9788507497883,149,Hardcover,On Hold
+B0014,Secret River,Sage Young,Realistic Fiction,5-6,quest;gardens;outdoors,Beacon Ridge Publishing,2017,3rd,Oak Street Adventures,English,math;robots;exploration,Upper Elementary,9789760623742,161,Paperback,On Hold
+B0015,Rising Mountain,Quinn Perez,Historical Fiction,5-6,exploration;maps;earth,Fieldstone Learning,2020,2nd,Circuit Riders,Spanish,exploration;family;community,Upper Elementary,9785334976883,408,Hardcover,Available
+B0016,Last Lighthouse,Quinn Kim,Mystery,6-7,kindness;outdoors;clues,Willow & Pine,2020,1st,,Spanish,community;adventure;family,Middle School,9784771526597,255,Hardcover,Available
+B0017,Bright River,Taylor Kim,Historical Fiction,5-6,maps;earth;library,Harborlight Press,2024,2nd,Coastal Chronicles,English,outdoors;coding;poetry,Middle School,9781189351213,290,Hardcover,On Hold
+B0018,Golden Library,Reese Ruiz,Realistic Fiction,6-8,creativity;friendship;robots,Northwind Books,2018,3rd,Explorer Series,Spanish,teamwork;coding;outdoors,Upper Elementary,9786618926823,140,Paperback,Available
+B0019,Forgotten Lighthouse,Drew Hayes,Fantasy,6-8,puzzles;courage;invention,Fieldstone Learning,2018,1st,Discovery Files,English,library;family;math,Middle School,9784482141802,256,Hardcover,On Hold
+B0020,Brave Code,Sky Brooks,Poetry,5-6,library;feelings;school,Silver Compass House,2021,2nd,Stacks Mystery,English,adventure;mystery;poetry,Middle School,9788616379926,299,Paperback,On Hold
+B0021,Crystal River,Morgan Brooks,Science Fiction,6-7,teamwork;math;curiosity,Maple Leaf Press,2017,3rd,Discovery Files,Spanish,family;coding;history,Upper Elementary,9783476426797,250,Hardcover,On Hold
+B0022,Curious Map,Quinn Hall,Realistic Fiction,5-6,experiments;coast;outdoors,Willow & Pine,2021,3rd,Oak Street Adventures,Spanish,community;history;family,Middle School,9786695912196,271,Hardcover,Available
+B0023,Curious Lab,Avery Nguyen,Mystery,6-7,history;creativity;feelings,Maple Leaf Press,2020,2nd,Stacks Mystery,Spanish,family;exploration;science,Middle School,9783901796894,381,Paperback,On Hold
+B0024,Silent Lab,Jordan Kim,Realistic Fiction,6-7,outdoors;feelings;poems,Fieldstone Learning,2020,1st,Stacks Mystery,English,adventure;friendship;robots,Middle School,9784300636585,353,Paperback,On Hold
+B0025,Rising Lighthouse,Reese Park,STEM,6-8,history;clues;invention,Maple Leaf Press,2017,2nd,Stacks Mystery,English,community;exploration;adventure,Upper Elementary,9785816198518,188,Paperback,On Hold
+B0026,Last River,Parker Perez,Poetry,6-8,feelings;school;creativity,Silver Compass House,2018,3rd,,Spanish,earth science;science;coding,Middle School,9787533932947,242,Paperback,Checked Out
+B0027,Brave Mystery,Casey Ortega,Historical Fiction,6-7,earth;kindness;creativity,Northwind Books,2018,1st,Stacks Mystery,Spanish,teamwork;mystery;friendship,Middle School,9787045593274,397,Paperback,Checked Out
+B0028,Hidden Lighthouse,Sky Chen,STEM,4-5,community;kindness;poems,Cityline Kids,2022,2nd,Explorer Series,Spanish,history;math;coding,Middle School,9784856070374,369,Hardcover,Checked Out
+B0029,Curious Forest,Alex Chen,Fantasy,6-8,courage;teamwork;feelings,Silver Compass House,2018,3rd,Explorer Series,Spanish,adventure;outdoors;family,Middle School,9782982979741,145,Paperback,Checked Out
+B0030,Stormy Lighthouse,Jamie Perez,Fantasy,6-8,curiosity;poems;feelings,Signal Tree Media,2020,1st,,English,friendship;fantasy;robots,Upper Elementary,9783799264931,135,Hardcover,Available
+B0031,Crystal Map,Parker Patel,Nonfiction,5-6,magic;exploration;robots,Cityline Kids,2019,2nd,Coastal Chronicles,Spanish,library;robots;math,Upper Elementary,9789438411468,175,Hardcover,Checked Out
+B0032,Rising Lab,Sage Chen,STEM,5-6,outdoors;math;maps,Fieldstone Learning,2017,3rd,Coastal Chronicles,English,friendship;fantasy;earth science,Middle School,9788136179811,155,Paperback,Available
+B0033,Crystal Code,Sky Ruiz,Science Fiction,6-8,experiments;coding;kindness,Silver Compass House,2018,2nd,Circuit Riders,Spanish,poetry;exploration;mystery,Middle School,9785014170428,262,Paperback,Available
+B0034,Shadow Forest,Parker Smith,STEM,6-7,friendship;magic;community,Willow & Pine,2018,2nd,Stacks Mystery,Spanish,earth science;family;teamwork,Middle School,9783387104291,384,Hardcover,Available
+B0035,Wandering Mystery,Avery Ruiz,Realistic Fiction,5-6,maps;magic;coding,Silver Compass House,2023,1st,Oak Street Adventures,Spanish,science;math;fantasy,Upper Elementary,9787792729530,362,Paperback,Checked Out
+B0036,Bright River,Morgan Perez,Poetry,6-7,science;curiosity;clues,Northwind Books,2019,2nd,Oak Street Adventures,English,mystery;community;fantasy,Middle School,9787858164010,171,Hardcover,Checked Out
+B0037,Wandering Voyage,Taylor Kim,Adventure,5-6,curiosity;quest;creativity,Harborlight Press,2018,3rd,,English,adventure;history;science,Middle School,9787186766399,214,Hardcover,Checked Out
+B0038,Crystal Forest,Jordan Young,Science Fiction,6-8,magic;outdoors;math,Maple Leaf Press,2018,1st,Coastal Chronicles,English,science;robots;earth science,Middle School,9787539399243,350,Paperback,Checked Out
+B0039,Crystal Mountain,Avery Kim,Adventure,4-5,poems;library;coding,Fieldstone Learning,2020,3rd,Oak Street Adventures,English,science;library;earth science,Upper Elementary,9781672302490,329,Paperback,On Hold
+B0040,Rising Forest,Casey Brooks,Nonfiction,6-7,maps;science;community,Silver Compass House,2017,3rd,Stacks Mystery,Spanish,mystery;coding;friendship,Upper Elementary,9783781569954,256,Hardcover,Available
+B0041,Hidden Library,Rowan Kim,Historical Fiction,6-8,robots;family;maps,Harborlight Press,2022,2nd,,Spanish,outdoors;friendship;exploration,Middle School,9788449766493,248,Hardcover,Available
+B0042,Wandering Lab,Sky Young,Adventure,6-7,math;quest;poems,Beacon Ridge Publishing,2023,3rd,,Spanish,library;coding;family,Middle School,9785162060546,360,Paperback,Checked Out
+B0043,Stormy Voyage,Drew Hayes,Mystery,6-7,coast;maps;magic,Harborlight Press,2022,3rd,Explorer Series,Spanish,outdoors;family;teamwork,Middle School,9788613035386,383,Hardcover,On Hold
+B0044,Crystal River,Jamie Chen,Adventure,5-6,gardens;experiments;puzzles,Silver Compass House,2023,1st,Stacks Mystery,Spanish,teamwork;history;science,Middle School,9781521521078,242,Hardcover,Checked Out
+B0045,Last Map,Quinn Chen,Science Fiction,5-6,feelings;school;robots,Silver Compass House,2017,3rd,Circuit Riders,Spanish,history;earth science;mystery,Middle School,9789505085936,244,Paperback,On Hold
+B0046,Silent Code,Riley Hall,Realistic Fiction,5-6,community;outdoors;curiosity,Signal Tree Media,2021,3rd,Coastal Chronicles,English,history;community;coding,Middle School,9784716265973,348,Paperback,Checked Out
+B0047,Stormy River,Rowan Lee,STEM,6-8,school;earth;community,Fieldstone Learning,2019,3rd,Discovery Files,English,coding;friendship;library,Middle School,9788779941999,317,Hardcover,Checked Out
+B0048,Hidden Library,Quinn Smith,Fantasy,4-5,community;family;robots,Riverglass Press,2023,1st,Circuit Riders,Spanish,teamwork;outdoors;science,Middle School,9788270110908,161,Paperback,On Hold
+B0049,Crystal River,Avery Perez,Poetry,4-5,puzzles;outdoors;clues,Harborlight Press,2019,3rd,Oak Street Adventures,Spanish,robots;community;science,Upper Elementary,9788275679594,134,Hardcover,Checked Out
+B0050,Shadow Map,Casey Perez,Fantasy,6-8,invention;clues;gardens,Signal Tree Media,2018,1st,Circuit Riders,English,math;science;poetry,Upper Elementary,9786292209057,250,Paperback,Checked Out
+B0051,Forgotten Map,Sage Davis,Poetry,6-7,exploration;creativity;teamwork,Northwind Books,2023,2nd,Coastal Chronicles,Spanish,earth science;exploration;coding,Middle School,9783075362821,241,Paperback,On Hold
+B0052,Stormy Mountain,Casey Park,Historical Fiction,4-5,feelings;exploration;history,Harborlight Press,2016,3rd,Explorer Series,Spanish,history;science;community,Middle School,9785464285982,345,Hardcover,On Hold
+B0053,Stormy Mystery,Taylor Hayes,Historical Fiction,6-7,courage;coast;teamwork,Fieldstone Learning,2018,3rd,Codebreakers,Spanish,library;earth science;exploration,Middle School,9789033293776,178,Paperback,Available
+B0054,Silent Compass,Riley Young,STEM,6-7,outdoors;nature;history,Maple Leaf Press,2020,3rd,Oak Street Adventures,Spanish,fantasy;earth science;history,Middle School,9789333490239,175,Hardcover,Checked Out
+B0055,Hidden Mountain,Sage Lee,Fantasy,5-6,coding;outdoors;feelings,Silver Compass House,2020,3rd,Discovery Files,English,teamwork;friendship;adventure,Middle School,9789572442790,179,Hardcover,Available
+B0056,Wild River,Taylor Chen,Poetry,6-7,exploration;courage;maps,Riverglass Press,2022,3rd,Circuit Riders,Spanish,robots;poetry;history,Middle School,9782201474778,309,Hardcover,Checked Out
+B0057,Secret Lighthouse,Sky Perez,Science Fiction,6-7,creativity;kindness;coding,Willow & Pine,2016,2nd,Coastal Chronicles,English,robots;exploration;friendship,Upper Elementary,9781091729577,290,Hardcover,Available
+B0058,Shadow Mountain,Riley Hayes,Realistic Fiction,5-6,math;library;feelings,Fieldstone Learning,2021,1st,Explorer Series,Spanish,teamwork;community;earth science,Middle School,9784429590757,176,Hardcover,Available
+B0059,Hidden Voyage,Rowan Davis,Nonfiction,6-7,friendship;teamwork;curiosity,Maple Leaf Press,2018,3rd,Discovery Files,English,outdoors;poetry;science,Middle School,9785763350700,377,Hardcover,On Hold
+B0060,Hidden Mystery,Rowan Hall,Realistic Fiction,6-7,family;coding;friendship,Maple Leaf Press,2023,2nd,Discovery Files,English,poetry;exploration;friendship,Upper Elementary,9781637088959,184,Paperback,On Hold
+B0061,Forgotten Mountain,Quinn Park,Fantasy,6-8,puzzles;gardens;science,Silver Compass House,2024,3rd,Discovery Files,English,robots;mystery;poetry,Middle School,9784814321889,331,Paperback,Checked Out
+B0062,Curious Code,Reese Hayes,Fantasy,6-8,earth;exploration;curiosity,Willow & Pine,2018,3rd,,English,outdoors;community;friendship,Middle School,9788468071953,186,Hardcover,On Hold
+B0063,Last River,Morgan Nguyen,Science Fiction,6-8,experiments;community;exploration,Signal Tree Media,2016,2nd,Coastal Chronicles,Spanish,robots;mystery;outdoors,Middle School,9785759761714,404,Paperback,Available
+B0064,Shadow Circuit,Parker Ortega,STEM,4-5,puzzles;school;exploration,Harborlight Press,2016,1st,Coastal Chronicles,Spanish,family;fantasy;adventure,Upper Elementary,9784736031885,409,Paperback,Available
+B0065,Silent Mystery,Drew Brooks,Science Fiction,5-6,history;coast;family,Willow & Pine,2018,2nd,Coastal Chronicles,Spanish,outdoors;friendship;community,Upper Elementary,9789803662851,161,Paperback,Checked Out
+B0066,Forgotten Code,Jamie Smith,Poetry,6-8,curiosity;library;poems,Riverglass Press,2017,2nd,Discovery Files,English,history;poetry;earth science,Middle School,9781195066088,322,Hardcover,Available
+B0067,Wandering Circuit,Riley Davis,Mystery,6-7,science;earth;robots,Maple Leaf Press,2023,3rd,Discovery Files,English,teamwork;math;earth science,Upper Elementary,9788757570742,156,Paperback,On Hold
+B0068,Hidden Code,Alex Ruiz,Science Fiction,6-7,math;coast;history,Signal Tree Media,2020,1st,Discovery Files,English,family;library;math,Middle School,9789245348297,165,Paperback,Available
+B0069,Wandering Code,Parker Chen,Realistic Fiction,4-5,history;community;science,Willow & Pine,2019,2nd,Circuit Riders,English,community;robots;earth science,Upper Elementary,9786795522649,195,Hardcover,Available
+B0070,Silent Circuit,Riley Patel,Mystery,4-5,teamwork;poems;coding,Silver Compass House,2023,3rd,,Spanish,family;teamwork;science,Upper Elementary,9787308968023,275,Paperback,On Hold
+B0071,Hidden Voyage,Quinn Hayes,Historical Fiction,6-8,family;quest;experiments,Harborlight Press,2017,3rd,Oak Street Adventures,Spanish,exploration;friendship;science,Upper Elementary,9785560712830,172,Paperback,On Hold
+B0072,Brave River,Drew Patel,Adventure,5-6,maps;family;gardens,Riverglass Press,2018,2nd,Codebreakers,Spanish,math;coding;community,Middle School,9782437308013,288,Hardcover,On Hold
+B0073,Forgotten Code,Casey Kim,Mystery,6-7,outdoors;math;exploration,Beacon Ridge Publishing,2021,2nd,Discovery Files,English,outdoors;history;earth science,Middle School,9789991312028,336,Paperback,Available
+B0074,Stormy Circuit,Taylor Ortega,Fantasy,6-8,library;clues;invention,Beacon Ridge Publishing,2017,2nd,Oak Street Adventures,English,family;teamwork;history,Middle School,9781662510569,212,Hardcover,On Hold
+B0075,Secret Map,Avery Perez,Nonfiction,6-8,puzzles;science;poems,Silver Compass House,2019,3rd,Stacks Mystery,Spanish,poetry;mystery;library,Middle School,9787560389844,202,Hardcover,On Hold
+B0076,Silent Bridge,Casey Brooks,Poetry,6-7,creativity;school;robots,Riverglass Press,2017,2nd,Oak Street Adventures,English,earth science;exploration;poetry,Upper Elementary,9788864285771,166,Hardcover,Checked Out
+B0077,Wild Voyage,Sage Brooks,STEM,4-5,history;gardens;experiments,Fieldstone Learning,2022,1st,Codebreakers,English,adventure;family;exploration,Upper Elementary,9788086527181,194,Hardcover,Available
+B0078,Golden Signal,Sky Ruiz,Mystery,6-8,family;puzzles;friendship,Northwind Books,2016,2nd,Stacks Mystery,English,community;coding;friendship,Middle School,9786315624319,182,Hardcover,Available
+B0079,Curious Lab,Rowan Smith,Poetry,4-5,robots;feelings;kindness,Silver Compass House,2024,1st,Stacks Mystery,English,history;coding;adventure,Middle School,9782789144223,163,Paperback,Available
+B0080,Last River,Quinn Davis,Realistic Fiction,4-5,history;community;magic,Maple Leaf Press,2022,2nd,Coastal Chronicles,English,fantasy;outdoors;library,Upper Elementary,9783698343112,417,Paperback,Available
+B0081,Hidden Voyage,Quinn Perez,Mystery,6-8,maps;magic;coding,Beacon Ridge Publishing,2018,1st,,English,history;mystery;adventure,Upper Elementary,9784804440746,281,Paperback,On Hold
+B0082,Curious Bridge,Quinn Ruiz,Historical Fiction,4-5,poems;coding;library,Harborlight Press,2021,1st,Codebreakers,Spanish,robots;fantasy;mystery,Middle School,9788487449580,317,Paperback,Available
+B0083,Secret Mystery,Jamie Perez,Realistic Fiction,6-7,nature;outdoors;courage,Signal Tree Media,2017,2nd,Circuit Riders,Spanish,family;robots;friendship,Middle School,9788133593748,276,Paperback,On Hold
+B0084,Bright Code,Taylor Park,Poetry,6-7,family;quest;courage,Willow & Pine,2022,2nd,Explorer Series,English,math;fantasy;earth science,Upper Elementary,9785092199300,193,Paperback,Available
+B0085,Silent Garden,Riley Davis,Fantasy,6-7,history;math;quest,Cityline Kids,2018,3rd,,Spanish,fantasy;exploration;math,Upper Elementary,9783464975279,391,Paperback,Checked Out
+B0086,Stormy Lab,Casey Ortega,Science Fiction,4-5,courage;teamwork;magic,Riverglass Press,2022,3rd,Oak Street Adventures,Spanish,earth science;exploration;robots,Middle School,9789584045520,222,Hardcover,Available
+B0087,Crystal Garden,Jamie Patel,Poetry,4-5,nature;exploration;community,Willow & Pine,2021,3rd,Oak Street Adventures,Spanish,history;library;fantasy,Upper Elementary,9788703867299,380,Hardcover,Available
+B0088,Wandering Compass,Taylor Ortega,Poetry,4-5,experiments;creativity;math,Willow & Pine,2023,3rd,Circuit Riders,English,outdoors;history;mystery,Middle School,9787552812957,329,Hardcover,Available
+B0089,Stormy Lab,Jordan Ruiz,Poetry,6-7,invention;kindness;feelings,Riverglass Press,2018,1st,Discovery Files,English,robots;teamwork;poetry,Upper Elementary,9785990610098,235,Paperback,On Hold
+B0090,Wild Circuit,Sky Hayes,Historical Fiction,5-6,coding;creativity;curiosity,Beacon Ridge Publishing,2020,3rd,Oak Street Adventures,English,teamwork;library;family,Middle School,9783420721027,134,Hardcover,Available
+B0091,Forgotten Compass,Parker Kim,Nonfiction,6-8,puzzles;coding;friendship,Silver Compass House,2024,2nd,Coastal Chronicles,Spanish,science;math;teamwork,Middle School,9789903351330,150,Hardcover,Checked Out
+B0092,Curious Forest,Jamie Ortega,Fantasy,5-6,earth;community;maps,Willow & Pine,2021,2nd,Circuit Riders,Spanish,community;robots;library,Upper Elementary,9783003484425,256,Paperback,Available
+B0093,Silent Garden,Alex Kim,STEM,6-8,clues;community;kindness,Beacon Ridge Publishing,2021,3rd,Codebreakers,English,library;poetry;earth science,Middle School,9786620138568,131,Hardcover,Checked Out
+B0094,Last Forest,Riley Ortega,Fantasy,4-5,quest;science;magic,Cityline Kids,2023,2nd,Explorer Series,English,coding;teamwork;exploration,Middle School,9788419590655,326,Paperback,Available
+B0095,Curious Map,Parker Lee,Nonfiction,6-7,creativity;science;outdoors,Signal Tree Media,2024,2nd,Coastal Chronicles,English,teamwork;robots;mystery,Middle School,9789327720702,193,Hardcover,On Hold
+B0096,Last Code,Quinn Brooks,Adventure,4-5,invention;maps;earth,Silver Compass House,2024,2nd,Circuit Riders,English,family;community;outdoors,Middle School,9787581349462,408,Paperback,Checked Out
+B0097,Crystal Map,Morgan Perez,Science Fiction,6-8,math;science;nature,Maple Leaf Press,2023,2nd,Stacks Mystery,English,poetry;library;earth science,Middle School,9783923699745,136,Hardcover,Available
+B0098,Hidden Forest,Morgan Chen,Mystery,6-8,maps;library;coast,Riverglass Press,2023,3rd,Explorer Series,English,community;mystery;earth science,Middle School,9786913417379,208,Paperback,On Hold
+B0099,Stormy River,Morgan Nguyen,Historical Fiction,6-8,library;clues;curiosity,Riverglass Press,2020,1st,Coastal Chronicles,Spanish,mystery;poetry;library,Middle School,9786469458472,182,Paperback,Checked Out
+B0100,Crystal Voyage,Rowan Davis,Mystery,6-7,quest;science;maps,Northwind Books,2021,2nd,Coastal Chronicles,Spanish,mystery;community;coding,Middle School,9788285000265,190,Hardcover,On Hold
+B0101,Bright Mountain,Riley Ortega,Adventure,5-6,coding;clues;quest,Northwind Books,2022,2nd,,English,teamwork;adventure;earth science,Upper Elementary,9789067664957,364,Hardcover,Checked Out
+B0102,Stormy Circuit,Drew Brooks,Science Fiction,5-6,creativity;courage;community,Maple Leaf Press,2018,2nd,Circuit Riders,English,math;poetry;outdoors,Middle School,9784765583254,124,Paperback,On Hold
+B0103,Rising Garden,Sage Perez,Historical Fiction,6-8,coding;creativity;gardens,Silver Compass House,2018,3rd,,Spanish,mystery;robots;library,Upper Elementary,9788435100486,251,Hardcover,Available
+B0104,Bright Voyage,Rowan Kim,Nonfiction,5-6,puzzles;community;coding,Signal Tree Media,2022,3rd,Codebreakers,English,math;robots;outdoors,Upper Elementary,9787345617046,247,Hardcover,Checked Out
+B0105,Curious Lighthouse,Jamie Davis,Historical Fiction,6-7,science;math;courage,Cityline Kids,2016,2nd,Codebreakers,English,friendship;robots;science,Middle School,9785980945846,377,Paperback,On Hold
+B0106,Brave Lab,Sage Kim,Fantasy,5-6,clues;invention;magic,Beacon Ridge Publishing,2023,3rd,Codebreakers,Spanish,poetry;mystery;math,Upper Elementary,9784381731378,389,Paperback,On Hold
+B0107,Bright Voyage,Jordan Hall,Science Fiction,4-5,feelings;creativity;kindness,Riverglass Press,2019,3rd,Circuit Riders,English,family;exploration;friendship,Upper Elementary,9783099500153,381,Paperback,Available
+B0108,Secret Library,Quinn Chen,Poetry,4-5,creativity;family;exploration,Harborlight Press,2016,2nd,Coastal Chronicles,English,mystery;outdoors;adventure,Middle School,9789863781331,150,Hardcover,Checked Out
+B0109,Hidden Circuit,Avery Patel,Mystery,6-8,experiments;kindness;history,Silver Compass House,2022,2nd,Oak Street Adventures,English,fantasy;robots;outdoors,Middle School,9783271361431,234,Hardcover,Available
+B0110,Golden Forest,Drew Park,Realistic Fiction,6-8,creativity;history;feelings,Fieldstone Learning,2019,2nd,Codebreakers,English,earth science;mystery;exploration,Upper Elementary,9788130494783,128,Hardcover,Available
+B0111,Brave Garden,Parker Brooks,Poetry,4-5,clues;courage;quest,Signal Tree Media,2023,1st,Stacks Mystery,English,teamwork;history;robots,Middle School,9788809893329,241,Paperback,Available
+B0112,Forgotten River,Riley Chen,Historical Fiction,6-7,quest;creativity;math,Beacon Ridge Publishing,2022,3rd,,English,fantasy;math;poetry,Middle School,9788285589122,329,Hardcover,Checked Out
+B0113,Curious Library,Rowan Lee,Poetry,5-6,community;clues;science,Beacon Ridge Publishing,2023,1st,Discovery Files,Spanish,community;teamwork;mystery,Upper Elementary,9782095197958,289,Hardcover,Checked Out
+B0114,Crystal Voyage,Jordan Lee,Nonfiction,4-5,curiosity;history;exploration,Cityline Kids,2016,1st,Stacks Mystery,English,poetry;mystery;coding,Middle School,9784904100195,228,Hardcover,On Hold
+B0115,Brave Mystery,Rowan Ruiz,Nonfiction,5-6,history;school;clues,Riverglass Press,2021,2nd,Discovery Files,Spanish,fantasy;history;teamwork,Middle School,9787430757004,170,Paperback,Checked Out
+B0116,Wild Lighthouse,Morgan Perez,STEM,4-5,math;community;clues,Beacon Ridge Publishing,2016,2nd,Discovery Files,Spanish,teamwork;mystery;library,Upper Elementary,9784579265601,375,Paperback,Checked Out
+B0117,Shadow Bridge,Jamie Park,Poetry,6-8,teamwork;courage;nature,Willow & Pine,2018,1st,,English,friendship;community;coding,Upper Elementary,9783869963931,123,Paperback,Available
+B0118,Crystal Lab,Riley Hayes,Mystery,4-5,library;gardens;family,Willow & Pine,2016,3rd,,Spanish,adventure;community;earth science,Middle School,9781050899550,391,Paperback,On Hold
+B0119,Golden Map,Quinn Young,STEM,5-6,robots;school;gardens,Beacon Ridge Publishing,2019,1st,Coastal Chronicles,Spanish,earth science;math;friendship,Middle School,9789415119956,355,Hardcover,On Hold
+B0120,Wandering Circuit,Drew Young,Science Fiction,4-5,outdoors;history;creativity,Silver Compass House,2016,3rd,Explorer Series,English,outdoors;poetry;coding,Middle School,9785182609867,390,Hardcover,Available
+B0121,Wandering Signal,Sky Park,Poetry,6-7,quest;school;outdoors,Harborlight Press,2024,3rd,Explorer Series,English,family;adventure;robots,Upper Elementary,9785625411308,203,Hardcover,On Hold
+B0122,Crystal Bridge,Avery Nguyen,Realistic Fiction,6-7,history;poems;courage,Beacon Ridge Publishing,2017,3rd,Codebreakers,English,robots;coding;community,Upper Elementary,9788617360361,135,Paperback,Checked Out
+B0123,Secret Lighthouse,Morgan Lee,STEM,6-8,teamwork;exploration;math,Signal Tree Media,2017,3rd,Coastal Chronicles,English,outdoors;community;teamwork,Upper Elementary,9786968380957,304,Hardcover,Available
+B0124,Hidden Circuit,Jamie Perez,Historical Fiction,4-5,invention;outdoors;teamwork,Signal Tree Media,2023,3rd,Discovery Files,English,adventure;outdoors;library,Upper Elementary,9788664105957,317,Hardcover,Checked Out
+B0125,Curious Code,Rowan Hayes,Realistic Fiction,5-6,math;gardens;teamwork,Signal Tree Media,2018,1st,Coastal Chronicles,Spanish,earth science;poetry;outdoors,Upper Elementary,9786013117609,261,Paperback,Checked Out
+B0126,Secret Compass,Jordan Perez,Historical Fiction,5-6,courage;coding;magic,Cityline Kids,2019,2nd,Oak Street Adventures,English,history;adventure;mystery,Middle School,9788998080862,345,Paperback,Checked Out
+B0127,Crystal Bridge,Sky Nguyen,Mystery,6-7,earth;puzzles;maps,Fieldstone Learning,2023,2nd,Circuit Riders,Spanish,family;history;fantasy,Middle School,9784358554365,286,Paperback,Checked Out
+B0128,Crystal Compass,Avery Perez,Science Fiction,5-6,math;creativity;teamwork,Riverglass Press,2016,3rd,,English,exploration;history;coding,Upper Elementary,9783144490990,275,Hardcover,Checked Out
+B0129,Forgotten Library,Reese Chen,STEM,4-5,family;puzzles;magic,Cityline Kids,2022,3rd,Discovery Files,English,fantasy;outdoors;friendship,Upper Elementary,9782524751277,142,Paperback,Checked Out
+B0130,Shadow Code,Jordan Brooks,Science Fiction,6-7,clues;gardens;courage,Riverglass Press,2024,3rd,Stacks Mystery,Spanish,fantasy;math;science,Upper Elementary,9785400463094,173,Paperback,Checked Out
+B0131,Wild Garden,Jordan Young,Mystery,6-7,science;earth;family,Fieldstone Learning,2024,2nd,Codebreakers,Spanish,robots;exploration;fantasy,Middle School,9782369705770,273,Hardcover,On Hold
+B0132,Brave Map,Sky Perez,Science Fiction,5-6,school;courage;clues,Riverglass Press,2018,3rd,Circuit Riders,Spanish,coding;exploration;robots,Middle School,9783704799972,215,Paperback,Checked Out
+B0133,Hidden Mystery,Parker Hall,Nonfiction,6-8,math;coast;history,Maple Leaf Press,2019,1st,Coastal Chronicles,English,robots;library;poetry,Middle School,9786141394879,178,Paperback,On Hold
+B0134,Crystal Forest,Quinn Nguyen,Fantasy,6-8,puzzles;history;math,Northwind Books,2021,2nd,,English,history;outdoors;family,Upper Elementary,9782345122542,242,Paperback,Available
+B0135,Silent Voyage,Reese Patel,Realistic Fiction,6-8,coast;puzzles;invention,Cityline Kids,2022,2nd,Circuit Riders,Spanish,library;community;science,Middle School,9781602569046,281,Paperback,On Hold
+B0136,Hidden Bridge,Morgan Brooks,Poetry,5-6,library;feelings;history,Riverglass Press,2024,3rd,,Spanish,poetry;coding;fantasy,Middle School,9783098948446,162,Hardcover,Available
+B0137,Golden Map,Casey Ortega,Realistic Fiction,6-7,teamwork;poems;family,Cityline Kids,2023,3rd,Oak Street Adventures,English,earth science;fantasy;community,Upper Elementary,9782826025489,246,Paperback,Available
+B0138,Secret Circuit,Morgan Young,Science Fiction,6-8,community;robots;poems,Fieldstone Learning,2019,3rd,Codebreakers,Spanish,library;teamwork;math,Upper Elementary,9784494084172,150,Paperback,On Hold
+B0139,Golden Mountain,Quinn Patel,Fantasy,6-7,science;math;curiosity,Riverglass Press,2017,1st,Discovery Files,English,earth science;teamwork;fantasy,Upper Elementary,9782072355594,284,Hardcover,On Hold
+B0140,Curious Forest,Taylor Smith,Historical Fiction,6-8,history;family;outdoors,Northwind Books,2022,3rd,Coastal Chronicles,Spanish,exploration;poetry;library,Upper Elementary,9789989974968,354,Paperback,Available
+B0141,Shadow River,Avery Ortega,STEM,5-6,magic;curiosity;earth,Harborlight Press,2021,3rd,Circuit Riders,Spanish,family;friendship;adventure,Upper Elementary,9788888575793,128,Hardcover,Available
+B0142,Secret Forest,Alex Chen,Nonfiction,5-6,kindness;coding;science,Beacon Ridge Publishing,2020,1st,Codebreakers,Spanish,outdoors;fantasy;family,Upper Elementary,9785517391943,276,Hardcover,Checked Out
+B0143,Forgotten Garden,Reese Hayes,Adventure,5-6,magic;outdoors;invention,Cityline Kids,2019,3rd,,English,adventure;family;coding,Upper Elementary,9785862655247,156,Hardcover,Checked Out
+B0144,Brave Mystery,Rowan Hayes,Science Fiction,6-7,experiments;kindness;science,Beacon Ridge Publishing,2022,1st,Circuit Riders,English,community;adventure;history,Upper Elementary,9787185179917,229,Hardcover,Checked Out
+B0145,Rising Lab,Jamie Young,Nonfiction,4-5,kindness;robots;invention,Northwind Books,2022,2nd,Discovery Files,Spanish,teamwork;science;community,Upper Elementary,9789056616444,225,Hardcover,On Hold
+B0146,Curious Circuit,Drew Brooks,Nonfiction,6-8,history;robots;clues,Silver Compass House,2017,3rd,Explorer Series,Spanish,family;teamwork;mystery,Middle School,9783933213766,361,Hardcover,Available
+B0147,Rising Garden,Alex Kim,Nonfiction,4-5,school;quest;nature,Signal Tree Media,2024,2nd,Discovery Files,Spanish,math;outdoors;family,Upper Elementary,9782191714875,278,Hardcover,On Hold
+B0148,Wild Lighthouse,Rowan Patel,Realistic Fiction,6-7,history;math;coding,Northwind Books,2020,3rd,Discovery Files,English,friendship;science;community,Middle School,9785793125884,148,Paperback,On Hold
+B0149,Bright Lab,Reese Patel,Science Fiction,4-5,maps;invention;friendship,Beacon Ridge Publishing,2023,2nd,Coastal Chronicles,English,fantasy;teamwork;community,Middle School,9784865030023,291,Paperback,Checked Out
+B0150,Last Garden,Casey Park,Science Fiction,6-8,family;gardens;experiments,Maple Leaf Press,2023,3rd,Circuit Riders,Spanish,library;earth science;math,Upper Elementary,9781495354059,380,Hardcover,Available
+B0151,Crystal Bridge,Alex Ortega,Adventure,6-8,experiments;history;school,Beacon Ridge Publishing,2018,1st,Discovery Files,English,family;science;mystery,Middle School,9789924456994,310,Hardcover,On Hold
+B0152,Forgotten Signal,Alex Patel,Nonfiction,4-5,history;outdoors;kindness,Silver Compass House,2020,2nd,Codebreakers,English,exploration;adventure;library,Upper Elementary,9788664400151,244,Paperback,Checked Out
+B0153,Rising Forest,Rowan Davis,Nonfiction,5-6,invention;friendship;school,Signal Tree Media,2016,1st,Codebreakers,English,family;adventure;math,Middle School,9788418332121,173,Hardcover,On Hold
+B0154,Wandering Code,Jamie Brooks,Mystery,6-7,outdoors;quest;school,Fieldstone Learning,2024,2nd,Codebreakers,Spanish,outdoors;robots;earth science,Upper Elementary,9782693725910,410,Hardcover,Checked Out
+B0155,Forgotten Library,Riley Kim,Historical Fiction,6-7,school;nature;history,Willow & Pine,2021,2nd,Coastal Chronicles,English,outdoors;mystery;community,Upper Elementary,9781667483244,204,Paperback,Checked Out
+B0156,Stormy Code,Jordan Lee,Fantasy,5-6,family;science;curiosity,Northwind Books,2017,1st,Coastal Chronicles,English,mystery;family;outdoors,Upper Elementary,9784054397788,302,Paperback,On Hold
+B0157,Hidden Lab,Casey Kim,Mystery,4-5,history;community;family,Riverglass Press,2024,1st,Oak Street Adventures,Spanish,robots;teamwork;friendship,Upper Elementary,9781954720281,221,Paperback,Checked Out
+B0158,Forgotten Lab,Drew Hayes,Historical Fiction,4-5,friendship;outdoors;library,Silver Compass House,2018,1st,Codebreakers,English,friendship;exploration;adventure,Upper Elementary,9788406374110,374,Hardcover,Checked Out
+B0159,Forgotten Code,Taylor Perez,Nonfiction,5-6,curiosity;family;kindness,Beacon Ridge Publishing,2016,3rd,Stacks Mystery,Spanish,poetry;coding;exploration,Middle School,9781261903104,263,Paperback,Available
+B0160,Curious Lighthouse,Drew Hall,Realistic Fiction,5-6,coding;nature;creativity,Maple Leaf Press,2022,3rd,Codebreakers,Spanish,poetry;fantasy;exploration,Middle School,9786963052185,212,Hardcover,Checked Out
+B0161,Rising Lighthouse,Alex Hall,Historical Fiction,4-5,nature;magic;gardens,Willow & Pine,2019,1st,Oak Street Adventures,English,science;earth science;poetry,Upper Elementary,9785070780669,414,Paperback,Checked Out
+B0162,Wild Bridge,Sky Patel,Mystery,5-6,math;earth;nature,Willow & Pine,2016,3rd,Codebreakers,English,mystery;poetry;earth science,Middle School,9786048977867,139,Hardcover,Available
+B0163,Wandering Mountain,Riley Brooks,Realistic Fiction,6-8,friendship;earth;school,Cityline Kids,2019,1st,Codebreakers,English,family;friendship;adventure,Upper Elementary,9784939447721,176,Paperback,Available
+B0164,Stormy Mystery,Drew Chen,Science Fiction,6-7,science;earth;invention,Beacon Ridge Publishing,2022,3rd,,Spanish,library;fantasy;robots,Upper Elementary,9786920114673,270,Hardcover,Available
+B0165,Bright Map,Reese Smith,STEM,4-5,teamwork;puzzles;earth,Cityline Kids,2019,3rd,Oak Street Adventures,Spanish,teamwork;family;fantasy,Upper Elementary,9786317152031,283,Hardcover,On Hold
+B0166,Wild Garden,Sky Park,Fantasy,6-8,friendship;curiosity;library,Fieldstone Learning,2017,2nd,Coastal Chronicles,English,adventure;friendship;mystery,Middle School,9788441393731,205,Paperback,Checked Out
+B0167,Wild Code,Morgan Lee,STEM,4-5,feelings;magic;nature,Cityline Kids,2019,1st,,English,friendship;history;adventure,Middle School,9781449790661,295,Hardcover,Checked Out
+B0168,Silent Mystery,Jordan Lee,Science Fiction,6-7,puzzles;kindness;magic,Maple Leaf Press,2022,3rd,Circuit Riders,Spanish,library;friendship;poetry,Middle School,9786110943464,403,Paperback,On Hold
+B0169,Golden Circuit,Riley Hayes,Adventure,6-8,math;creativity;feelings,Silver Compass House,2018,1st,Codebreakers,English,coding;outdoors;teamwork,Middle School,9781857596764,133,Hardcover,Available
+B0170,Forgotten Circuit,Jordan Ruiz,Science Fiction,6-7,nature;history;magic,Silver Compass House,2020,1st,Discovery Files,English,fantasy;math;library,Upper Elementary,9782914590233,254,Paperback,Checked Out
+B0171,Golden Lighthouse,Sky Kim,Adventure,5-6,poems;maps;exploration,Northwind Books,2017,3rd,Codebreakers,Spanish,science;friendship;coding,Middle School,9784786674545,363,Paperback,Available
+B0172,Curious Signal,Sky Park,Adventure,5-6,robots;poems;family,Beacon Ridge Publishing,2018,1st,Stacks Mystery,English,friendship;coding;community,Middle School,9787850677534,283,Hardcover,Available
+B0173,Curious River,Avery Lee,Fantasy,6-7,gardens;family;school,Maple Leaf Press,2024,2nd,Oak Street Adventures,Spanish,teamwork;community;history,Upper Elementary,9784972536230,408,Hardcover,Checked Out
+B0174,Crystal River,Sage Perez,STEM,6-7,history;coding;magic,Cityline Kids,2023,1st,Circuit Riders,Spanish,math;teamwork;history,Middle School,9785461537013,289,Hardcover,Available
+B0175,Bright Forest,Sage Kim,Fantasy,4-5,earth;feelings;nature,Harborlight Press,2020,2nd,,English,science;teamwork;poetry,Middle School,9786673086213,333,Hardcover,Available
+B0176,Secret Lighthouse,Sage Young,STEM,6-8,poems;gardens;community,Willow & Pine,2016,3rd,Circuit Riders,English,history;math;outdoors,Upper Elementary,9781746196273,222,Hardcover,Available
+B0177,Hidden Forest,Alex Hall,Fantasy,5-6,curiosity;experiments;feelings,Silver Compass House,2024,2nd,Oak Street Adventures,English,science;fantasy;community,Middle School,9789033653743,420,Paperback,Checked Out
+B0178,Silent Bridge,Sage Kim,Science Fiction,6-7,friendship;history;quest,Beacon Ridge Publishing,2019,1st,Stacks Mystery,English,earth science;coding;community,Upper Elementary,9783930025537,362,Hardcover,On Hold
+B0179,Silent Mountain,Rowan Brooks,Nonfiction,6-7,puzzles;nature;science,Harborlight Press,2022,2nd,Codebreakers,Spanish,earth science;mystery;science,Middle School,9781439427140,381,Paperback,On Hold
+B0180,Forgotten Mountain,Parker Kim,Historical Fiction,4-5,magic;outdoors;earth,Harborlight Press,2021,2nd,Coastal Chronicles,Spanish,mystery;teamwork;earth science,Upper Elementary,9784864126433,326,Paperback,On Hold
+B0181,Silent Mystery,Alex Nguyen,Poetry,6-7,curiosity;school;coast,Signal Tree Media,2022,3rd,Explorer Series,English,family;science;community,Middle School,9788180620422,379,Paperback,Available
+B0182,Crystal Lab,Sage Lee,Mystery,6-7,robots;magic;invention,Harborlight Press,2024,1st,Codebreakers,English,science;fantasy;robots,Middle School,9789103931356,310,Paperback,On Hold
+B0183,Golden Forest,Sky Hayes,Poetry,4-5,community;coding;math,Cityline Kids,2017,2nd,Stacks Mystery,English,math;history;mystery,Upper Elementary,9781647588523,222,Paperback,Checked Out
+B0184,Rising Signal,Sage Ruiz,Mystery,6-7,community;maps;teamwork,Northwind Books,2023,2nd,Circuit Riders,Spanish,friendship;adventure;science,Middle School,9784322338756,415,Hardcover,Checked Out
+B0185,Shadow Compass,Rowan Hayes,Mystery,6-8,coding;coast;history,Signal Tree Media,2023,2nd,Explorer Series,English,mystery;fantasy;adventure,Middle School,9783280772748,129,Hardcover,On Hold
+B0186,Bright Lighthouse,Riley Park,Fantasy,6-7,invention;robots;history,Riverglass Press,2020,1st,Oak Street Adventures,English,history;community;science,Middle School,9785869588539,370,Paperback,Available
+B0187,Silent Signal,Sage Davis,STEM,4-5,clues;courage;invention,Fieldstone Learning,2016,3rd,Circuit Riders,English,fantasy;friendship;mystery,Middle School,9783676343517,144,Hardcover,On Hold
+B0188,Crystal Map,Alex Park,Science Fiction,6-8,family;history;robots,Riverglass Press,2020,2nd,Circuit Riders,English,adventure;history;mystery,Upper Elementary,9785884080139,173,Hardcover,Checked Out
+B0189,Brave Compass,Jordan Ruiz,Nonfiction,5-6,poems;curiosity;feelings,Riverglass Press,2019,2nd,Discovery Files,Spanish,library;friendship;earth science,Middle School,9784909951947,366,Paperback,Available
+B0190,Hidden Map,Drew Hayes,Science Fiction,6-8,invention;outdoors;poems,Riverglass Press,2017,3rd,Oak Street Adventures,Spanish,science;exploration;teamwork,Middle School,9782994056084,171,Hardcover,Available
+B0191,Crystal Circuit,Morgan Davis,Fantasy,6-8,courage;robots;community,Maple Leaf Press,2016,1st,Circuit Riders,Spanish,fantasy;exploration;history,Middle School,9785694190173,295,Hardcover,Available
+B0192,Curious Code,Jamie Kim,STEM,6-8,nature;coast;coding,Beacon Ridge Publishing,2017,1st,Explorer Series,English,robots;coding;exploration,Middle School,9788208643631,212,Paperback,Checked Out
+B0193,Rising Map,Sky Nguyen,Mystery,6-8,school;magic;robots,Signal Tree Media,2023,1st,Oak Street Adventures,Spanish,family;adventure;fantasy,Upper Elementary,9785704029171,247,Paperback,Checked Out
+B0194,Forgotten Lab,Drew Chen,Mystery,4-5,friendship;coding;school,Beacon Ridge Publishing,2024,2nd,,English,outdoors;poetry;library,Upper Elementary,9782194675791,379,Hardcover,On Hold
+B0195,Forgotten Code,Avery Young,Nonfiction,4-5,family;nature;math,Silver Compass House,2017,2nd,,Spanish,robots;poetry;fantasy,Upper Elementary,9785735817014,331,Hardcover,On Hold
+B0196,Last Map,Sky Hayes,Historical Fiction,5-6,coding;exploration;family,Willow & Pine,2021,1st,Stacks Mystery,Spanish,family;poetry;fantasy,Middle School,9788369792370,178,Hardcover,On Hold
+B0197,Wandering Map,Morgan Perez,Historical Fiction,6-7,maps;robots;quest,Beacon Ridge Publishing,2023,1st,Discovery Files,English,earth science;mystery;robots,Upper Elementary,9782687477596,354,Hardcover,On Hold
+B0198,Stormy Garden,Rowan Chen,Adventure,4-5,poems;kindness;family,Silver Compass House,2024,1st,,English,community;friendship;earth science,Middle School,9783484872186,185,Hardcover,Checked Out
+B0199,Forgotten Mountain,Parker Hall,Fantasy,6-8,coast;puzzles;school,Fieldstone Learning,2020,2nd,Codebreakers,Spanish,exploration;teamwork;outdoors,Middle School,9787495255966,400,Paperback,On Hold
+B0200,Bright Signal,Quinn Nguyen,Nonfiction,5-6,library;puzzles;maps,Harborlight Press,2021,3rd,Circuit Riders,English,community;family;fantasy,Upper Elementary,9788562471167,407,Paperback,On Hold
+B0201,Rising Lab,Reese Chen,Realistic Fiction,6-7,kindness;community;coast,Maple Leaf Press,2024,1st,Explorer Series,Spanish,teamwork;friendship;family,Upper Elementary,9786153541642,202,Paperback,On Hold
+B0202,Golden Library,Sky Brooks,Historical Fiction,5-6,poems;creativity;quest,Willow & Pine,2023,1st,Stacks Mystery,Spanish,science;history;fantasy,Upper Elementary,9789274189261,318,Paperback,On Hold
+B0203,Stormy River,Alex Brooks,Historical Fiction,5-6,puzzles;community;poems,Silver Compass House,2019,3rd,Codebreakers,English,mystery;history;science,Upper Elementary,9781319841893,208,Hardcover,Checked Out
+B0204,Hidden Code,Casey Lee,Historical Fiction,5-6,teamwork;math;community,Harborlight Press,2016,2nd,,English,friendship;teamwork;exploration,Middle School,9783563581525,274,Paperback,On Hold
+B0205,Last Voyage,Jordan Davis,Fantasy,5-6,teamwork;gardens;outdoors,Riverglass Press,2018,2nd,Discovery Files,English,fantasy;science;exploration,Upper Elementary,9788143967196,289,Paperback,Checked Out
+B0206,Wandering Compass,Parker Lee,Poetry,4-5,robots;exploration;experiments,Silver Compass House,2019,3rd,Stacks Mystery,English,family;math;exploration,Upper Elementary,9786952291828,396,Paperback,Available
+B0207,Wild River,Sky Davis,Fantasy,6-8,magic;quest;science,Fieldstone Learning,2021,3rd,Oak Street Adventures,English,library;adventure;family,Upper Elementary,9788238760130,173,Hardcover,On Hold
+B0208,Crystal Mystery,Sage Park,STEM,4-5,courage;exploration;invention,Maple Leaf Press,2023,3rd,Codebreakers,English,outdoors;community;adventure,Upper Elementary,9788706093841,405,Hardcover,On Hold
+B0209,Crystal Lighthouse,Sage Kim,STEM,6-8,family;coding;history,Signal Tree Media,2021,1st,Discovery Files,English,adventure;outdoors;math,Upper Elementary,9785606736607,377,Hardcover,Checked Out
+B0210,Shadow Lab,Casey Smith,Science Fiction,6-7,poems;school;family,Signal Tree Media,2022,3rd,Explorer Series,Spanish,library;science;outdoors,Middle School,9783723205427,272,Paperback,Available
+B0211,Last Bridge,Quinn Patel,Science Fiction,4-5,friendship;math;puzzles,Signal Tree Media,2024,3rd,Oak Street Adventures,Spanish,mystery;fantasy;robots,Middle School,9781611840071,214,Hardcover,On Hold
+B0212,Crystal Circuit,Riley Hayes,Mystery,4-5,community;poems;school,Riverglass Press,2023,3rd,Oak Street Adventures,Spanish,outdoors;earth science;friendship,Upper Elementary,9786715961218,185,Hardcover,Available
+B0213,Golden Mountain,Jordan Hall,Nonfiction,6-7,magic;family;earth,Cityline Kids,2020,3rd,Circuit Riders,Spanish,family;coding;outdoors,Upper Elementary,9782345247256,233,Paperback,Checked Out
+B0214,Crystal Voyage,Taylor Nguyen,Fantasy,6-8,family;experiments;poems,Harborlight Press,2023,3rd,Oak Street Adventures,English,outdoors;earth science;coding,Upper Elementary,9786138636031,159,Hardcover,Available
+B0215,Crystal River,Drew Brooks,STEM,5-6,school;quest;creativity,Harborlight Press,2024,3rd,,English,fantasy;math;robots,Middle School,9785869982921,376,Hardcover,Checked Out
+B0216,Stormy River,Alex Nguyen,Nonfiction,5-6,poems;gardens;invention,Silver Compass House,2018,1st,Circuit Riders,Spanish,fantasy;friendship;robots,Middle School,9781995358283,255,Paperback,Available
+B0217,Hidden Lab,Riley Lee,Fantasy,6-8,magic;school;family,Maple Leaf Press,2016,3rd,Codebreakers,English,community;earth science;coding,Middle School,9783448819206,312,Paperback,Checked Out
+B0218,Rising Lab,Sage Young,Science Fiction,6-7,history;school;clues,Riverglass Press,2022,2nd,Codebreakers,Spanish,poetry;adventure;earth science,Upper Elementary,9782889350539,237,Hardcover,On Hold
+B0219,Forgotten Circuit,Riley Patel,Mystery,5-6,experiments;puzzles;maps,Northwind Books,2019,2nd,Codebreakers,English,poetry;community;science,Upper Elementary,9783537427612,330,Hardcover,Available
+B0220,Hidden Library,Parker Smith,Mystery,5-6,coding;gardens;quest,Cityline Kids,2018,1st,Circuit Riders,Spanish,library;math;history,Upper Elementary,9788822438146,163,Hardcover,Checked Out
+B0221,Rising Forest,Sky Ruiz,Mystery,5-6,feelings;coast;puzzles,Beacon Ridge Publishing,2018,3rd,Coastal Chronicles,English,family;exploration;history,Upper Elementary,9786282009986,317,Hardcover,Available
+B0222,Hidden Lighthouse,Quinn Young,Realistic Fiction,6-8,feelings;invention;puzzles,Northwind Books,2018,2nd,Explorer Series,English,outdoors;poetry;family,Upper Elementary,9787101791420,142,Paperback,Available
+B0223,Shadow Forest,Rowan Davis,STEM,6-7,math;nature;courage,Cityline Kids,2017,2nd,Circuit Riders,Spanish,poetry;science;exploration,Upper Elementary,9787050091525,216,Hardcover,On Hold
+B0224,Bright Compass,Alex Smith,Realistic Fiction,4-5,gardens;friendship;history,Fieldstone Learning,2021,2nd,Codebreakers,English,teamwork;coding;family,Middle School,9787597520265,409,Paperback,On Hold
+B0225,Golden Lab,Avery Davis,Nonfiction,6-8,creativity;nature;magic,Beacon Ridge Publishing,2021,3rd,,Spanish,history;fantasy;math,Middle School,9784160161496,180,Hardcover,Checked Out
+B0226,Shadow Mystery,Taylor Hayes,Nonfiction,6-8,nature;earth;creativity,Cityline Kids,2016,1st,Discovery Files,English,outdoors;teamwork;science,Middle School,9781378561387,254,Hardcover,Checked Out
+B0227,Brave Mountain,Alex Park,STEM,6-8,puzzles;coding;gardens,Harborlight Press,2016,1st,,Spanish,adventure;mystery;coding,Middle School,9781836429847,381,Hardcover,On Hold
+B0228,Silent Lab,Alex Perez,Nonfiction,4-5,teamwork;outdoors;curiosity,Signal Tree Media,2021,3rd,Discovery Files,Spanish,mystery;adventure;fantasy,Upper Elementary,9784947836984,401,Paperback,On Hold
+B0229,Crystal River,Sage Smith,Fantasy,6-7,feelings;curiosity;clues,Cityline Kids,2019,2nd,Discovery Files,English,earth science;library;mystery,Upper Elementary,9783399300652,377,Paperback,Checked Out
+B0230,Brave Compass,Quinn Kim,Realistic Fiction,6-7,maps;family;history,Cityline Kids,2023,1st,Codebreakers,Spanish,exploration;adventure;science,Upper Elementary,9782107327477,315,Hardcover,On Hold
+B0231,Bright Lighthouse,Rowan Perez,STEM,6-7,gardens;creativity;friendship,Harborlight Press,2019,2nd,Oak Street Adventures,Spanish,family;outdoors;earth science,Upper Elementary,9787341757401,301,Hardcover,On Hold
+B0232,Golden Library,Reese Nguyen,Nonfiction,6-8,courage;library;clues,Fieldstone Learning,2020,1st,Stacks Mystery,English,science;fantasy;outdoors,Upper Elementary,9789927036153,372,Hardcover,On Hold
+B0233,Hidden Bridge,Jamie Perez,Fantasy,6-8,kindness;math;community,Harborlight Press,2023,1st,Coastal Chronicles,Spanish,science;teamwork;adventure,Middle School,9783322580659,377,Paperback,Checked Out
+B0234,Crystal Lab,Rowan Patel,Poetry,4-5,maps;gardens;family,Willow & Pine,2016,1st,Stacks Mystery,Spanish,robots;family;library,Middle School,9782128928014,257,Paperback,On Hold
+B0235,Stormy Voyage,Taylor Ruiz,STEM,5-6,coast;maps;poems,Willow & Pine,2021,2nd,Coastal Chronicles,Spanish,library;teamwork;history,Upper Elementary,9784496922300,258,Hardcover,On Hold
+B0236,Curious Bridge,Avery Ortega,Mystery,5-6,magic;nature;friendship,Beacon Ridge Publishing,2022,2nd,Circuit Riders,Spanish,poetry;history;teamwork,Upper Elementary,9782711123163,203,Hardcover,Available
+B0237,Crystal Circuit,Jamie Young,Science Fiction,6-8,courage;earth;curiosity,Willow & Pine,2021,3rd,Coastal Chronicles,Spanish,adventure;coding;friendship,Middle School,9788646369354,301,Paperback,On Hold
+B0238,Last Forest,Rowan Park,Poetry,4-5,history;puzzles;science,Silver Compass House,2018,1st,Codebreakers,Spanish,math;outdoors;friendship,Upper Elementary,9782475860255,280,Paperback,On Hold
+B0239,Golden Mystery,Casey Smith,STEM,6-7,kindness;family;poems,Willow & Pine,2024,2nd,Discovery Files,English,library;adventure;outdoors,Upper Elementary,9788138332494,160,Hardcover,Available
+B0240,Curious Garden,Jordan Hayes,Poetry,4-5,friendship;poems;history,Riverglass Press,2017,1st,Coastal Chronicles,English,outdoors;math;teamwork,Upper Elementary,9786515490818,184,Hardcover,On Hold
+B0241,Crystal Library,Alex Brooks,Fantasy,6-7,community;magic;family,Riverglass Press,2020,3rd,,English,library;exploration;family,Middle School,9786786043791,396,Hardcover,Available
+B0242,Secret Circuit,Morgan Chen,Historical Fiction,5-6,science;friendship;gardens,Beacon Ridge Publishing,2021,2nd,,English,poetry;community;teamwork,Upper Elementary,9788584350472,269,Hardcover,Available
+B0243,Last Voyage,Riley Chen,Realistic Fiction,6-8,history;clues;teamwork,Signal Tree Media,2022,1st,Coastal Chronicles,English,coding;science;earth science,Middle School,9788768773991,331,Hardcover,Available
+B0244,Silent Library,Casey Hayes,Poetry,6-8,curiosity;maps;puzzles,Silver Compass House,2019,2nd,Explorer Series,English,friendship;adventure;outdoors,Upper Elementary,9786506640008,184,Paperback,On Hold
+B0245,Hidden Lighthouse,Jordan Patel,Adventure,6-8,library;earth;coast,Harborlight Press,2023,2nd,,English,family;outdoors;coding,Upper Elementary,9785535650160,320,Hardcover,On Hold
+B0246,Secret Library,Riley Hall,Historical Fiction,6-8,feelings;friendship;robots,Fieldstone Learning,2022,2nd,Stacks Mystery,English,mystery;exploration;fantasy,Upper Elementary,9785218155484,362,Paperback,On Hold
+B0247,Golden Signal,Morgan Patel,Adventure,4-5,curiosity;magic;coding,Harborlight Press,2019,2nd,Explorer Series,English,robots;science;family,Middle School,9782393774816,205,Paperback,On Hold
+B0248,Brave Code,Rowan Ortega,Adventure,4-5,math;nature;maps,Silver Compass House,2018,2nd,Oak Street Adventures,English,library;poetry;friendship,Middle School,9783684922912,150,Paperback,On Hold
+B0249,Silent Mystery,Quinn Davis,Science Fiction,5-6,magic;clues;earth,Riverglass Press,2021,2nd,Stacks Mystery,English,math;fantasy;poetry,Upper Elementary,9785464569299,344,Paperback,On Hold
+B0250,Bright Forest,Riley Smith,Mystery,6-7,earth;courage;family,Harborlight Press,2024,1st,Oak Street Adventures,English,exploration;history;coding,Middle School,9787621147142,352,Hardcover,On Hold
+B0251,Last Code,Reese Patel,Adventure,6-7,poems;puzzles;clues,Willow & Pine,2017,3rd,Discovery Files,English,community;poetry;math,Upper Elementary,9787927950813,285,Paperback,On Hold
+B0252,Stormy Garden,Jordan Lee,Science Fiction,4-5,feelings;invention;teamwork,Maple Leaf Press,2019,1st,,English,robots;friendship;history,Middle School,9788120717574,389,Paperback,Available
+B0253,Stormy Lighthouse,Parker Park,Science Fiction,4-5,school;library;coding,Silver Compass House,2017,2nd,Explorer Series,Spanish,coding;fantasy;math,Upper Elementary,9789764538552,156,Paperback,Available
+B0254,Wandering River,Jordan Hayes,Nonfiction,6-8,library;gardens;exploration,Fieldstone Learning,2018,3rd,Discovery Files,English,fantasy;exploration;community,Middle School,9784791700311,205,Hardcover,On Hold
+B0255,Curious River,Morgan Nguyen,Mystery,6-8,school;experiments;kindness,Willow & Pine,2024,2nd,Codebreakers,Spanish,coding;family;history,Upper Elementary,9786213781637,401,Paperback,Checked Out
+B0256,Secret Forest,Avery Brooks,Adventure,6-7,puzzles;friendship;gardens,Beacon Ridge Publishing,2020,1st,Coastal Chronicles,English,mystery;family;adventure,Middle School,9783455054143,168,Hardcover,Checked Out
+B0257,Stormy Library,Taylor Kim,Fantasy,5-6,clues;curiosity;nature,Harborlight Press,2017,3rd,Discovery Files,English,outdoors;family;math,Middle School,9786037577831,415,Hardcover,On Hold
+B0258,Forgotten Circuit,Alex Park,STEM,4-5,poems;quest;school,Willow & Pine,2021,2nd,Discovery Files,English,science;adventure;family,Middle School,9785527445083,388,Hardcover,Checked Out
+B0259,Last Mountain,Taylor Perez,Realistic Fiction,5-6,invention;quest;exploration,Signal Tree Media,2023,3rd,Oak Street Adventures,English,coding;history;math,Middle School,9781635708419,292,Hardcover,Checked Out
+B0260,Rising Mystery,Alex Lee,STEM,6-7,outdoors;history;gardens,Signal Tree Media,2018,1st,,English,poetry;math;family,Upper Elementary,9783251627092,244,Hardcover,Checked Out
+B0261,Shadow Code,Morgan Nguyen,Science Fiction,4-5,exploration;coast;experiments,Willow & Pine,2019,2nd,Codebreakers,English,history;library;poetry,Middle School,9783676546979,345,Hardcover,Available
+B0262,Wandering Lab,Morgan Patel,Science Fiction,4-5,courage;quest;clues,Cityline Kids,2018,2nd,Explorer Series,Spanish,robots;history;science,Middle School,9785392669701,227,Hardcover,Available
+B0263,Last River,Rowan Kim,Realistic Fiction,6-8,puzzles;courage;invention,Maple Leaf Press,2022,3rd,Explorer Series,Spanish,library;friendship;teamwork,Upper Elementary,9787949105797,147,Paperback,On Hold
+B0264,Hidden Garden,Avery Nguyen,Historical Fiction,6-7,community;robots;friendship,Harborlight Press,2022,1st,Discovery Files,English,family;poetry;coding,Upper Elementary,9781800656591,376,Paperback,On Hold
+B0265,Wild Mystery,Alex Brooks,Nonfiction,6-7,earth;magic;history,Beacon Ridge Publishing,2016,2nd,Codebreakers,Spanish,history;science;earth science,Middle School,9784487053308,251,Paperback,Available
+B0266,Last Circuit,Riley Patel,Fantasy,6-8,exploration;invention;outdoors,Signal Tree Media,2024,3rd,Stacks Mystery,Spanish,science;teamwork;mystery,Middle School,9786709234482,397,Hardcover,Available
+B0267,Forgotten Library,Parker Lee,Nonfiction,5-6,science;maps;kindness,Riverglass Press,2018,2nd,Circuit Riders,English,family;outdoors;earth science,Upper Elementary,9786085822029,194,Hardcover,Checked Out
+B0268,Wild Code,Avery Kim,Poetry,6-7,invention;poems;library,Northwind Books,2018,1st,Explorer Series,Spanish,science;community;robots,Upper Elementary,9782543015709,364,Hardcover,On Hold
+B0269,Crystal Mountain,Jamie Park,Fantasy,5-6,community;history;magic,Silver Compass House,2018,1st,Stacks Mystery,English,friendship;coding;math,Upper Elementary,9789269680715,331,Hardcover,On Hold
+B0270,Forgotten Lighthouse,Rowan Ortega,Science Fiction,5-6,school;family;community,Cityline Kids,2023,3rd,Codebreakers,Spanish,science;coding;mystery,Upper Elementary,9788835431320,280,Paperback,On Hold
+B0271,Bright Mountain,Parker Lee,Realistic Fiction,4-5,gardens;robots;family,Silver Compass House,2016,1st,Discovery Files,English,math;friendship;robots,Middle School,9787182836805,275,Paperback,Checked Out
+B0272,Silent Code,Casey Smith,Adventure,5-6,family;feelings;coding,Silver Compass House,2017,3rd,Oak Street Adventures,English,teamwork;math;mystery,Middle School,9782936540028,211,Paperback,On Hold
+B0273,Wild Mystery,Sage Ortega,Poetry,4-5,curiosity;earth;maps,Beacon Ridge Publishing,2017,1st,Oak Street Adventures,Spanish,fantasy;outdoors;earth science,Middle School,9785981731142,401,Paperback,Available
+B0274,Shadow Library,Sage Perez,Mystery,5-6,community;invention;teamwork,Maple Leaf Press,2022,2nd,Coastal Chronicles,Spanish,history;library;friendship,Upper Elementary,9785125032122,121,Paperback,Available
+B0275,Secret Forest,Sky Ruiz,Realistic Fiction,4-5,puzzles;kindness;magic,Fieldstone Learning,2019,3rd,,Spanish,coding;exploration;friendship,Upper Elementary,9787645781604,405,Hardcover,Available
+B0276,Silent Library,Alex Nguyen,Fantasy,4-5,invention;community;quest,Cityline Kids,2020,2nd,Oak Street Adventures,English,robots;coding;outdoors,Upper Elementary,9788181574001,413,Hardcover,Checked Out
+B0277,Bright Mountain,Morgan Hall,Adventure,4-5,poems;science;earth,Willow & Pine,2022,1st,Discovery Files,English,history;poetry;outdoors,Upper Elementary,9786473585962,389,Paperback,On Hold
+B0278,Wandering Mystery,Riley Smith,Adventure,4-5,math;courage;coding,Riverglass Press,2017,2nd,Coastal Chronicles,Spanish,family;earth science;poetry,Middle School,9784981887252,408,Paperback,On Hold
+B0279,Bright Lab,Jamie Ruiz,Mystery,5-6,maps;science;library,Maple Leaf Press,2017,1st,,English,mystery;coding;community,Upper Elementary,9786728594127,406,Hardcover,Available
+B0280,Forgotten Lighthouse,Reese Kim,Historical Fiction,4-5,science;gardens;creativity,Willow & Pine,2016,1st,Codebreakers,Spanish,math;adventure;coding,Upper Elementary,9786128257880,293,Paperback,Checked Out
+B0281,Shadow Map,Drew Patel,Poetry,5-6,coding;family;kindness,Riverglass Press,2021,2nd,Discovery Files,English,community;history;poetry,Middle School,9781080395064,415,Paperback,Checked Out
+B0282,Brave Library,Casey Young,Adventure,6-7,history;coding;creativity,Beacon Ridge Publishing,2022,1st,Oak Street Adventures,Spanish,family;friendship;teamwork,Middle School,9785667760951,241,Paperback,Checked Out
+B0283,Crystal Circuit,Riley Lee,Historical Fiction,5-6,robots;experiments;nature,Maple Leaf Press,2019,1st,,English,poetry;teamwork;robots,Middle School,9789261957016,388,Paperback,Checked Out
+B0284,Silent Compass,Sky Hayes,Realistic Fiction,5-6,library;courage;quest,Silver Compass House,2022,3rd,Oak Street Adventures,English,history;friendship;family,Upper Elementary,9786726435900,143,Hardcover,On Hold
+B0285,Shadow Lab,Reese Kim,Adventure,6-7,coding;kindness;library,Willow & Pine,2019,1st,Coastal Chronicles,Spanish,family;exploration;community,Upper Elementary,9782171040915,200,Paperback,Available
+B0286,Hidden Mountain,Quinn Lee,Science Fiction,5-6,creativity;experiments;earth,Harborlight Press,2018,3rd,Coastal Chronicles,English,library;outdoors;teamwork,Middle School,9787616728266,145,Hardcover,Available
+B0287,Secret Signal,Drew Brooks,Science Fiction,6-8,quest;outdoors;coast,Signal Tree Media,2018,3rd,,Spanish,history;family;coding,Upper Elementary,9783291300350,358,Hardcover,Available
+B0288,Crystal Compass,Sage Park,Poetry,4-5,family;science;exploration,Silver Compass House,2023,1st,Stacks Mystery,English,earth science;fantasy;mystery,Upper Elementary,9788151896308,286,Paperback,Checked Out
+B0289,Hidden Garden,Jamie Hayes,Fantasy,6-8,family;community;teamwork,Harborlight Press,2021,3rd,Circuit Riders,English,math;robots;library,Upper Elementary,9788698432271,392,Paperback,Checked Out
+B0290,Rising Code,Riley Smith,Nonfiction,5-6,magic;history;outdoors,Willow & Pine,2019,3rd,Discovery Files,Spanish,family;science;outdoors,Upper Elementary,9788888773421,178,Paperback,Checked Out
+B0291,Last Garden,Sky Ruiz,Mystery,6-7,history;outdoors;puzzles,Northwind Books,2022,2nd,,English,outdoors;mystery;coding,Upper Elementary,9785935846979,392,Paperback,Checked Out
+B0292,Rising Mountain,Jamie Ortega,Nonfiction,6-7,science;math;nature,Harborlight Press,2022,3rd,Codebreakers,English,adventure;math;coding,Upper Elementary,9788956449152,151,Paperback,On Hold
+B0293,Hidden Map,Reese Lee,Fantasy,4-5,community;science;friendship,Fieldstone Learning,2022,3rd,Discovery Files,Spanish,math;community;mystery,Middle School,9783341267390,208,Paperback,Available
+B0294,Wandering River,Avery Young,Fantasy,6-8,invention;science;community,Beacon Ridge Publishing,2018,1st,Oak Street Adventures,English,teamwork;poetry;family,Middle School,9781583152392,190,Paperback,Checked Out
+B0295,Wild Compass,Reese Smith,STEM,5-6,family;gardens;coast,Riverglass Press,2023,2nd,Codebreakers,English,library;coding;history,Upper Elementary,9787777194242,241,Paperback,Checked Out
+B0296,Wild River,Parker Perez,Adventure,4-5,math;magic;maps,Willow & Pine,2017,3rd,,English,teamwork;earth science;science,Upper Elementary,9783620233330,245,Paperback,On Hold
+B0297,Bright Lab,Drew Hayes,Realistic Fiction,6-7,puzzles;quest;kindness,Willow & Pine,2024,1st,,Spanish,community;poetry;history,Middle School,9787103217717,270,Paperback,Available
+B0298,Hidden Mystery,Sage Smith,Historical Fiction,6-7,quest;coding;magic,Cityline Kids,2018,3rd,Explorer Series,Spanish,adventure;history;science,Upper Elementary,9788661202977,249,Hardcover,On Hold
+B0299,Golden Circuit,Sky Kim,Adventure,4-5,puzzles;teamwork;school,Cityline Kids,2018,3rd,,Spanish,library;earth science;math,Upper Elementary,9783082709180,390,Hardcover,Checked Out
+B0300,Brave Library,Parker Hall,Mystery,6-8,poems;coast;history,Fieldstone Learning,2023,3rd,Circuit Riders,English,fantasy;friendship;family,Middle School,9781498192006,205,Paperback,Checked Out

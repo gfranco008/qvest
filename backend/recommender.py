@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from collections import Counter, defaultdict
 from dataclasses import dataclass
-from typing import Dict, Iterable, List, Sequence, Tuple
+from typing import Dict, Iterable, List, Sequence
 
-from .data_loader import Book, Student
+from .data_loader import Book, Loan, Student
 
 
 @dataclass
@@ -19,7 +19,7 @@ class Recommender:
         self,
         books: Dict[str, Book],
         students: Dict[str, Student],
-        loans: Sequence[Tuple[str, str, str]],
+        loans: Sequence[Loan],
     ) -> None:
         self.books = books
         self.students = students
@@ -30,16 +30,16 @@ class Recommender:
 
     def _build_student_books(self) -> Dict[str, List[str]]:
         student_books: Dict[str, List[str]] = defaultdict(list)
-        for student_id, book_id, _ in self.loans:
-            if book_id in self.books:
-                student_books[student_id].append(book_id)
+        for loan in self.loans:
+            if loan.book_id in self.books:
+                student_books[loan.student_id].append(loan.book_id)
         return student_books
 
     def _build_book_counts(self) -> Counter[str]:
         counts: Counter[str] = Counter()
-        for _, book_id, _ in self.loans:
-            if book_id in self.books:
-                counts[book_id] += 1
+        for loan in self.loans:
+            if loan.book_id in self.books:
+                counts[loan.book_id] += 1
         return counts
 
     def _build_cooccurrence(self) -> Dict[Tuple[str, str], int]:

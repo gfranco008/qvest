@@ -1,7 +1,301 @@
-student_id,grade,interests
-S001,4,adventure;animals
-S002,5,science;robots
-S003,6,mystery;library
-S004,7,history;coast
-S005,5,community;friendship
-S006,6,math;puzzles
+student_id,grade,age,interests,reading_level,preferred_genres,account_status,items_checkedout,notes,homeroom
+S0001,7,12,friendship;coast,5-6,STEM;Realistic Fiction,Inactive,2,Reads during lunch,7D
+S0002,4,9,friendship;sports,6-8,STEM;Fantasy,Active,0,Likes series books,4C
+S0003,7,12,community;library,6-7,Historical Fiction;Science Fiction,Active,3,Needs quiet spaces,7B
+S0004,8,13,history;community,6-7,Mystery;Fantasy,Active,0,Enjoys hands-on projects,8A
+S0005,7,12,robots;community,4-5,Poetry;Fantasy,Active,2,Prefers group reads,7B
+S0006,4,9,adventure;friendship,4-5,Adventure;Nonfiction,Active,0,Enjoys hands-on projects,4B
+S0007,7,12,library;sports,4-5,Mystery;Historical Fiction,Active,3,Enjoys hands-on projects,7D
+S0008,6,11,art;puzzles,6-7,Historical Fiction;Mystery,Active,2,Prefers shorter chapters,6D
+S0009,7,12,math;adventure,6-7,Historical Fiction;Mystery,Inactive,0,Needs quiet spaces,7B
+S0010,8,13,coding;science,6-8,Science Fiction;Mystery,Inactive,1,Asks for recommendations,8A
+S0011,7,12,community;animals,4-5,Science Fiction;Realistic Fiction,Active,3,Prefers shorter chapters,7D
+S0012,5,10,adventure;sports,4-5,STEM;Historical Fiction,Active,2,Enjoys graphic novels,5A
+S0013,8,13,music;coast,6-8,STEM;Science Fiction,Active,0,Enjoys graphic novels,8D
+S0014,4,9,puzzles;library,6-7,STEM;Adventure,Active,2,Likes series books,4C
+S0015,4,9,sports;coding,6-7,Nonfiction;Mystery,Active,3,Interested in local history,4C
+S0016,7,12,robots;math,6-7,Poetry;Science Fiction,Inactive,1,Reads during lunch,7A
+S0017,5,10,adventure;puzzles,5-6,Poetry;STEM,Active,2,Needs quiet spaces,5D
+S0018,4,9,animals;library,4-5,Fantasy;Adventure,Inactive,0,Interested in local history,4D
+S0019,8,13,mystery;puzzles,5-6,Science Fiction;Adventure,Active,3,Prefers shorter chapters,8D
+S0020,8,13,animals;robots,5-6,Adventure;Mystery,Active,2,Enjoys hands-on projects,8D
+S0021,8,13,library;art,4-5,Science Fiction;Realistic Fiction,Inactive,1,Enjoys hands-on projects,8B
+S0022,7,12,math;coding,6-8,Fantasy;Science Fiction,Active,2,Interested in local history,7A
+S0023,8,13,library;music,4-5,Science Fiction;Historical Fiction,Active,3,Reads during lunch,8C
+S0024,8,13,library;coast,5-6,Adventure;Mystery,Active,3,Reads during lunch,8A
+S0025,7,12,science;adventure,4-5,Mystery;Science Fiction,Active,3,Needs quiet spaces,7B
+S0026,5,10,mystery;math,6-7,Realistic Fiction;Poetry,Inactive,1,Reads during lunch,5A
+S0027,8,13,library;puzzles,6-8,Science Fiction;Historical Fiction,Active,3,Prefers shorter chapters,8B
+S0028,5,10,robots;community,4-5,Fantasy;Nonfiction,Inactive,1,Prefers group reads,5A
+S0029,5,10,robots;coding,5-6,Poetry;Realistic Fiction,Active,1,Prefers shorter chapters,5A
+S0030,6,11,friendship;robots,6-8,Historical Fiction;Fantasy,Inactive,0,Enjoys hands-on projects,6A
+S0031,8,13,library;science,4-5,Poetry;Science Fiction,Active,1,Needs quiet spaces,8C
+S0032,7,12,history;puzzles,6-7,Nonfiction;Science Fiction,Active,1,Enjoys hands-on projects,7B
+S0033,7,12,history;music,5-6,Science Fiction;Poetry,Inactive,0,Enjoys graphic novels,7B
+S0034,5,10,sports;science,6-8,Fantasy;Mystery,Inactive,1,Likes challenge problems,5C
+S0035,5,10,math;science,4-5,Adventure;Historical Fiction,Active,0,Needs quiet spaces,5D
+S0036,7,12,library;coding,6-7,Nonfiction;Historical Fiction,Active,1,Asks for recommendations,7B
+S0037,4,9,art;music,6-8,Nonfiction;Poetry,Inactive,2,Prefers shorter chapters,4D
+S0038,5,10,coast;library,6-8,Nonfiction;Mystery,Active,3,Prefers shorter chapters,5A
+S0039,7,12,animals;history,6-8,Poetry;Science Fiction,Inactive,3,Interested in local history,7A
+S0040,8,13,adventure;puzzles,6-8,Nonfiction;Mystery,Active,2,Interested in local history,8A
+S0041,4,9,music;math,6-7,Mystery;Poetry,Active,3,Needs quiet spaces,4B
+S0042,7,12,library;coding,6-7,Poetry;Adventure,Active,3,Likes challenge problems,7A
+S0043,6,11,art;coding,6-7,Realistic Fiction;Nonfiction,Active,2,Prefers shorter chapters,6C
+S0044,4,9,robots;history,6-7,Poetry;Adventure,Active,2,Reads during lunch,4A
+S0045,8,13,history;science,6-7,Nonfiction;Science Fiction,Inactive,1,Interested in local history,8C
+S0046,6,11,community;music,6-8,Historical Fiction;Adventure,Active,2,Likes challenge problems,6D
+S0047,7,12,robots;coast,6-7,Poetry;Fantasy,Active,1,Needs quiet spaces,7A
+S0048,4,9,coding;sports,5-6,Historical Fiction;Science Fiction,Active,1,Prefers group reads,4A
+S0049,5,10,music;science,5-6,Realistic Fiction;Adventure,Active,3,Likes series books,5B
+S0050,7,12,puzzles;history,6-8,Adventure;Historical Fiction,Active,0,Prefers shorter chapters,7B
+S0051,8,13,math;history,6-7,Fantasy;Poetry,Inactive,3,Prefers group reads,8B
+S0052,6,11,library;coding,6-7,Nonfiction;Poetry,Active,2,Prefers shorter chapters,6B
+S0053,6,11,friendship;coast,5-6,Mystery;Historical Fiction,Active,1,Reads during lunch,6B
+S0054,5,10,robots;adventure,6-7,Mystery;Poetry,Active,2,Reads during lunch,5B
+S0055,8,13,animals;math,6-7,Fantasy;Mystery,Active,3,Likes series books,8B
+S0056,8,13,friendship;animals,4-5,STEM;Poetry,Active,3,Likes challenge problems,8B
+S0057,4,9,math;music,6-7,Poetry;Historical Fiction,Active,3,Likes challenge problems,4A
+S0058,7,12,animals;science,4-5,Historical Fiction;Adventure,Inactive,1,Needs quiet spaces,7C
+S0059,4,9,math;adventure,5-6,Realistic Fiction;Nonfiction,Active,1,Prefers shorter chapters,4A
+S0060,8,13,sports;math,4-5,Realistic Fiction;STEM,Active,3,Likes challenge problems,8A
+S0061,6,11,coding;science,6-8,Fantasy;STEM,Active,0,Prefers group reads,6C
+S0062,6,11,friendship;coast,4-5,Nonfiction;Poetry,Inactive,3,Prefers group reads,6B
+S0063,7,12,art;science,4-5,Mystery;Nonfiction,Active,3,Likes series books,7C
+S0064,4,9,coding;animals,4-5,STEM;Historical Fiction,Inactive,1,Likes series books,4D
+S0065,8,13,mystery;robots,5-6,STEM;Historical Fiction,Inactive,0,Prefers group reads,8C
+S0066,7,12,sports;robots,4-5,Adventure;Mystery,Active,2,Needs quiet spaces,7A
+S0067,6,11,art;science,6-8,Nonfiction;Adventure,Active,2,Needs quiet spaces,6A
+S0068,8,13,puzzles;friendship,6-8,STEM;Historical Fiction,Inactive,0,Likes challenge problems,8A
+S0069,6,11,library;friendship,4-5,Mystery;Fantasy,Inactive,1,Likes challenge problems,6B
+S0070,4,9,community;library,6-8,Fantasy;Adventure,Active,2,Likes series books,4A
+S0071,8,13,history;coding,5-6,Science Fiction;Mystery,Active,2,Prefers group reads,8C
+S0072,6,11,robots;community,6-7,Mystery;Adventure,Active,2,Likes challenge problems,6D
+S0073,7,12,math;sports,5-6,Science Fiction;Nonfiction,Active,1,Interested in local history,7A
+S0074,7,12,sports;music,4-5,Science Fiction;Mystery,Active,3,Likes challenge problems,7C
+S0075,6,11,mystery;art,6-8,Realistic Fiction;Fantasy,Active,2,Prefers shorter chapters,6A
+S0076,5,10,mystery;art,5-6,Nonfiction;Historical Fiction,Active,1,Reads during lunch,5A
+S0077,7,12,robots;animals,4-5,Poetry;STEM,Active,1,Enjoys hands-on projects,7A
+S0078,8,13,animals;coast,4-5,Historical Fiction;Adventure,Active,2,Prefers shorter chapters,8A
+S0079,4,9,history;friendship,5-6,Mystery;Fantasy,Active,0,Reads during lunch,4C
+S0080,8,13,puzzles;library,5-6,Realistic Fiction;Nonfiction,Active,0,Asks for recommendations,8A
+S0081,8,13,history;puzzles,5-6,Historical Fiction;Mystery,Active,0,Interested in local history,8D
+S0082,6,11,library;coast,4-5,Mystery;Fantasy,Inactive,3,Interested in local history,6B
+S0083,7,12,robots;coding,6-7,Science Fiction;Poetry,Active,1,Needs quiet spaces,7C
+S0084,6,11,animals;music,6-7,Poetry;Science Fiction,Inactive,2,Needs quiet spaces,6C
+S0085,7,12,coast;community,6-8,Historical Fiction;STEM,Active,0,Needs quiet spaces,7C
+S0086,5,10,adventure;math,6-8,Science Fiction;STEM,Inactive,0,Enjoys hands-on projects,5B
+S0087,7,12,coding;puzzles,4-5,Mystery;Science Fiction,Active,1,Likes challenge problems,7B
+S0088,8,13,coding;animals,5-6,STEM;Poetry,Active,2,Enjoys graphic novels,8C
+S0089,7,12,coding;coast,6-7,Mystery;Poetry,Active,0,Prefers group reads,7D
+S0090,7,12,coast;math,5-6,Adventure;Science Fiction,Active,0,Needs quiet spaces,7A
+S0091,5,10,coding;friendship,6-7,Mystery;Historical Fiction,Active,0,Likes series books,5D
+S0092,7,12,history;mystery,6-8,Poetry;Historical Fiction,Active,0,Prefers shorter chapters,7D
+S0093,4,9,coding;coast,6-7,STEM;Poetry,Inactive,0,Prefers shorter chapters,4B
+S0094,8,13,friendship;sports,5-6,Poetry;STEM,Active,2,Enjoys graphic novels,8D
+S0095,4,9,music;math,6-8,Poetry;Mystery,Active,3,Prefers group reads,4D
+S0096,8,13,coding;friendship,6-7,Historical Fiction;Fantasy,Active,0,Asks for recommendations,8A
+S0097,5,10,puzzles;library,4-5,Fantasy;STEM,Active,3,Likes challenge problems,5C
+S0098,7,12,puzzles;adventure,5-6,Nonfiction;Realistic Fiction,Active,0,Enjoys hands-on projects,7C
+S0099,4,9,math;science,4-5,Realistic Fiction;Fantasy,Active,3,Enjoys graphic novels,4D
+S0100,6,11,adventure;puzzles,6-8,Adventure;Fantasy,Inactive,3,Likes challenge problems,6A
+S0101,7,12,robots;puzzles,5-6,Fantasy;Poetry,Active,1,Asks for recommendations,7C
+S0102,6,11,art;robots,6-8,Science Fiction;Nonfiction,Active,2,Prefers shorter chapters,6C
+S0103,8,13,coding;music,5-6,Science Fiction;Realistic Fiction,Active,2,Enjoys hands-on projects,8D
+S0104,7,12,history;library,4-5,Historical Fiction;Realistic Fiction,Inactive,2,Interested in local history,7D
+S0105,7,12,community;friendship,6-8,Realistic Fiction;Mystery,Active,1,Asks for recommendations,7D
+S0106,5,10,sports;mystery,6-8,Adventure;Nonfiction,Active,3,Reads during lunch,5B
+S0107,5,10,friendship;art,6-8,STEM;Fantasy,Active,1,Enjoys graphic novels,5C
+S0108,6,11,library;mystery,5-6,STEM;Nonfiction,Active,1,Interested in local history,6A
+S0109,5,10,friendship;coast,6-8,Realistic Fiction;STEM,Inactive,0,Interested in local history,5B
+S0110,6,11,mystery;adventure,6-7,Historical Fiction;Mystery,Active,3,Prefers shorter chapters,6A
+S0111,4,9,math;friendship,6-7,Science Fiction;STEM,Active,0,Enjoys graphic novels,4B
+S0112,5,10,robots;friendship,4-5,Realistic Fiction;Historical Fiction,Inactive,0,Interested in local history,5A
+S0113,6,11,math;art,6-8,Nonfiction;STEM,Active,1,Enjoys hands-on projects,6B
+S0114,5,10,community;coast,6-8,Historical Fiction;Adventure,Inactive,2,Enjoys hands-on projects,5C
+S0115,8,13,art;coast,5-6,Historical Fiction;Mystery,Active,3,Likes challenge problems,8C
+S0116,4,9,animals;art,4-5,Nonfiction;Historical Fiction,Inactive,2,Likes challenge problems,4A
+S0117,8,13,coast;art,6-8,STEM;Adventure,Inactive,2,Prefers group reads,8A
+S0118,5,10,friendship;robots,5-6,Poetry;Fantasy,Inactive,0,Prefers group reads,5A
+S0119,7,12,music;puzzles,6-8,Fantasy;STEM,Active,1,Prefers group reads,7A
+S0120,6,11,art;friendship,6-7,Poetry;Adventure,Active,1,Needs quiet spaces,6B
+S0121,4,9,coding;robots,6-7,Fantasy;Science Fiction,Active,1,Interested in local history,4B
+S0122,8,13,art;coding,6-7,Poetry;Realistic Fiction,Active,2,Reads during lunch,8C
+S0123,6,11,history;animals,6-8,Fantasy;Mystery,Inactive,3,Asks for recommendations,6B
+S0124,4,9,adventure;sports,5-6,Science Fiction;Poetry,Active,2,Reads during lunch,4A
+S0125,7,12,art;friendship,6-7,Mystery;Science Fiction,Active,1,Asks for recommendations,7A
+S0126,4,9,art;coding,6-8,Poetry;Science Fiction,Active,1,Interested in local history,4C
+S0127,6,11,music;history,5-6,STEM;Nonfiction,Active,2,Interested in local history,6D
+S0128,5,10,art;coding,5-6,Adventure;Historical Fiction,Active,1,Asks for recommendations,5D
+S0129,5,10,puzzles;friendship,6-8,Science Fiction;Adventure,Inactive,1,Likes challenge problems,5D
+S0130,5,10,coding;puzzles,6-8,Historical Fiction;Science Fiction,Active,0,Prefers shorter chapters,5C
+S0131,5,10,music;sports,6-7,Adventure;Realistic Fiction,Active,3,Prefers group reads,5D
+S0132,6,11,mystery;sports,4-5,Mystery;Historical Fiction,Active,3,Likes challenge problems,6D
+S0133,5,10,science;library,6-8,Mystery;Historical Fiction,Active,2,Prefers shorter chapters,5B
+S0134,7,12,community;puzzles,6-7,STEM;Historical Fiction,Active,2,Likes series books,7C
+S0135,7,12,library;music,6-8,Mystery;Poetry,Active,1,Reads during lunch,7A
+S0136,5,10,library;adventure,6-8,Historical Fiction;Mystery,Inactive,3,Enjoys hands-on projects,5D
+S0137,4,9,sports;library,6-8,Poetry;Realistic Fiction,Active,1,Enjoys hands-on projects,4C
+S0138,4,9,history;art,6-7,Mystery;Realistic Fiction,Active,1,Asks for recommendations,4A
+S0139,8,13,library;history,4-5,Nonfiction;Poetry,Active,2,Prefers shorter chapters,8C
+S0140,4,9,coding;library,4-5,Fantasy;Mystery,Active,0,Needs quiet spaces,4D
+S0141,7,12,community;friendship,4-5,Fantasy;Adventure,Inactive,2,Asks for recommendations,7B
+S0142,5,10,animals;coding,6-7,Fantasy;Adventure,Active,3,Enjoys hands-on projects,5D
+S0143,6,11,library;robots,6-8,Science Fiction;Adventure,Active,1,Enjoys graphic novels,6D
+S0144,6,11,mystery;animals,6-7,Poetry;STEM,Active,1,Likes challenge problems,6A
+S0145,6,11,history;coast,6-8,STEM;Poetry,Active,3,Enjoys hands-on projects,6D
+S0146,6,11,library;history,6-8,Science Fiction;Adventure,Active,3,Interested in local history,6B
+S0147,7,12,science;mystery,6-8,STEM;Science Fiction,Inactive,2,Reads during lunch,7B
+S0148,6,11,coast;community,6-8,Historical Fiction;Adventure,Active,0,Likes series books,6A
+S0149,8,13,art;history,4-5,Poetry;Historical Fiction,Active,2,Asks for recommendations,8A
+S0150,8,13,adventure;animals,6-8,Mystery;Realistic Fiction,Inactive,0,Enjoys hands-on projects,8D
+S0151,6,11,math;friendship,6-8,Poetry;Historical Fiction,Active,1,Interested in local history,6B
+S0152,4,9,community;art,4-5,STEM;Adventure,Active,3,Enjoys hands-on projects,4A
+S0153,5,10,music;coast,6-8,Poetry;Historical Fiction,Active,3,Prefers group reads,5A
+S0154,5,10,mystery;adventure,5-6,Science Fiction;Adventure,Active,0,Interested in local history,5D
+S0155,5,10,coast;history,5-6,Science Fiction;Historical Fiction,Inactive,1,Needs quiet spaces,5D
+S0156,4,9,robots;science,5-6,Poetry;Realistic Fiction,Inactive,0,Needs quiet spaces,4B
+S0157,5,10,friendship;music,6-8,Adventure;Fantasy,Active,0,Enjoys graphic novels,5D
+S0158,7,12,friendship;adventure,6-8,STEM;Poetry,Inactive,1,Prefers shorter chapters,7A
+S0159,7,12,math;community,4-5,Historical Fiction;STEM,Inactive,0,Needs quiet spaces,7C
+S0160,7,12,art;adventure,5-6,Historical Fiction;Nonfiction,Inactive,2,Needs quiet spaces,7B
+S0161,8,13,coast;friendship,6-7,Poetry;Mystery,Active,3,Enjoys graphic novels,8C
+S0162,7,12,library;friendship,5-6,Historical Fiction;Science Fiction,Inactive,1,Reads during lunch,7B
+S0163,5,10,music;animals,6-8,Poetry;Historical Fiction,Active,1,Likes series books,5A
+S0164,4,9,puzzles;sports,6-7,Fantasy;Mystery,Active,0,Enjoys hands-on projects,4C
+S0165,7,12,robots;friendship,5-6,Science Fiction;Nonfiction,Inactive,2,Likes challenge problems,7C
+S0166,4,9,community;sports,5-6,Realistic Fiction;Science Fiction,Active,3,Needs quiet spaces,4A
+S0167,4,9,robots;art,4-5,Realistic Fiction;Science Fiction,Active,0,Interested in local history,4C
+S0168,5,10,friendship;puzzles,6-8,Realistic Fiction;Poetry,Active,1,Likes challenge problems,5C
+S0169,5,10,robots;art,5-6,Poetry;STEM,Active,1,Needs quiet spaces,5C
+S0170,6,11,library;animals,6-7,Fantasy;STEM,Active,1,Reads during lunch,6D
+S0171,5,10,mystery;coding,6-8,STEM;Realistic Fiction,Inactive,2,Prefers shorter chapters,5D
+S0172,5,10,adventure;puzzles,4-5,Science Fiction;Fantasy,Active,3,Reads during lunch,5D
+S0173,4,9,coding;music,4-5,Mystery;Adventure,Active,3,Enjoys graphic novels,4C
+S0174,6,11,puzzles;adventure,6-7,Realistic Fiction;Mystery,Inactive,3,Interested in local history,6D
+S0175,6,11,coding;music,5-6,Historical Fiction;Science Fiction,Active,2,Enjoys graphic novels,6B
+S0176,8,13,friendship;robots,4-5,Realistic Fiction;Historical Fiction,Active,1,Prefers shorter chapters,8A
+S0177,8,13,community;robots,6-7,STEM;Science Fiction,Active,2,Prefers group reads,8C
+S0178,4,9,animals;coding,4-5,Poetry;Historical Fiction,Active,3,Likes challenge problems,4B
+S0179,8,13,coast;library,6-7,Historical Fiction;Mystery,Inactive,1,Enjoys hands-on projects,8C
+S0180,8,13,history;art,6-7,Poetry;Science Fiction,Active,3,Enjoys graphic novels,8A
+S0181,4,9,animals;history,5-6,Poetry;Nonfiction,Inactive,0,Likes challenge problems,4D
+S0182,8,13,coding;art,6-7,Poetry;STEM,Inactive,3,Enjoys graphic novels,8B
+S0183,5,10,mystery;coast,6-8,Mystery;Science Fiction,Active,3,Needs quiet spaces,5A
+S0184,5,10,puzzles;sports,4-5,STEM;Science Fiction,Active,2,Asks for recommendations,5C
+S0185,4,9,mystery;animals,6-7,Historical Fiction;Fantasy,Active,2,Needs quiet spaces,4A
+S0186,5,10,mystery;coding,6-8,Adventure;Historical Fiction,Active,1,Reads during lunch,5D
+S0187,4,9,robots;community,6-7,Science Fiction;Adventure,Inactive,3,Asks for recommendations,4C
+S0188,8,13,sports;music,6-7,STEM;Poetry,Active,1,Likes series books,8D
+S0189,7,12,sports;science,6-7,Science Fiction;STEM,Inactive,1,Enjoys graphic novels,7C
+S0190,8,13,animals;math,6-8,Historical Fiction;Science Fiction,Active,0,Asks for recommendations,8C
+S0191,8,13,robots;math,4-5,Nonfiction;Adventure,Active,3,Likes series books,8A
+S0192,4,9,library;adventure,6-7,Nonfiction;Realistic Fiction,Inactive,0,Likes series books,4C
+S0193,7,12,animals;coast,4-5,Fantasy;STEM,Active,3,Prefers shorter chapters,7C
+S0194,7,12,community;animals,4-5,Science Fiction;Mystery,Active,1,Reads during lunch,7C
+S0195,4,9,mystery;music,6-8,Mystery;Adventure,Active,1,Prefers shorter chapters,4A
+S0196,6,11,coding;animals,6-7,Mystery;STEM,Active,2,Enjoys graphic novels,6A
+S0197,4,9,history;robots,5-6,Poetry;STEM,Active,2,Prefers shorter chapters,4C
+S0198,7,12,art;animals,6-8,Adventure;STEM,Active,0,Prefers group reads,7A
+S0199,5,10,mystery;music,6-8,Poetry;Science Fiction,Active,1,Likes challenge problems,5B
+S0200,5,10,art;sports,6-8,Adventure;Realistic Fiction,Inactive,2,Reads during lunch,5A
+S0201,4,9,music;mystery,6-7,STEM;Fantasy,Active,2,Prefers shorter chapters,4B
+S0202,8,13,science;mystery,4-5,STEM;Science Fiction,Active,2,Enjoys graphic novels,8B
+S0203,8,13,math;sports,6-7,Historical Fiction;Poetry,Active,1,Likes challenge problems,8C
+S0204,5,10,sports;friendship,6-7,Adventure;Mystery,Active,3,Prefers shorter chapters,5A
+S0205,5,10,art;community,6-8,STEM;Science Fiction,Active,0,Needs quiet spaces,5A
+S0206,6,11,coding;art,6-7,STEM;Mystery,Active,0,Needs quiet spaces,6C
+S0207,5,10,sports;adventure,5-6,Adventure;Historical Fiction,Active,1,Enjoys hands-on projects,5C
+S0208,5,10,coast;music,6-7,Adventure;Historical Fiction,Inactive,1,Prefers shorter chapters,5B
+S0209,7,12,robots;art,6-7,Realistic Fiction;Poetry,Active,1,Asks for recommendations,7B
+S0210,4,9,mystery;puzzles,4-5,Mystery;Historical Fiction,Active,2,Interested in local history,4A
+S0211,8,13,community;math,6-8,Adventure;STEM,Active,2,Enjoys graphic novels,8D
+S0212,6,11,robots;math,6-8,Poetry;Fantasy,Active,1,Prefers shorter chapters,6C
+S0213,7,12,sports;library,4-5,STEM;Nonfiction,Active,0,Asks for recommendations,7A
+S0214,5,10,art;animals,5-6,Nonfiction;Mystery,Active,2,Enjoys hands-on projects,5A
+S0215,4,9,music;history,4-5,Fantasy;Historical Fiction,Active,0,Needs quiet spaces,4B
+S0216,6,11,animals;art,6-7,Realistic Fiction;Nonfiction,Active,3,Enjoys hands-on projects,6D
+S0217,8,13,robots;animals,4-5,Adventure;STEM,Active,0,Reads during lunch,8A
+S0218,7,12,animals;mystery,6-8,Science Fiction;Realistic Fiction,Active,0,Prefers group reads,7D
+S0219,7,12,robots;friendship,6-8,Nonfiction;Adventure,Inactive,3,Needs quiet spaces,7D
+S0220,8,13,robots;library,4-5,Poetry;Fantasy,Active,0,Enjoys hands-on projects,8A
+S0221,8,13,science;friendship,5-6,Mystery;Historical Fiction,Active,3,Needs quiet spaces,8D
+S0222,5,10,coast;science,4-5,Adventure;Mystery,Active,3,Likes series books,5C
+S0223,6,11,mystery;science,6-8,Historical Fiction;Fantasy,Active,2,Prefers shorter chapters,6B
+S0224,4,9,coast;community,4-5,STEM;Fantasy,Active,1,Interested in local history,4A
+S0225,6,11,history;math,6-8,Poetry;Fantasy,Active,2,Enjoys graphic novels,6C
+S0226,5,10,robots;coast,4-5,Poetry;Nonfiction,Active,1,Interested in local history,5D
+S0227,8,13,history;robots,6-8,Fantasy;STEM,Active,3,Reads during lunch,8A
+S0228,6,11,adventure;animals,6-7,Adventure;Science Fiction,Active,2,Needs quiet spaces,6B
+S0229,8,13,puzzles;adventure,4-5,Nonfiction;Realistic Fiction,Active,1,Interested in local history,8C
+S0230,5,10,math;art,5-6,Mystery;Nonfiction,Active,1,Prefers group reads,5A
+S0231,4,9,mystery;history,4-5,Fantasy;Nonfiction,Active,3,Interested in local history,4C
+S0232,6,11,library;community,6-8,Science Fiction;Realistic Fiction,Active,1,Interested in local history,6B
+S0233,8,13,coding;puzzles,6-7,Fantasy;STEM,Active,0,Asks for recommendations,8B
+S0234,8,13,friendship;coding,5-6,Fantasy;Nonfiction,Active,2,Reads during lunch,8D
+S0235,5,10,science;coding,6-8,Science Fiction;Mystery,Inactive,2,Needs quiet spaces,5D
+S0236,5,10,math;puzzles,6-7,Realistic Fiction;Poetry,Inactive,3,Prefers group reads,5D
+S0237,8,13,animals;robots,5-6,Nonfiction;Poetry,Active,3,Interested in local history,8C
+S0238,7,12,coding;friendship,5-6,Fantasy;Historical Fiction,Active,1,Enjoys hands-on projects,7C
+S0239,7,12,puzzles;robots,4-5,Poetry;Fantasy,Inactive,3,Needs quiet spaces,7D
+S0240,7,12,puzzles;coding,6-8,Fantasy;Historical Fiction,Inactive,0,Reads during lunch,7D
+S0241,5,10,community;math,4-5,Fantasy;Science Fiction,Active,0,Prefers group reads,5B
+S0242,4,9,robots;animals,6-7,Adventure;Nonfiction,Active,1,Likes challenge problems,4C
+S0243,6,11,community;robots,5-6,Realistic Fiction;Historical Fiction,Active,2,Prefers group reads,6C
+S0244,7,12,coding;art,4-5,Poetry;Mystery,Inactive,1,Interested in local history,7B
+S0245,7,12,coast;community,6-8,Poetry;Fantasy,Active,2,Interested in local history,7D
+S0246,7,12,history;coast,6-8,Realistic Fiction;Adventure,Active,1,Asks for recommendations,7B
+S0247,6,11,adventure;coast,6-7,Fantasy;Nonfiction,Inactive,3,Enjoys graphic novels,6C
+S0248,6,11,adventure;friendship,4-5,Mystery;Realistic Fiction,Active,3,Enjoys graphic novels,6B
+S0249,7,12,science;community,6-8,Nonfiction;Poetry,Active,2,Asks for recommendations,7D
+S0250,6,11,science;music,4-5,Realistic Fiction;Mystery,Active,3,Prefers shorter chapters,6B
+S0251,5,10,science;sports,6-8,Historical Fiction;Nonfiction,Active,2,Likes series books,5A
+S0252,7,12,animals;library,4-5,Mystery;Fantasy,Inactive,3,Reads during lunch,7A
+S0253,5,10,art;coast,4-5,STEM;Nonfiction,Active,1,Prefers group reads,5D
+S0254,7,12,library;friendship,6-7,Nonfiction;Poetry,Active,1,Prefers shorter chapters,7B
+S0255,7,12,science;art,6-8,Nonfiction;Fantasy,Inactive,3,Needs quiet spaces,7A
+S0256,4,9,friendship;math,6-8,Fantasy;Historical Fiction,Inactive,1,Enjoys graphic novels,4B
+S0257,5,10,art;coast,6-8,Mystery;Science Fiction,Inactive,0,Interested in local history,5B
+S0258,6,11,friendship;math,4-5,Nonfiction;Poetry,Inactive,0,Likes challenge problems,6A
+S0259,4,9,math;history,6-8,Mystery;Historical Fiction,Active,0,Needs quiet spaces,4A
+S0260,4,9,sports;history,6-7,STEM;Nonfiction,Inactive,0,Prefers shorter chapters,4C
+S0261,4,9,mystery;library,6-8,Poetry;Realistic Fiction,Active,0,Likes series books,4B
+S0262,7,12,mystery;coast,6-7,Mystery;Realistic Fiction,Active,0,Reads during lunch,7C
+S0263,4,9,coding;science,4-5,Adventure;Historical Fiction,Active,3,Likes challenge problems,4B
+S0264,5,10,animals;sports,5-6,Poetry;Adventure,Active,3,Prefers group reads,5D
+S0265,4,9,adventure;music,6-8,Nonfiction;Realistic Fiction,Active,1,Interested in local history,4A
+S0266,4,9,art;adventure,4-5,Fantasy;Nonfiction,Active,1,Enjoys hands-on projects,4B
+S0267,5,10,animals;history,4-5,Fantasy;Realistic Fiction,Active,1,Likes series books,5D
+S0268,7,12,robots;music,5-6,Science Fiction;Fantasy,Active,1,Prefers shorter chapters,7D
+S0269,6,11,adventure;history,5-6,Poetry;Nonfiction,Active,2,Asks for recommendations,6C
+S0270,4,9,science;sports,5-6,STEM;Historical Fiction,Inactive,0,Likes series books,4B
+S0271,6,11,robots;friendship,6-7,STEM;Mystery,Active,1,Likes challenge problems,6D
+S0272,4,9,math;adventure,6-8,STEM;Nonfiction,Active,1,Prefers shorter chapters,4A
+S0273,6,11,coast;puzzles,6-8,Nonfiction;Science Fiction,Active,1,Likes challenge problems,6D
+S0274,6,11,history;science,6-8,Nonfiction;Adventure,Active,3,Likes challenge problems,6B
+S0275,6,11,math;music,4-5,Realistic Fiction;STEM,Active,0,Interested in local history,6C
+S0276,6,11,coast;robots,4-5,Nonfiction;Realistic Fiction,Inactive,2,Reads during lunch,6D
+S0277,4,9,science;art,6-8,Science Fiction;Nonfiction,Active,1,Interested in local history,4B
+S0278,4,9,library;friendship,5-6,Nonfiction;Science Fiction,Inactive,3,Prefers group reads,4B
+S0279,5,10,coast;history,5-6,Nonfiction;Historical Fiction,Active,3,Interested in local history,5C
+S0280,7,12,science;library,6-8,STEM;Mystery,Inactive,3,Enjoys graphic novels,7D
+S0281,5,10,music;adventure,6-8,STEM;Science Fiction,Active,1,Likes series books,5B
+S0282,6,11,coding;coast,6-7,Poetry;Historical Fiction,Inactive,3,Enjoys hands-on projects,6C
+S0283,5,10,music;robots,5-6,Nonfiction;Adventure,Active,2,Needs quiet spaces,5D
+S0284,7,12,coding;puzzles,6-7,STEM;Poetry,Active,0,Enjoys graphic novels,7A
+S0285,4,9,coding;sports,5-6,Nonfiction;STEM,Active,2,Likes series books,4D
+S0286,6,11,animals;math,6-8,STEM;Nonfiction,Active,3,Prefers shorter chapters,6C
+S0287,4,9,mystery;music,6-8,Mystery;Historical Fiction,Active,1,Prefers shorter chapters,4A
+S0288,4,9,coding;history,4-5,Realistic Fiction;Nonfiction,Inactive,1,Enjoys graphic novels,4C
+S0289,6,11,coding;friendship,6-7,STEM;Science Fiction,Active,2,Reads during lunch,6C
+S0290,5,10,coding;puzzles,6-7,Adventure;Mystery,Inactive,0,Enjoys hands-on projects,5A
+S0291,7,12,art;math,6-7,STEM;Mystery,Active,2,Reads during lunch,7B
+S0292,5,10,music;science,4-5,Poetry;Nonfiction,Active,1,Prefers shorter chapters,5B
+S0293,5,10,community;sports,6-8,Poetry;Science Fiction,Active,0,Prefers group reads,5A
+S0294,7,12,robots;mystery,4-5,Fantasy;Adventure,Active,3,Needs quiet spaces,7A
+S0295,4,9,animals;mystery,4-5,Adventure;Science Fiction,Active,0,Enjoys graphic novels,4C
+S0296,7,12,music;coding,6-7,STEM;Fantasy,Active,2,Likes challenge problems,7B
+S0297,6,11,coding;history,4-5,Fantasy;Realistic Fiction,Active,0,Needs quiet spaces,6D
+S0298,5,10,adventure;friendship,4-5,Realistic Fiction;Historical Fiction,Active,2,Needs quiet spaces,5D
+S0299,8,13,art;math,5-6,Adventure;Fantasy,Active,2,Prefers shorter chapters,8C
+S0300,7,12,coast;friendship,6-8,STEM;Science Fiction,Active,3,Needs quiet spaces,7A
