@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Library Chatbot</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Librarian Assistant</p>
+        <h1>Ask the Reading Coach</h1>
+        <p class="lead">
+          A friendly prototype that helps librarians quickly find read-alikes and
+          talking points for students.
+        </p>
+        <a class="muted" href="index.html">Back to recommendations</a>
+      </header>
+
+      <section class="panel">
+        <div class="chat-window" id="chatWindow"></div>
+        <div class="chat-input">
+          <input id="chatInput" type="text" placeholder="Ask about a student or book..." />
+          <button id="sendButton">Send</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="chatbot.js"></script>
+  </body>
+</html>

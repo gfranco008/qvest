@@ -177,6 +177,48 @@ button:hover {
   color: var(--muted);
 }
 
+.chat-window {
+  min-height: 320px;
+  max-height: 420px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fffaf4;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: #f7d6b1;
+  color: var(--ink);
+}
+
+.chat-bubble.bot {
+  align-self: flex-start;
+  background: #fff2e4;
+  color: var(--ink);
+}
+
+.chat-input {
+  display: flex;
+  gap: 12px;
+}
+
+.chat-input input {
+  flex: 1;
+}
+
 @media (max-width: 680px) {
   .hero,
   .panel {

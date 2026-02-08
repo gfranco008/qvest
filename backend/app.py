@@ -1,10 +1,15 @@
 from __future__ import annotations
 
+import os
+from pathlib import Path
 from dataclasses import asdict
 from typing import Any, Dict, List
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from openai import OpenAI
+from dotenv import load_dotenv
 
 from .data_loader import load_catalog, load_loans, load_students
 from .recommender import Recommender
@@ -22,6 +27,21 @@ books = load_catalog()
 students = load_students()
 loans = load_loans()
 recommender = Recommender(books=books, students=students, loans=loans)
+
+load_dotenv(Path(__file__).resolve().parent.parent / ".env")
+
+
+class ChatRequest(BaseModel):
+    message: str
+
+
+def _get_openai_client() -> OpenAI:
+    if not os.getenv("OPENAI_API_KEY"):
+        raise HTTPException(
+            status_code=500,
+            detail="OPENAI_API_KEY is not set on the server.",
+        )
+    return OpenAI()
 
 
 def _default_reason(book: Dict[str, Any], similar_book: Dict[str, Any] | None) -> str:
@@ -73,3 +93,21 @@ async def recommendations(
         )
 
     return {"student": asdict(students[student_id]), "recommendations": response}
+
+
+@app.post("/chat")
+async def chat(payload: ChatRequest) -> Dict[str, str]:
+    client = _get_openai_client()
+    system_prompt = (
+        "You are a helpful librarian assistant. Provide concise, friendly "
+        "recommendations and talking points for students and librarians."
+    )
+    model = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
+    response = client.responses.create(
+        model=model,
+        input=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": payload.message},
+        ],
+    )
+    return {"reply": response.output_text}
