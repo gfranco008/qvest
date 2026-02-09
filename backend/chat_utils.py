@@ -4,14 +4,7 @@ import re
 from dataclasses import asdict
 from typing import Any, Dict, Iterable, List
 
-DRIVER_LABELS = {
-    "history_similarity": "Borrowing history match",
-    "collaborative_similarity": "Borrowing pattern similarity",
-    "content_similarity": "Content similarity",
-    "profile_fit": "Student profile fit",
-    "popularity": "Popularity",
-    "availability_penalty": "Availability penalty",
-}
+from .labels import DRIVER_LABELS
 
 
 STUDENT_ID_RE = re.compile(r"\bS\d{4}\b", re.IGNORECASE)

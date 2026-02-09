@@ -11,18 +11,10 @@ from openai import OpenAI
 
 from ..agent_state import load_state, save_state
 from . import prompts
+from .engine import run_agent
 from .models import ConciergeRequest, FeedbackRequest, HoldRequest, OnboardingRequest
-from .utils import (
-    default_reason,
-    extract_filters,
-    format_concierge_reply,
-    build_continuation_recommendations,
-    next_id,
-    normalize,
-    now_iso,
-    score_book,
-)
-from ..tools import call_tool, tool_detect
+from .utils import format_concierge_reply, next_id, now_iso
+from ..tools import tool_metadata
 
 
 def _get_openai_client_optional() -> OpenAI | None:
@@ -39,237 +31,76 @@ def create_router(
     recommender: Any,
 ) -> APIRouter:
     router = APIRouter(prefix="/agents")
-    book_genres = sorted({book.genre for book in books.values() if book.genre})
 
     @router.post("/concierge")
     async def concierge(payload: ConciergeRequest) -> Dict[str, Any]:
         if payload.student_id and payload.student_id not in students:
             raise HTTPException(status_code=404, detail="Student not found")
 
-        state = load_state()
-        onboarding_profile = (
-            state.get("onboarding_profiles", {}).get(payload.student_id or "", None)
+        result = run_agent(
+            mode="concierge",
+            message=payload.message,
+            student_id=payload.student_id,
+            availability_only=payload.availability_only,
+            limit=payload.limit,
+            books=books,
+            students=students,
+            loans=loans,
+            recommender=recommender,
         )
-        filters = extract_filters(payload.message, onboarding_profile, book_genres)
-        if payload.availability_only:
-            filters["availability"] = "Available"
-
-        tokens = [token for token in normalize(payload.message).split() if token]
-        recommendations: List[Dict[str, Any]] = []
-        continuation_hint = tool_detect("series_author", payload.message)
-
-        availability_hint = payload.availability_only or tool_detect(
-            "availability", payload.message
-        )
-        onboarding_hint = tool_detect("onboard_from_history", payload.message)
-        save_onboarding = tool_detect("onboard_save_intent", payload.message)
-        if save_onboarding and not onboarding_hint:
-            onboarding_hint = True
-        available_candidates = None
-        if availability_hint:
-            available_candidates = {
-                book["book_id"]
-                for book in call_tool(
-                    "availability",
-                    books=books,
-                    message=payload.message,
-                    genres=book_genres,
-                    limit=200,
-                )
-            }
-
-        def _book_matches_filters(book: Dict[str, Any]) -> bool:
-            if available_candidates is not None and book.get("book_id") not in available_candidates:
-                return False
-            if filters.get("availability") and book.get("availability") != filters["availability"]:
-                return False
-            if filters.get("genres") and book.get("genre") not in filters["genres"]:
-                return False
-            if filters.get("reading_level") and book.get("reading_level") != filters["reading_level"]:
-                return False
-            if filters.get("language") and book.get("language") != filters["language"]:
-                return False
-            return True
-        continuation_recs: List[Dict[str, Any]] = []
-        continuation_note = ""
-        if continuation_hint:
-            continuation_result = call_tool(
-                "series_author",
-                books=books,
-                message=payload.message,
-                limit=payload.limit,
-            )
-            continuation_recs = build_continuation_recommendations(
-                continuation_result, limit=payload.limit
-            )
-            if continuation_recs:
-                continuation_recs = [
-                    rec
-                    for rec in continuation_recs
-                    if _book_matches_filters(rec.get("book", {}))
-                ]
-            if not continuation_recs:
-                continuation_note = "No series/author continuation matches found in the catalog."
-            else:
-                continuation_note = "Series/author continuation matches were found in the catalog."
-            recommendations = continuation_recs
-
-        onboarding_profile = None
-        onboarding_saved = False
-        onboarding_pending = False
-        if onboarding_hint and payload.student_id:
-            onboarding_result = call_tool(
-                "onboard_from_history",
-                books=books,
-                loans=loans,
-                student_id=payload.student_id,
-            )
-            onboarding_profile = onboarding_result.get("profile", {}) or None
-            if onboarding_profile:
-                state = load_state()
-                existing_profile = state.get("onboarding_profiles", {}).get(payload.student_id)
-                should_save = save_onboarding or not existing_profile
-                if should_save:
-                    profile = dict(existing_profile or {})
-                    profile.update(onboarding_profile)
-                    profile.setdefault("created_at", now_iso())
-                    profile["updated_at"] = now_iso()
-                    state.setdefault("onboarding_profiles", {})[payload.student_id] = profile
-                    save_state(state)
-                    onboarding_saved = True
-                else:
-                    onboarding_pending = True
-
-        if payload.student_id and not continuation_hint:
-            recs = recommender.recommend(payload.student_id, k=payload.limit)
-            for rec in recs:
-                book = books.get(rec.book_id)
-                if not book:
-                    continue
-                book_data = asdict(book)
-                if available_candidates is not None and book_data["book_id"] not in available_candidates:
-                    continue
-                if filters.get("availability") and book_data["availability"] != filters["availability"]:
-                    continue
-                if filters.get("genres") and book_data["genre"] not in filters["genres"]:
-                    continue
-                if filters.get("reading_level") and book_data["reading_level"] != filters["reading_level"]:
-                    continue
-                if filters.get("language") and book_data["language"] != filters["language"]:
-                    continue
-                similar_book = books.get(rec.similar_to) if rec.similar_to else None
-                recommendations.append(
-                    {
-                        "book": book_data,
-                        "score": round(rec.score, 3),
-                        "similar_to": asdict(similar_book) if similar_book else None,
-                        "reason": default_reason(
-                            book_data, asdict(similar_book) if similar_book else None
-                        ),
-                    }
-                )
-
-        if len(recommendations) < payload.limit and not continuation_hint:
-            exclude_ids = {rec["book"]["book_id"] for rec in recommendations}
-            scored: List[tuple[float, Dict[str, Any]]] = []
-            for book in books.values():
-                if available_candidates is not None and book.book_id not in available_candidates:
-                    continue
-                if book.book_id in exclude_ids:
-                    continue
-                book_data = asdict(book)
-                score = score_book(book_data, tokens, filters)
-                if score is None:
-                    continue
-                score += recommender._book_counts.get(book.book_id, 0) * 0.05
-                scored.append((score, book_data))
-
-            scored.sort(key=lambda item: item[0], reverse=True)
-            for score, book_data in scored[: payload.limit - len(recommendations)]:
-                recommendations.append(
-                    {
-                        "book": book_data,
-                        "score": round(score, 3),
-                        "similar_to": None,
-                        "reason": default_reason(book_data, None),
-                    }
-                )
 
         client = _get_openai_client_optional()
         reply = format_concierge_reply(
-            payload.message, recommendations, use_llm=bool(client)
+            payload.message, result.recommendations, use_llm=bool(client)
         )
         if client:
-            summary_lines = [
-                (
-                    f"{rec['book']['title']} by {rec['book']['author']} "
-                    f"({rec['book']['genre']}, level {rec['book']['reading_level']}) "
-                    f"- {rec['book']['availability']}"
-                )
-                for rec in recommendations
-            ]
-            profile_note = ""
-            if onboarding_profile:
-                profile_note = (
-                    "Onboarding preferences: "
-                    f"{onboarding_profile.get('preferred_genres', 'n/a')}; "
-                    f"interests {onboarding_profile.get('interests', 'n/a')}; "
-                    f"reading level {onboarding_profile.get('reading_level', 'n/a')}."
-                )
-            if continuation_note:
-                profile_note = (profile_note + " " if profile_note else "") + continuation_note
-            if onboarding_hint and not payload.student_id:
-                profile_note = (profile_note + " " if profile_note else "") + (
-                    "Student_id is missing. Ask for it before saving onboarding."
-                )
-            if onboarding_profile:
-                summary_parts = []
-                if onboarding_profile.get("preferred_genres"):
-                    summary_parts.append(
-                        f"Genres: {onboarding_profile['preferred_genres']}"
-                    )
-                if onboarding_profile.get("reading_level"):
-                    summary_parts.append(f"Level: {onboarding_profile['reading_level']}")
-                if onboarding_profile.get("interests"):
-                    summary_parts.append(f"Interests: {onboarding_profile['interests']}")
-                summary = " · ".join(summary_parts) if summary_parts else "Profile generated."
-                decision_note = ""
-                if onboarding_saved:
-                    decision_note = " Saved."
-                elif onboarding_pending:
-                    decision_note = " A profile already exists; ask to save changes."
-                profile_note = (profile_note + " " if profile_note else "") + (
-                    f"Onboarding profile summary: {summary}.{decision_note}"
-                )
+            context_note = prompts.build_context_note(result.context_payload())
             system_prompt = prompts.CONCIERGE_SYSTEM_PROMPT
-            user_prompt = prompts.CONCIERGE_USER_TEMPLATE.format(
-                request=payload.message,
-                profile_note=profile_note,
-                recommendations="\n".join(summary_lines),
-            )
+            user_prompt = prompts.CONCIERGE_USER_TEMPLATE.format(request=payload.message)
             model = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
             try:
                 response = client.responses.create(
                     model=model,
                     input=[
                         {"role": "system", "content": system_prompt},
+                        {"role": "system", "content": context_note},
                         {"role": "user", "content": user_prompt},
                     ],
                 )
                 reply = response.output_text
             except Exception:
                 reply = format_concierge_reply(
-                    payload.message, recommendations, use_llm=False
+                    payload.message, result.recommendations, use_llm=False
                 )
-
         return {
             "reply": reply,
-            "recommendations": recommendations,
-            "filters": filters,
-            "onboarding_profile": onboarding_profile,
-            "onboarding_saved": onboarding_saved,
-            "onboarding_pending": onboarding_pending,
+            "recommendations": result.recommendations,
+            "filters": result.filters,
+            "onboarding_profile": result.onboarding_profile,
+            "onboarding_saved": result.onboarding_saved,
+            "onboarding_pending": result.onboarding_pending,
         }
+
+    @router.get("/tools")
+    async def agent_tools() -> Dict[str, Any]:
+        return {"tools": tool_metadata()}
+
+    @router.get("/observability")
+    async def agent_observability(
+        limit: int = Query(50, ge=1, le=200),
+        offset: int = Query(0, ge=0),
+        student_id: str | None = None,
+        mode: str | None = None,
+    ) -> Dict[str, Any]:
+        state = load_state()
+        events = list(reversed(state.get("observability", [])))
+        if student_id:
+            events = [event for event in events if event.get("student_id") == student_id]
+        if mode:
+            events = [event for event in events if event.get("mode") == mode]
+        total = len(events)
+        page = events[offset : offset + limit]
+        return {"events": page, "count": len(page), "total": total}
 
     @router.get("/onboarding/{student_id}")
     async def onboarding_profile(student_id: str) -> Dict[str, Any]:

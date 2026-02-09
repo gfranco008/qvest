@@ -1,3 +1,17 @@
-from .router import call_tool, tool_detect, tool_names
+from .router import (
+    action_detect,
+    call_tool,
+    signal_detect,
+    tool_detect,
+    tool_metadata,
+    tool_names,
+)
 
-__all__ = ["call_tool", "tool_detect", "tool_names"]
+__all__ = [
+    "action_detect",
+    "call_tool",
+    "signal_detect",
+    "tool_detect",
+    "tool_metadata",
+    "tool_names",
+]

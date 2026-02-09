@@ -57,6 +57,856 @@
       "student_id": "S0001"
     }
   ],
+  "observability": [
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:37:40Z",
+      "event_id": "EVT-c6a3811633",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "why do you hate m",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0006",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:37:49Z",
+      "event_id": "EVT-0dbca551c5",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "reading hist",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0006",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:37:57Z",
+      "event_id": "EVT-9a971ce90d",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "s0055",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0055",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:38:09Z",
+      "event_id": "EVT-e46d3065a5",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "yes",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0055",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 6,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:38:16Z",
+      "event_id": "EVT-b65ceb250c",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": true,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "reading history",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0055",
+      "tools_called": [
+        "reading_history"
+      ]
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:40:09Z",
+      "event_id": "EVT-72bcedd359",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "s0059",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:40:31Z",
+      "event_id": "EVT-8a6321655d",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": true
+      },
+      "message": "snapshot",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": [
+        "student_snapshot"
+      ]
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 4,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:40:37Z",
+      "event_id": "EVT-9d5184eba1",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": true,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "reading history",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": [
+        "reading_history"
+      ]
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:40:44Z",
+      "event_id": "EVT-006bbed8b0",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": true,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "profile",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": [
+        "onboard_from_history"
+      ]
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:41:10Z",
+      "event_id": "EVT-8853387a7c",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": true,
+        "student_snapshot": false
+      },
+      "message": "books from the same author",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": [
+        "series_author"
+      ]
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:41:21Z",
+      "event_id": "EVT-a1fd6f580b",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "any of them",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:41:38Z",
+      "event_id": "EVT-312f7b53e8",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "check",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:41:45Z",
+      "event_id": "EVT-ef7ed0fcd5",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "Jordan",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:42:06Z",
+      "event_id": "EVT-f6c0a92b8f",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "did you check?",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:42:17Z",
+      "event_id": "EVT-9f2e3d3d9c",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "s0059",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:42:36Z",
+      "event_id": "EVT-fad0ecc3eb",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "adventure works",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:43:05Z",
+      "event_id": "EVT-593bb42e55",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "yes please",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:43:15Z",
+      "event_id": "EVT-93c33e191e",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "yes",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:43:28Z",
+      "event_id": "EVT-f210c1796f",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "reserve_hold": true,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "what other books are on hold?",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false
+      },
+      "student_id": "S0059",
+      "tools_called": [
+        "reserve_hold"
+      ]
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T05:59:56Z",
+      "event_id": "EVT-92bc0d3510",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "recommendations": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "why do you hate m",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false,
+        "profile_query": false
+      },
+      "student_id": "S0059",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T06:00:09Z",
+      "event_id": "EVT-89bec1da9a",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "recommendations": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "what books do i read?",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false,
+        "profile_query": false
+      },
+      "student_id": "S0059",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T06:00:16Z",
+      "event_id": "EVT-b1766f6f1d",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "recommendations": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "s0056",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false,
+        "profile_query": false
+      },
+      "student_id": "S0056",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T06:03:00Z",
+      "event_id": "EVT-a2ae3d4589",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "recommendations": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "why do you hate m",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false,
+        "profile_query": false
+      },
+      "student_id": "S0056",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T06:03:35Z",
+      "event_id": "EVT-e79ee94728",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "recommendations": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "why do you hate m",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false,
+        "profile_query": false
+      },
+      "student_id": "S0056",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T06:04:56Z",
+      "event_id": "EVT-f615034a0b",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "recommendations": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "s0003",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false,
+        "profile_query": false
+      },
+      "student_id": "S0003",
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 3,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T06:05:07Z",
+      "event_id": "EVT-64a8174766",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": true,
+        "recommendations": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "what books have i read",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false,
+        "profile_query": false
+      },
+      "student_id": "S0003",
+      "tools_called": [
+        "reading_history"
+      ]
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T06:05:22Z",
+      "event_id": "EVT-c7cda143fd",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "recommendations": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "what books have i read?",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false,
+        "profile_query": false
+      },
+      "student_id": null,
+      "tools_called": []
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 3,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T06:05:26Z",
+      "event_id": "EVT-d5e1456607",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": true,
+        "recommendations": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "s0003",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false,
+        "profile_query": false
+      },
+      "student_id": "S0003",
+      "tools_called": [
+        "reading_history"
+      ]
+    },
+    {
+      "counts": {
+        "available_books": 0,
+        "available_candidates": 0,
+        "continuation_results": 0,
+        "fallback_candidates": 0,
+        "reading_history": 0,
+        "recommendations": 0
+      },
+      "created_at": "2026-02-09T06:53:46Z",
+      "event_id": "EVT-9030ac8098",
+      "filters": {},
+      "intents": {
+        "availability": false,
+        "onboard_from_history": false,
+        "reading_history": false,
+        "recommendations": false,
+        "reserve_hold": false,
+        "series_author": false,
+        "student_snapshot": false
+      },
+      "message": "why do you hate m",
+      "mode": "chat",
+      "signals": {
+        "onboard_save_intent": false,
+        "profile_query": false
+      },
+      "student_id": "S0003",
+      "tools_called": []
+    }
+  ],
   "onboarding_profiles": {
     "S0001": {
       "created_at": "2026-02-09T00:20:45Z",
@@ -66,6 +916,16 @@
       "reading_level": "6-7",
       "source": "reading_history",
       "updated_at": "2026-02-09T00:20:45Z"
+    },
+    "S0059": {
+      "created_at": "2026-02-09T05:40:44Z",
+      "interests": "science;community;coding;math",
+      "notes": "Generated from reading history.",
+      "preferred_genres": "STEM;Nonfiction",
+      "reading_level": "4-5",
+      "source": "reading_history",
+      "updated_at": "2026-02-09T05:40:44Z"
     }
-  }
+  },
+  "schema_version": 1
 }

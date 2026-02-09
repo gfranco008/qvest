@@ -10,6 +10,12 @@
   --panel: #ffffff;
   --border: #e3d7c8;
   --shadow: 0 18px 40px rgba(41, 27, 13, 0.15);
+  --chart-1: #c17b37;
+  --chart-2: #3c8a7a;
+  --chart-3: #c95d63;
+  --chart-4: #7b8f4a;
+  --chart-5: #8a5a44;
+  --chart-track: #f0e3d5;
 }
 
 * {
@@ -153,6 +159,155 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 18px;
+}
+
+.visual-panel {
+  background: linear-gradient(135deg, #fff7ec, #f4e2cf);
+  border: 1px solid #e9d8c5;
+}
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.viz-card {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.viz-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.viz-head h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.viz-tag {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #7a4a1b;
+  background: #f6dfc7;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.viz {
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-chart svg {
+  width: 140px;
+  height: 140px;
+}
+
+.donut-track {
+  fill: none;
+  stroke: var(--chart-track);
+  stroke-width: 16;
+}
+
+.donut-seg {
+  fill: none;
+  stroke-width: 16;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.donut-label {
+  font-weight: 700;
+  font-size: 18px;
+  fill: var(--ink);
+}
+
+.trend-chart svg {
+  width: 100%;
+  height: 140px;
+}
+
+.trend-area {
+  fill: rgba(193, 123, 55, 0.18);
+}
+
+.trend-line {
+  fill: none;
+  stroke: var(--accent-dark);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.trend-dot {
+  fill: var(--accent);
+}
+
+.bar-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.bar-row {
+  display: grid;
+  gap: 6px;
+}
+
+.bar-row-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.bar-track {
+  width: 100%;
+  height: 10px;
+  background: var(--chart-track);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
 
 .card {

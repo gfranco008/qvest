@@ -17,6 +17,37 @@
 
       <section class="results" id="kpiGrid"></section>
 
+      <section class="panel visual-panel">
+        <h2>Visuals</h2>
+        <div class="visual-grid">
+          <article class="viz-card">
+            <div class="viz-head">
+              <h3>Availability Mix</h3>
+              <span class="viz-tag">Live</span>
+            </div>
+            <div class="viz" id="availabilityChart"></div>
+            <div class="legend" id="availabilityLegend"></div>
+            <p class="meta" id="availabilityMeta"></p>
+          </article>
+          <article class="viz-card">
+            <div class="viz-head">
+              <h3>Borrowing Trend</h3>
+              <span class="viz-tag">Last 8 months</span>
+            </div>
+            <div class="viz" id="loanTrendChart"></div>
+            <p class="meta" id="loanTrendMeta"></p>
+          </article>
+          <article class="viz-card">
+            <div class="viz-head">
+              <h3>Genre Share</h3>
+              <span class="viz-tag">Top 5</span>
+            </div>
+            <div class="viz" id="genreChart"></div>
+            <p class="meta" id="genreMeta"></p>
+          </article>
+        </div>
+      </section>
+
       <section class="panel">
         <h2>Highlights</h2>
         <div class="results" id="highlightGrid"></div>
@@ -38,6 +69,6 @@
       </section>
     </main>
 
-    <script src="analytics.js"></script>
+    <script src="analytics.js?v=4"></script>
   </body>
 </html>

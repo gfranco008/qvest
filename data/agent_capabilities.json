@@ -1,0 +1,38 @@
+{
+  "chat": {
+    "intents": {
+      "availability": true,
+      "reading_history": true,
+      "series_author": true,
+      "student_snapshot": true,
+      "reserve_hold": true,
+      "onboard_from_history": true,
+      "recommendations": true
+    },
+    "signals": {
+      "onboard_save_intent": true,
+      "profile_query": true
+    },
+    "use_filters": false,
+    "availability_limit": 5,
+    "recommendation_style": "chat"
+  },
+  "concierge": {
+    "intents": {
+      "availability": true,
+      "reading_history": false,
+      "series_author": true,
+      "student_snapshot": false,
+      "reserve_hold": false,
+      "onboard_from_history": true,
+      "recommendations": true
+    },
+    "signals": {
+      "onboard_save_intent": true,
+      "profile_query": false
+    },
+    "use_filters": true,
+    "availability_limit": 200,
+    "recommendation_style": "concierge"
+  }
+}

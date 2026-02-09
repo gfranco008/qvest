@@ -45,6 +45,127 @@
           <div class="reason">Use feedback to boost future picks.</div>
         </a>
       </section>
+
+      <section class="panel">
+        <h3>Tool Registry</h3>
+        <p class="muted">Live capabilities from <code>/agents/tools</code>.</p>
+        <div class="results" id="tool-grid"></div>
+      </section>
+
+      <section class="panel">
+        <h3>Observability</h3>
+        <p class="muted">Recent agent activity from <code>/agents/observability</code>.</p>
+        <div class="controls">
+          <label>
+            Mode
+            <select id="obs-mode">
+              <option value="">All</option>
+              <option value="chat">chat</option>
+              <option value="concierge">concierge</option>
+            </select>
+          </label>
+          <label>
+            Student ID
+            <input id="obs-student" placeholder="S0001" />
+          </label>
+          <label>
+            Limit
+            <input id="obs-limit" type="number" min="1" max="200" value="12" />
+          </label>
+          <button id="obs-refresh">Refresh</button>
+        </div>
+        <div class="results" id="obs-grid"></div>
+      </section>
     </main>
+    <script>
+      const toolGrid = document.getElementById("tool-grid");
+      const obsGrid = document.getElementById("obs-grid");
+      const obsMode = document.getElementById("obs-mode");
+      const obsStudent = document.getElementById("obs-student");
+      const obsLimit = document.getElementById("obs-limit");
+      const obsRefresh = document.getElementById("obs-refresh");
+
+      const renderTools = (tools) => {
+        if (!tools || !tools.length) {
+          toolGrid.innerHTML =
+            '<div class="card"><h4>No tools found</h4><div class="meta">Start the backend to populate the registry.</div></div>';
+          return;
+        }
+        toolGrid.innerHTML = tools
+          .map((tool) => {
+            const props =
+              tool.input_schema && tool.input_schema.properties
+                ? Object.keys(tool.input_schema.properties)
+                : [];
+            const inputs = props.length ? props.join(", ") : "n/a";
+            return `
+              <div class="card">
+                <h4>${tool.name}</h4>
+                <div class="meta">Type: ${tool.kind}</div>
+                <div class="reason">${tool.description}</div>
+                <div class="meta">Inputs: ${inputs}</div>
+              </div>
+            `;
+          })
+          .join("");
+      };
+
+      fetch("/agents/tools")
+        .then((res) => res.json())
+        .then((data) => renderTools(data.tools || []))
+        .catch(() => {
+          toolGrid.innerHTML =
+            '<div class="card"><h4>Tool registry unavailable</h4><div class="meta">Start the backend to see live capabilities.</div></div>';
+        });
+
+      const renderObservability = (events) => {
+        if (!events || !events.length) {
+          obsGrid.innerHTML =
+            '<div class="card"><h4>No events yet</h4><div class="meta">Trigger a chat or concierge request to populate.</div></div>';
+          return;
+        }
+        obsGrid.innerHTML = events
+          .map((event) => {
+            const tools = (event.tools_called || []).join(", ") || "none";
+            const counts = event.counts || {};
+            const summary = [
+              `recs ${counts.recommendations ?? 0}`,
+              `avail ${counts.available_books ?? 0}`,
+              `history ${counts.reading_history ?? 0}`,
+            ].join(" · ");
+            return `
+              <div class="card">
+                <h4>${event.mode || "unknown"} · ${event.created_at || "n/a"}</h4>
+                <div class="meta">Student: ${event.student_id || "n/a"}</div>
+                <div class="reason">${event.message || "No message recorded."}</div>
+                <div class="meta">Tools: ${tools}</div>
+                <div class="meta">Counts: ${summary}</div>
+              </div>
+            `;
+          })
+          .join("");
+      };
+
+      const loadObservability = () => {
+        const params = new URLSearchParams();
+        const mode = obsMode.value.trim();
+        const studentId = obsStudent.value.trim();
+        const limit = obsLimit.value.trim();
+        if (mode) params.set("mode", mode);
+        if (studentId) params.set("student_id", studentId);
+        if (limit) params.set("limit", limit);
+
+        fetch(`/agents/observability?${params.toString()}`)
+          .then((res) => res.json())
+          .then((data) => renderObservability(data.events || []))
+          .catch(() => {
+            obsGrid.innerHTML =
+              '<div class="card"><h4>Observability unavailable</h4><div class="meta">Start the backend to see recent activity.</div></div>';
+          });
+      };
+
+      obsRefresh.addEventListener("click", () => loadObservability());
+      loadObservability();
+    </script>
   </body>
 </html>

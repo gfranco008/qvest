@@ -14,14 +14,13 @@ from pydantic import BaseModel
 from openai import OpenAI
 from dotenv import load_dotenv
 
-from .agent_state import load_state, save_state
 from .agents import create_router, prompts
-from .agents.utils import default_reason, now_iso, build_continuation_recommendations
-from .chat_utils import build_recommendations, extract_student_id, wants_recommendations
+from .agents.engine import run_agent
+from .agents.utils import default_reason
 from .chat_memory import get_history, set_history
 from .data_loader import load_catalog, load_loans, load_students
+from .labels import DRIVER_LABELS
 from .recommender import Recommender
-from .tools import call_tool, tool_detect
 
 app = FastAPI(title="QVest Reading Recommender", version="0.1.0")
 app.add_middleware(
@@ -138,248 +137,19 @@ async def chat(payload: ChatRequest) -> Dict[str, Any]:
     history = history[-12:]
     set_history(session_id, history)
     history_texts = [item.get("content", "") for item in history]
-    student_id = payload.student_id or extract_student_id(history_texts)
-    state = load_state()
-    existing_profile = (
-        state.get("onboarding_profiles", {}).get(student_id) if student_id else None
+
+    result = run_agent(
+        mode="chat",
+        message=payload.message,
+        student_id=payload.student_id,
+        history_texts=history_texts,
+        books=books,
+        students=students,
+        loans=loans,
+        recommender=recommender,
     )
-    wants_recs = wants_recommendations(payload.message)
-    recommendations: List[Dict[str, Any]] = []
-    needs_student_id = False
-    availability_hint = tool_detect("availability", payload.message)
-    history_hint = tool_detect("reading_history", payload.message)
-    continuation_hint = tool_detect("series_author", payload.message)
-    snapshot_hint = tool_detect("student_snapshot", payload.message)
-    profile_query = "profile" in (payload.message or "").lower()
-    hold_hint = tool_detect("reserve_hold", payload.message)
-    onboarding_hint = tool_detect("onboard_from_history", payload.message)
-    save_onboarding = tool_detect("onboard_save_intent", payload.message)
-    if save_onboarding and not onboarding_hint:
-        onboarding_hint = True
-    if profile_query and not existing_profile and not onboarding_hint:
-        onboarding_hint = True
-    available_books = (
-        call_tool("availability", books=books, message=payload.message, limit=5)
-        if availability_hint
-        else []
-    )
-    continuation_recs: List[Dict[str, Any]] = []
-    if continuation_hint:
-        continuation_recs = build_continuation_recommendations(
-            call_tool("series_author", books=books, message=payload.message, limit=5),
-            limit=5,
-        )
-        if availability_hint:
-            continuation_recs = [
-                rec
-                for rec in continuation_recs
-                if rec["book"].get("availability") == "Available"
-            ]
-    hold_result = None
-    if hold_hint:
-        hold_result = call_tool(
-            "reserve_hold",
-            books=books,
-            students=students,
-            student_id=student_id,
-            message=payload.message,
-        )
-        if hold_result.get("status") == "needs_student_id":
-            needs_student_id = True
-    reading_history = []
-    if history_hint and student_id:
-        reading_history = call_tool(
-            "reading_history",
-            books=books,
-            loans=loans,
-            student_id=student_id,
-            limit=12,
-        )
-    if history_hint and not student_id:
-        needs_student_id = True
-    onboarding_profile = None
-    onboarding_saved = False
-    onboarding_pending = False
-    if onboarding_hint and student_id:
-        onboarding_result = call_tool(
-            "onboard_from_history",
-            books=books,
-            loans=loans,
-            student_id=student_id,
-        )
-        onboarding_profile = onboarding_result.get("profile", {}) or None
-        if onboarding_profile:
-            existing_profile = state.get("onboarding_profiles", {}).get(student_id)
-            should_save = save_onboarding or not existing_profile
-            if should_save:
-                profile = dict(existing_profile or {})
-                profile.update(onboarding_profile)
-                profile.setdefault("created_at", now_iso())
-                profile["updated_at"] = now_iso()
-                state.setdefault("onboarding_profiles", {})[student_id] = profile
-                save_state(state)
-                onboarding_saved = True
-            else:
-                onboarding_pending = True
-    if onboarding_hint and not student_id:
-        needs_student_id = True
-    snapshot = None
-    if snapshot_hint and student_id:
-        snapshot = call_tool(
-            "student_snapshot",
-            books=books,
-            loans=loans,
-            students=students,
-            student_id=student_id,
-            state=state,
-        )
-    if snapshot_hint and not student_id:
-        needs_student_id = True
-    if continuation_hint:
-        recommendations = continuation_recs
-    elif wants_recs:
-        if student_id:
-            recommendations = build_recommendations(
-                student_id=student_id,
-                k=5,
-                books=books,
-                recommender=recommender,
-                reason_fn=default_reason,
-            )
-            if availability_hint:
-                recommendations = [
-                    rec
-                    for rec in recommendations
-                    if rec["book"].get("availability") == "Available"
-                ]
-                if len(recommendations) < 3 and available_books:
-                    existing = {rec["book"]["book_id"] for rec in recommendations}
-                    for book in available_books:
-                        if book["book_id"] in existing:
-                            continue
-                        recommendations.append(
-                            {
-                                "book": book,
-                                "score": 0.0,
-                                "similar_to": None,
-                                "reason": default_reason(book, None),
-                            }
-                        )
-        else:
-            needs_student_id = True
-            if availability_hint and available_books:
-                recommendations = [
-                    {
-                        "book": book,
-                        "score": 0.0,
-                        "similar_to": None,
-                        "reason": default_reason(book, None),
-                    }
-                    for book in available_books
-                ]
-    context_lines = [f"Known student_id: {student_id or 'unknown'}."]
-    if needs_student_id:
-        context_lines.append(
-            "Student_id is missing. Ask for it before recommending or updating records."
-        )
-    if available_books:
-        available_lines = [
-            f"{book['title']} by {book['author']} ({book['genre']}, level {book['reading_level']})"
-            for book in available_books
-        ]
-        context_lines.append(
-            "Available titles matching request:\n" + "\n".join(available_lines)
-        )
-    if reading_history:
-        history_lines = [
-            f"{item['book']['title']} by {item['book']['author']} ({item['last_checkout'] or 'date unknown'})"
-            for item in reading_history
-        ]
-        context_lines.append("Reading history:\n" + "\n".join(history_lines))
-    if hold_result:
-        status = hold_result.get("status", "unknown")
-        message = hold_result.get("message", "")
-        if status == "ambiguous":
-            matches = hold_result.get("matches", [])
-            match_lines = [
-                f"{item.get('title')} by {item.get('author')} (ID {item.get('book_id')})"
-                for item in matches
-            ]
-            context_lines.append(
-                "Hold request needs clarification. Matches:\n" + "\n".join(match_lines)
-            )
-        else:
-            context_lines.append(f"Hold request status: {status}. {message}")
-    if continuation_hint:
-        if continuation_recs:
-            continuation_lines = [
-                f"{rec['book']['title']} by {rec['book']['author']} ({rec['book']['genre']})"
-                for rec in continuation_recs
-            ]
-            context_lines.append(
-                "Series/author continuation matches:\n"
-                + "\n".join(continuation_lines)
-            )
-        else:
-            context_lines.append(
-                "Series/author continuation: no matching titles found in the catalog."
-            )
-    if snapshot:
-        stats = snapshot.get("stats", {})
-        top_genres = ", ".join([item["genre"] for item in stats.get("top_genres", [])])
-        top_authors = ", ".join(
-            [item["author"] for item in stats.get("top_authors", [])]
-        )
-        recent_titles = ", ".join(
-            [item["title"] for item in stats.get("recent_books", [])]
-        )
-        snapshot_line = (
-            f"Student snapshot: total loans {stats.get('total_loans', 0)}, "
-            f"unique books {stats.get('unique_books', 0)}, "
-            f"last checkout {stats.get('last_checkout') or 'n/a'}."
-        )
-        if top_genres:
-            snapshot_line += f" Top genres: {top_genres}."
-        if top_authors:
-            snapshot_line += f" Top authors: {top_authors}."
-        if recent_titles:
-            snapshot_line += f" Recent reads: {recent_titles}."
-        context_lines.append(snapshot_line)
-    if onboarding_profile:
-        summary_parts = []
-        if onboarding_profile.get("preferred_genres"):
-            summary_parts.append(f"Genres: {onboarding_profile['preferred_genres']}")
-        if onboarding_profile.get("reading_level"):
-            summary_parts.append(f"Level: {onboarding_profile['reading_level']}")
-        if onboarding_profile.get("interests"):
-            summary_parts.append(f"Interests: {onboarding_profile['interests']}")
-        summary = " · ".join(summary_parts) if summary_parts else "Profile generated from history."
-        context_lines.append(f"Onboarding profile summary: {summary}")
-    elif existing_profile:
-        summary_parts = []
-        if existing_profile.get("preferred_genres"):
-            summary_parts.append(f"Genres: {existing_profile['preferred_genres']}")
-        if existing_profile.get("reading_level"):
-            summary_parts.append(f"Level: {existing_profile['reading_level']}")
-        if existing_profile.get("interests"):
-            summary_parts.append(f"Interests: {existing_profile['interests']}")
-        summary = " · ".join(summary_parts) if summary_parts else "Profile saved."
-        context_lines.append(f"Existing onboarding profile: {summary}")
-    elif student_id:
-        context_lines.append("No saved onboarding profile was found for this student.")
-    if recommendations:
-        summary_lines = [
-            (
-                f"{rec['book']['title']} by {rec['book']['author']} "
-                f"({rec['book']['genre']}, level {rec['book']['reading_level']})"
-            )
-            for rec in recommendations
-        ]
-        context_lines.append(
-            "Recommended titles for reference (use only these in your reply):\n"
-            + "\n".join(summary_lines)
-        )
-    context_note = "\n".join(context_lines)
+
+    context_note = prompts.build_context_note(result.context_payload())
     model = os.getenv("OPENAI_MODEL", "gpt-4.1-mini")
     response = client.responses.create(
         model=model,
@@ -390,28 +160,30 @@ async def chat(payload: ChatRequest) -> Dict[str, Any]:
         ],
     )
     assistant_reply = response.output_text
-    if reading_history and "reading history" not in assistant_reply.lower():
+
+    if result.reading_history and "reading history" not in assistant_reply.lower():
         history_lines = [
             f"- {item['book']['title']} by {item['book']['author']} ({item['last_checkout'] or 'date unknown'})"
-            for item in reading_history
+            for item in result.reading_history
         ]
         assistant_reply = (
             assistant_reply.strip()
             + "\n\nReading history:\n"
             + "\n".join(history_lines)
         )
-    if onboarding_profile and "onboarding profile" not in assistant_reply.lower():
-        summary_lines = []
-        if onboarding_profile.get("preferred_genres"):
-            summary_lines.append(f"Genres: {onboarding_profile['preferred_genres']}")
-        if onboarding_profile.get("reading_level"):
-            summary_lines.append(f"Level: {onboarding_profile['reading_level']}")
-        if onboarding_profile.get("interests"):
-            summary_lines.append(f"Interests: {onboarding_profile['interests']}")
-        summary = " · ".join(summary_lines) if summary_lines else "Profile generated from history."
-        if onboarding_saved:
+
+    if result.onboarding_profile and "onboarding profile" not in assistant_reply.lower():
+        summary_parts = []
+        if result.onboarding_profile.get("preferred_genres"):
+            summary_parts.append(f"Genres: {result.onboarding_profile['preferred_genres']}")
+        if result.onboarding_profile.get("reading_level"):
+            summary_parts.append(f"Level: {result.onboarding_profile['reading_level']}")
+        if result.onboarding_profile.get("interests"):
+            summary_parts.append(f"Interests: {result.onboarding_profile['interests']}")
+        summary = " · ".join(summary_parts) if summary_parts else "Profile generated from history."
+        if result.onboarding_saved:
             decision_line = "\nSaved."
-        elif onboarding_pending:
+        elif result.onboarding_pending:
             decision_line = "\nA profile already exists. Save these changes?"
         else:
             decision_line = "\nWould you like me to save this profile?"
@@ -423,22 +195,19 @@ async def chat(payload: ChatRequest) -> Dict[str, Any]:
         )
     elif (
         "profile" in payload.message.lower()
-        and existing_profile
+        and result.existing_profile
         and "profile" not in assistant_reply.lower()
     ):
-        summary_lines = []
-        if existing_profile.get("preferred_genres"):
-            summary_lines.append(f"Genres: {existing_profile['preferred_genres']}")
-        if existing_profile.get("reading_level"):
-            summary_lines.append(f"Level: {existing_profile['reading_level']}")
-        if existing_profile.get("interests"):
-            summary_lines.append(f"Interests: {existing_profile['interests']}")
-        summary = " · ".join(summary_lines) if summary_lines else "Profile saved."
-        assistant_reply = (
-            assistant_reply.strip()
-            + "\n\nProfile:\n"
-            + summary
-        )
+        summary_parts = []
+        if result.existing_profile.get("preferred_genres"):
+            summary_parts.append(f"Genres: {result.existing_profile['preferred_genres']}")
+        if result.existing_profile.get("reading_level"):
+            summary_parts.append(f"Level: {result.existing_profile['reading_level']}")
+        if result.existing_profile.get("interests"):
+            summary_parts.append(f"Interests: {result.existing_profile['interests']}")
+        summary = " · ".join(summary_parts) if summary_parts else "Profile saved."
+        assistant_reply = assistant_reply.strip() + "\n\nProfile:\n" + summary
+
     history.append({"role": "assistant", "content": assistant_reply})
     history = history[-12:]
     set_history(session_id, history)
@@ -446,21 +215,13 @@ async def chat(payload: ChatRequest) -> Dict[str, Any]:
         "reply": assistant_reply,
         "session_id": session_id,
         "memory_size": len(history),
-        "student_id": student_id,
-        "needs_student_id": needs_student_id,
-        "recommendations": recommendations,
-        "reading_history": reading_history,
-        "onboarding_profile": onboarding_profile,
-        "onboarding_saved": onboarding_saved,
-        "onboarding_pending": onboarding_pending,
-        "hold_result": hold_result,
-        "student_snapshot": snapshot,
+        "student_id": result.student_id,
+        "needs_student_id": result.needs_student_id,
+        "recommendations": result.recommendations,
+        "reading_history": result.reading_history,
+        "onboarding_profile": result.onboarding_profile,
+        "onboarding_saved": result.onboarding_saved,
+        "onboarding_pending": result.onboarding_pending,
+        "hold_result": result.hold_result,
+        "student_snapshot": result.snapshot,
     }
-DRIVER_LABELS = {
-    "history_similarity": "Borrowing history match",
-    "collaborative_similarity": "Borrowing pattern similarity",
-    "content_similarity": "Content similarity",
-    "profile_fit": "Student profile fit",
-    "popularity": "Popularity",
-    "availability_penalty": "Availability penalty",
-}

@@ -4,6 +4,7 @@ import re
 from dataclasses import asdict
 from typing import Any, Dict, Iterable, List
 
+from ..scoring import score_book
 
 AVAILABILITY_RE = re.compile(r"\b(available|in stock|on shelf|available now)\b", re.IGNORECASE)
 
@@ -40,34 +41,6 @@ def _extract_filters(message: str | None, genres: Iterable[str]) -> Dict[str, An
     return filters
 
 
-def _score_book(book: Dict[str, Any], tokens: List[str], filters: Dict[str, Any]) -> float:
-    score = 0.0
-    if filters.get("reading_level") and book.get("reading_level") == filters["reading_level"]:
-        score += 2.0
-    if filters.get("language") and book.get("language") == filters["language"]:
-        score += 1.5
-    if filters.get("genres") and book.get("genre") in filters["genres"]:
-        score += 2.5
-
-    searchable = " ".join(
-        [
-            book.get("title", ""),
-            book.get("author", ""),
-            book.get("keywords", ""),
-            book.get("subject_tags", ""),
-            book.get("series", ""),
-            book.get("audience", ""),
-            book.get("format", ""),
-            book.get("genre", ""),
-        ]
-    )
-    haystack = _normalize(searchable)
-    for token in tokens:
-        if token and token in haystack:
-            score += 1.0
-    return score
-
-
 def list_available_books(
     books: Dict[str, Any],
     *,
@@ -84,13 +57,17 @@ def list_available_books(
         book_data = asdict(book)
         if book_data.get("availability") != "Available":
             continue
-        if filters.get("language") and book_data.get("language") != filters["language"]:
+        score = score_book(
+            book_data,
+            tokens,
+            filters,
+            weight_reading_level=2.0,
+            weight_language=1.5,
+            weight_genre=2.5,
+            weight_token=1.0,
+        )
+        if score is None:
             continue
-        if filters.get("reading_level") and book_data.get("reading_level") != filters["reading_level"]:
-            continue
-        if filters.get("genres") and book_data.get("genre") not in filters["genres"]:
-            continue
-        score = _score_book(book_data, tokens, filters)
         available.append((score, book_data))
 
     available.sort(key=lambda item: item[0], reverse=True)

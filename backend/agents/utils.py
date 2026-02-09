@@ -83,45 +83,6 @@ def extract_filters(
     return filters
 
 
-def score_book(
-    book: Dict[str, Any],
-    tokens: List[str],
-    filters: Dict[str, Any],
-) -> float | None:
-    if filters.get("availability") and book.get("availability") != filters["availability"]:
-        return None
-    if filters.get("language") and book.get("language") != filters["language"]:
-        return None
-    if filters.get("genres") and book.get("genre") not in filters["genres"]:
-        return None
-
-    score = 0.0
-    if filters.get("reading_level") and book.get("reading_level") == filters["reading_level"]:
-        score += 2.5
-    if filters.get("genres") and book.get("genre") in filters["genres"]:
-        score += 3.0
-    if book.get("availability") == "Available":
-        score += 0.5
-
-    searchable = " ".join(
-        [
-            book.get("title", ""),
-            book.get("author", ""),
-            book.get("keywords", ""),
-            book.get("subject_tags", ""),
-            book.get("series", ""),
-            book.get("audience", ""),
-            book.get("format", ""),
-            book.get("genre", ""),
-        ]
-    )
-    haystack = normalize(searchable)
-    for token in tokens:
-        if token and token in haystack:
-            score += 1.0
-    return score
-
-
 def format_concierge_reply(
     message: str,
     recommendations: List[Dict[str, Any]],
