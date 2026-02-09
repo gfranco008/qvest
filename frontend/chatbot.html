@@ -15,16 +15,39 @@
           A friendly prototype that helps librarians quickly find read-alikes and
           talking points for students.
         </p>
-        <a class="muted" href="index.html">Back to recommendations</a>
+        <div class="nav-row">
+          <label>
+            Navigate
+            <select id="pageSelect">
+              <option value="chatbot.html">Chatbot (Home)</option>
+              <option value="index.html">Recommendations</option>
+              <option value="availability.html">Available Books</option>
+              <option value="analytics.html">Analytics</option>
+              <option value="agents.html">Agent Lab</option>
+              <option value="onboarding.html">Onboarding</option>
+              <option value="concierge.html">Concierge</option>
+              <option value="holds.html">Holds</option>
+              <option value="gaps.html">Collection Gaps</option>
+              <option value="feedback.html">Feedback</option>
+              <option value="home.html">Menu Grid</option>
+            </select>
+          </label>
+        </div>
       </header>
 
       <section class="panel">
+        <div class="status-row">
+          <span class="meta" id="chatStudentStatus">Using student: none</span>
+        </div>
         <div class="chat-window" id="chatWindow"></div>
         <div class="chat-input">
           <input id="chatInput" type="text" placeholder="Ask about a student or book..." />
           <button id="sendButton">Send</button>
+          <button id="resetButton" type="button">Reset chat</button>
         </div>
       </section>
+
+      <section class="results" id="chatRecommendations"></section>
     </main>
 
     <script src="chatbot.js"></script>

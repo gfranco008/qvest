@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000";
+const API_BASE = window.location.origin && window.location.origin !== "null" ? window.location.origin : "http://localhost:8000";
 
 const studentSelect = document.getElementById("studentSelect");
 const countInput = document.getElementById("countInput");

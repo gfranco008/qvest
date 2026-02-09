@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Onboarding</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Student Onboarding</p>
+        <h1>Capture Reading Preferences</h1>
+        <p class="lead">
+          Record goals, preferred genres, and notes so recommendations feel tailored from day one.
+        </p>
+        <a class="muted" href="agents.html">Back to Agent Lab</a>
+      </header>
+
+      <section class="panel">
+        <div class="controls">
+          <label>
+            Student
+            <select id="onboardingStudent"></select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="controls">
+          <label>
+            Interests
+            <input id="onboardingInterests" type="text" placeholder="robots;music;friendship" />
+          </label>
+          <label>
+            Preferred genres
+            <input id="onboardingGenres" type="text" placeholder="Mystery;Fantasy" />
+          </label>
+          <label>
+            Reading level
+            <input id="onboardingLevel" type="text" placeholder="5-6" />
+          </label>
+          <label>
+            Goals
+            <input id="onboardingGoals" type="text" placeholder="10 books this semester" />
+          </label>
+          <label>
+            Avoid topics
+            <input id="onboardingAvoid" type="text" placeholder="no scary themes" />
+          </label>
+          <label>
+            Notes
+            <textarea id="onboardingNotes" placeholder="Prefers shorter chapters"></textarea>
+          </label>
+          <button id="onboardingSave">Save profile</button>
+        </div>
+      </section>
+
+      <section class="results" id="onboardingSummary"></section>
+    </main>
+
+    <script src="onboarding.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Librarian Concierge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Librarian Concierge</p>
+        <h1>Guided Recommendations on Demand</h1>
+        <p class="lead">
+          Describe what a student needs and the concierge assembles a ready-to-share list.
+        </p>
+        <a class="muted" href="agents.html">Back to Agent Lab</a>
+      </header>
+
+      <section class="panel">
+        <div class="controls">
+          <label>
+            Student (optional)
+            <select id="conciergeStudent"></select>
+          </label>
+          <label>
+            Suggestions
+            <input id="conciergeLimit" type="number" min="1" max="10" value="5" />
+          </label>
+          <label class="checkbox-row">
+            <input id="conciergeAvailable" type="checkbox" />
+            Available only
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="chat-window" id="conciergeChat"></div>
+        <div class="chat-input">
+          <input
+            id="conciergeInput"
+            type="text"
+            placeholder="Try: mystery books for grade 6 who like robots"
+          />
+          <button id="conciergeSend">Send</button>
+        </div>
+      </section>
+
+      <section class="results" id="conciergeResults"></section>
+    </main>
+
+    <script src="concierge.js"></script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Availability & Holds</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Availability & Holds</p>
+        <h1>Inventory + Hold Queue</h1>
+        <p class="lead">
+          Filter the catalog and place holds with instant pickup status.
+        </p>
+        <a class="muted" href="agents.html">Back to Agent Lab</a>
+      </header>
+
+      <section class="panel">
+        <div class="controls">
+          <label>
+            Student
+            <select id="holdStudent"></select>
+          </label>
+          <label>
+            Genre
+            <select id="holdGenre">
+              <option value="">All</option>
+            </select>
+          </label>
+          <label>
+            Availability
+            <select id="holdAvailability">
+              <option value="">All</option>
+              <option value="Available">Available</option>
+              <option value="On Hold">On Hold</option>
+              <option value="Checked Out">Checked Out</option>
+            </select>
+          </label>
+          <button id="holdSearch">Search</button>
+        </div>
+      </section>
+
+      <section class="results" id="holdResults"></section>
+
+      <section class="panel">
+        <h3>Current holds</h3>
+        <section class="results" id="holdQueue"></section>
+      </section>
+    </main>
+
+    <script src="holds.js"></script>
+  </body>
+</html>

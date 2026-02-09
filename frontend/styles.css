@@ -97,6 +97,16 @@ input {
   background: #fffaf4;
 }
 
+textarea {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  font-size: 16px;
+  background: #fffaf4;
+  min-height: 90px;
+  resize: vertical;
+}
+
 button {
   padding: 12px 20px;
   border-radius: 999px;
@@ -112,6 +122,31 @@ button {
 button:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 28px rgba(193, 123, 55, 0.4);
+}
+
+.checkbox-row {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-row input {
+  width: auto;
+}
+
+.feedback-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.feedback-row input {
+  max-width: 140px;
+}
+
+.card button {
+  align-self: flex-start;
 }
 
 .results {
@@ -177,6 +212,14 @@ button:hover {
   color: var(--muted);
 }
 
+.nav-row {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
 .chat-window {
   min-height: 320px;
   max-height: 420px;
@@ -217,6 +260,11 @@ button:hover {
 
 .chat-input input {
   flex: 1;
+}
+
+.status-row {
+  display: flex;
+  justify-content: flex-end;
 }
 
 @media (max-width: 680px) {

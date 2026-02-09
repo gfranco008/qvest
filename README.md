@@ -106,6 +106,7 @@ Agent endpoints:
 - `POST /agents/concierge`
 - `GET /agents/onboarding/{student_id}`
 - `POST /agents/onboarding`
+- `GET /agents/snapshot/{student_id}`
 - `GET /agents/availability`
 - `GET /agents/holds`
 - `POST /agents/holds`

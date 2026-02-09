@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Feedback Loop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Feedback Loop Agent</p>
+        <h1>Capture Sentiment, Boost Picks</h1>
+        <p class="lead">
+          Collect student reactions and surface the titles that resonate most.
+        </p>
+        <a class="muted" href="agents.html">Back to Agent Lab</a>
+      </header>
+
+      <section class="panel">
+        <div class="controls">
+          <label>
+            Student
+            <select id="feedbackStudent"></select>
+          </label>
+          <label>
+            Book
+            <select id="feedbackBook"></select>
+          </label>
+          <label>
+            Rating
+            <select id="feedbackRating">
+              <option value="5">5 - Loved it</option>
+              <option value="4">4 - Liked it</option>
+              <option value="3">3 - It was fine</option>
+              <option value="2">2 - Struggled</option>
+              <option value="1">1 - Not a fit</option>
+            </select>
+          </label>
+          <label>
+            Comment
+            <input id="feedbackComment" type="text" placeholder="Quick note" />
+          </label>
+          <button id="submitFeedback">Submit feedback</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="controls">
+          <button id="refreshInsights">Refresh insights</button>
+          <button id="boostRecommendations">Boosted recommendations</button>
+        </div>
+      </section>
+
+      <section class="results" id="feedbackInsights"></section>
+      <section class="results" id="feedbackRecommendations"></section>
+    </main>
+
+    <script src="feedback.js"></script>
+  </body>
+</html>

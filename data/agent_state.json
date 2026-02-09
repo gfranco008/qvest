@@ -1,0 +1,71 @@
+{
+  "chat_sessions": {
+    "CHAT-642f08df8156": [
+      {
+        "content": "why do you hate me",
+        "role": "user"
+      },
+      {
+        "content": "I'm here to help and support you\u2014I don\u2019t have feelings, so I don\u2019t hate anyone! If you\u2019re feeling upset, I\u2019m happy to listen or assist with anything you need. How can I help you today?",
+        "role": "assistant"
+      },
+      {
+        "content": "why do you hate me",
+        "role": "user"
+      },
+      {
+        "content": "I don\u2019t hate you at all! My goal is to help and support you. If something I said made you feel that way, please let me know so I can assist better. How can I help you today?",
+        "role": "assistant"
+      },
+      {
+        "content": "why do you hate me",
+        "role": "user"
+      },
+      {
+        "content": "I\u2019m really sorry if you\u2019re feeling this way, but I don\u2019t have feelings and definitely don\u2019t hate you. I\u2019m here to help you with anything you need\u2014whether it\u2019s schoolwork, finding books, or just answering questions. How can I support you today?",
+        "role": "assistant"
+      }
+    ],
+    "CHAT-cdda2fe9-de9": [
+      {
+        "content": "why do you hate me",
+        "role": "user"
+      },
+      {
+        "content": "I'm here to help and support you\u2014I don\u2019t have feelings, so I don\u2019t hate anyone! If you\u2019re feeling upset or frustrated, I\u2019m happy to listen and assist with whatever you need. How can I help you today?",
+        "role": "assistant"
+      },
+      {
+        "content": "why do you hate m",
+        "role": "user"
+      },
+      {
+        "content": "I don\u2019t hate you at all! I\u2019m here to help you with any questions or support you might need. If something\u2019s bothering you, feel free to share, and I\u2019ll do my best to assist. How can I help you today?",
+        "role": "assistant"
+      }
+    ]
+  },
+  "feedback": [],
+  "holds": [
+    {
+      "book_id": "B0001",
+      "created_at": "2026-02-09T00:12:23Z",
+      "expires_at": "2026-02-16T00:12:23Z",
+      "hold_id": "H0001",
+      "notes": "",
+      "status": "Ready",
+      "student_id": "S0001"
+    }
+  ],
+  "onboarding_profiles": {
+    "S0001": {
+      "created_at": "2026-02-09T00:20:45Z",
+      "interests": "earth science;science;exploration;coding",
+      "notes": "Generated from reading history.",
+      "preferred_genres": "Poetry;Realistic Fiction",
+      "reading_level": "6-7",
+      "source": "reading_history",
+      "updated_at": "2026-02-09T00:20:45Z"
+    }
+  }
+}
