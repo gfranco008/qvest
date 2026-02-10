@@ -45,7 +45,24 @@
       }
     ]
   },
-  "feedback": [],
+  "feedback": [
+    {
+      "book_id": "B0054",
+      "comment": "Needed more action",
+      "created_at": "2026-02-10T19:16:43Z",
+      "feedback_id": "F0001",
+      "rating": 3,
+      "student_id": "S0001"
+    },
+    {
+      "book_id": "B0239",
+      "comment": "",
+      "created_at": "2026-02-10T19:17:59Z",
+      "feedback_id": "F0002",
+      "rating": 4,
+      "student_id": "S0001"
+    }
+  ],
   "holds": [
     {
       "book_id": "B0001",
