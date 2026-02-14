@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import re
 from datetime import datetime, timezone
 from typing import Any, Dict, Iterable, List
@@ -134,3 +135,76 @@ def build_continuation_recommendations(
             }
         )
     return recommendations
+
+
+def parse_token_usage(usage: Any | None) -> Dict[str, int]:
+    if not usage:
+        return {}
+    if isinstance(usage, dict):
+        data = usage
+    elif hasattr(usage, "model_dump"):
+        data = usage.model_dump()
+    else:
+        data = {
+            "input_tokens": getattr(usage, "input_tokens", None),
+            "output_tokens": getattr(usage, "output_tokens", None),
+            "total_tokens": getattr(usage, "total_tokens", None),
+            "prompt_tokens": getattr(usage, "prompt_tokens", None),
+            "completion_tokens": getattr(usage, "completion_tokens", None),
+        }
+
+    input_tokens = data.get("input_tokens")
+    if input_tokens is None:
+        input_tokens = data.get("prompt_tokens")
+    output_tokens = data.get("output_tokens")
+    if output_tokens is None:
+        output_tokens = data.get("completion_tokens")
+    total_tokens = data.get("total_tokens")
+    if total_tokens is None and input_tokens is not None and output_tokens is not None:
+        total_tokens = input_tokens + output_tokens
+
+    usage_out: Dict[str, int] = {}
+    if input_tokens is not None:
+        usage_out["input_tokens"] = int(input_tokens)
+    if output_tokens is not None:
+        usage_out["output_tokens"] = int(output_tokens)
+    if total_tokens is not None:
+        usage_out["total_tokens"] = int(total_tokens)
+    return usage_out
+
+
+def estimate_token_cost(
+    usage: Dict[str, int],
+    *,
+    model: str | None = None,
+) -> Dict[str, float]:
+    if not usage:
+        return {}
+
+    default_input = float(os.getenv("OPENAI_COST_INPUT_PER_1K", "0.0005"))
+    default_output = float(os.getenv("OPENAI_COST_OUTPUT_PER_1K", "0.0015"))
+    input_rate = default_input
+    output_rate = default_output
+
+    if model:
+        normalized = model.upper().replace("-", "_").replace(".", "_")
+        model_input = os.getenv(f"OPENAI_COST_INPUT_PER_1K_{normalized}")
+        model_output = os.getenv(f"OPENAI_COST_OUTPUT_PER_1K_{normalized}")
+        if model_input:
+            input_rate = float(model_input)
+        if model_output:
+            output_rate = float(model_output)
+
+    input_tokens = usage.get("input_tokens", 0)
+    output_tokens = usage.get("output_tokens", 0)
+    input_cost = (input_tokens / 1000.0) * input_rate
+    output_cost = (output_tokens / 1000.0) * output_rate
+    total_cost = input_cost + output_cost
+
+    return {
+        "input_usd": round(input_cost, 6),
+        "output_usd": round(output_cost, 6),
+        "total_usd": round(total_cost, 6),
+        "input_per_1k": input_rate,
+        "output_per_1k": output_rate,
+    }

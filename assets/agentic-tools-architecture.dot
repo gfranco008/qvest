@@ -1,0 +1,108 @@
+digraph AgenticTools {
+  rankdir=LR;
+  splines=ortho;
+  nodesep=0.35;
+  ranksep=0.6;
+  fontname="Helvetica";
+
+  node [
+    shape=box,
+    style="rounded,filled",
+    fillcolor="#fffaf4",
+    color="#d8c7b2",
+    fontname="Helvetica"
+  ];
+
+  subgraph cluster_ui {
+    label="Frontend (static HTML/JS)";
+    color="#e3d7c8";
+    style="rounded";
+    ChatUI[label="chatbot.js"];
+    ConciergeUI[label="concierge.js"];
+    AgentsUI[label="agents.html + other pages"];
+  }
+
+  subgraph cluster_api {
+    label="FastAPI (backend/app.py)";
+    color="#e3d7c8";
+    style="rounded";
+    Chat[label="POST /chat"];
+    Concierge[label="POST /agents/concierge"];
+    OtherAgents[label="POST/GET /agents/*"];
+  }
+
+  subgraph cluster_agents {
+    label="Agents Layer (backend/agents)";
+    color="#e3d7c8";
+    style="rounded";
+    AgentsRouter[label="agents/router.py"];
+    Prompts[label="agents/prompts.py"];
+    Models[label="agents/models.py"];
+    AgentUtils[label="agents/utils.py"];
+  }
+
+  subgraph cluster_tools {
+    label="Tool Router (backend/tools)";
+    color="#e3d7c8";
+    style="rounded";
+    ToolRouter[label="tools/router.py"];
+    AvailTool[label="availability.py"];
+    ReadHistTool[label="reading_history.py"];
+    OnboardTool[label="onboarding.py"];
+  }
+
+  subgraph cluster_memory {
+    label="State + Memory";
+    color="#e3d7c8";
+    style="rounded";
+    ChatMem[label="chat_memory.py"];
+    AgentState[label="data/agent_state.json"];
+  }
+
+  subgraph cluster_data {
+    label="Data Sources";
+    color="#e3d7c8";
+    style="rounded";
+    Catalog[label="data/catalog.csv", shape=folder];
+    Students[label="data/students.csv", shape=folder];
+    Loans[label="data/loans.csv", shape=folder];
+  }
+
+  subgraph cluster_recs {
+    label="Recommender";
+    color="#e3d7c8";
+    style="rounded";
+    Recommender[label="backend/recommender.py"];
+  }
+
+  ChatUI -> Chat;
+  ConciergeUI -> Concierge;
+  AgentsUI -> OtherAgents;
+
+  Chat -> ChatMem;
+  Chat -> ToolRouter;
+  Chat -> Recommender;
+  Chat -> AgentState;
+  Chat -> Prompts;
+
+  Concierge -> AgentsRouter;
+  OtherAgents -> AgentsRouter;
+
+  AgentsRouter -> ToolRouter;
+  AgentsRouter -> Prompts;
+  AgentsRouter -> AgentUtils;
+  AgentsRouter -> AgentState;
+  AgentsRouter -> Recommender;
+
+  ToolRouter -> AvailTool;
+  ToolRouter -> ReadHistTool;
+  ToolRouter -> OnboardTool;
+
+  Recommender -> Loans;
+  Recommender -> Catalog;
+
+  AgentsRouter -> Students;
+  AgentsRouter -> Catalog;
+  Chat -> Students;
+  Chat -> Catalog;
+}

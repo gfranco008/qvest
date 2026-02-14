@@ -120,6 +120,7 @@ def load_capabilities() -> Dict[str, AgentCapabilities]:
 
 @dataclass
 class AgentResult:
+    event_id: str
     message: str
     student_id: str | None
     needs_student_id: bool
@@ -542,9 +543,10 @@ def run_agent(
         "fallback_candidates": scored_candidates,
     }
 
+    event_id = new_event_id()
     record_observability(
         {
-            "event_id": new_event_id(),
+            "event_id": event_id,
             "created_at": now_iso(),
             "mode": mode,
             "message": message[:200],
@@ -558,6 +560,7 @@ def run_agent(
     )
 
     return AgentResult(
+        event_id=event_id,
         message=message,
         student_id=resolved_student_id,
         needs_student_id=needs_student_id,

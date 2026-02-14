@@ -16,7 +16,8 @@ from dotenv import load_dotenv
 
 from .agents import create_router, prompts
 from .agents.engine import run_agent
-from .agents.utils import default_reason
+from .agent_state import update_observability
+from .agents.utils import default_reason, estimate_token_cost, parse_token_usage
 from .chat_memory import get_history, set_history
 from .data_loader import load_catalog, load_loans, load_students
 from .labels import DRIVER_LABELS
@@ -160,6 +161,16 @@ async def chat(payload: ChatRequest) -> Dict[str, Any]:
         ],
     )
     assistant_reply = response.output_text
+    usage = parse_token_usage(getattr(response, "usage", None))
+    if usage:
+        update_observability(
+            result.event_id,
+            {
+                "model": model,
+                "token_usage": usage,
+                "cost_estimate": estimate_token_cost(usage, model=model),
+            },
+        )
 
     if result.reading_history and "reading history" not in assistant_reply.lower():
         history_lines = [

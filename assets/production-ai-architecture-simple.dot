@@ -1,0 +1,25 @@
+digraph G {
+  rankdir=LR;
+  graph [fontname="Helvetica", bgcolor="white", pad="0.2", nodesep="0.5", ranksep="0.8"];
+  node [fontname="Helvetica", shape=box, style="rounded,filled", fillcolor="#FFF6EA", color="#C17B37"];
+  edge [color="#6B4A2C", arrowsize=0.8];
+
+  UI [label="Librarian UI"];
+  API [label="API Gateway + App"];
+  AGENT [label="Agent Orchestrator\n(policy + routing)"];
+  TOOLS [label="Tools\n(availability, history, holds, snapshot)"];
+  REC [label="Recommender + Rerank"];
+  LLM [label="LLM (optional)", shape=ellipse, fillcolor="#F7EFE4"];
+  DATA [label="Core Data\n(catalog, loans, students)", shape=cylinder, fillcolor="#F7EFE4"];
+  PLATFORM [label="Data Platform\n(warehouse + feature store)", shape=cylinder, fillcolor="#F7EFE4"];
+  OBS [label="Observability\n(logs + trace)"];
+
+  UI -> API -> AGENT;
+  AGENT -> TOOLS;
+  AGENT -> REC;
+  AGENT -> LLM;
+  TOOLS -> DATA;
+  REC -> DATA;
+  PLATFORM -> REC;
+  AGENT -> OBS;
+}

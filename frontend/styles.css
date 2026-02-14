@@ -310,6 +310,142 @@ button:hover {
   border-radius: 50%;
 }
 
+.trace-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(280px, 1.2fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.trace-list {
+  display: grid;
+  gap: 12px;
+}
+
+.trace-item {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px 14px;
+  text-align: left;
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  gap: 8px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.trace-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 28px rgba(193, 123, 55, 0.2);
+}
+
+.trace-item.active {
+  border-color: var(--accent);
+  box-shadow: 0 16px 32px rgba(193, 123, 55, 0.25);
+}
+
+.trace-item-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+.trace-item-msg {
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.trace-detail {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 16px;
+}
+
+.trace-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.trace-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.trace-pill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #f3e6d7;
+  color: #6b4a2c;
+}
+
+.trace-pill.active {
+  background: #d7efe6;
+  color: #1f5c4f;
+}
+
+.trace-section {
+  display: grid;
+  gap: 8px;
+}
+
+.trace-message {
+  background: #fff6ea;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.trace-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.trace-chip {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #f1e4d6;
+  color: #6b4a2c;
+  font-size: 12px;
+}
+
+.trace-chip.active {
+  background: #e1f4ee;
+  color: #1f5c4f;
+}
+
+.trace-code {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f8f1e7;
+  font-size: 12px;
+  color: #4b4037;
+  overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+  .trace-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .card {
   background: var(--panel);
   border-radius: 18px;

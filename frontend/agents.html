@@ -74,16 +74,37 @@
           </label>
           <button id="obs-refresh">Refresh</button>
         </div>
-        <div class="results" id="obs-grid"></div>
+        <div class="trace-layout">
+          <div class="trace-list" id="obs-list"></div>
+          <div class="trace-detail" id="obs-detail">
+            <div class="meta">Select an event to inspect the full trace.</div>
+          </div>
+        </div>
       </section>
     </main>
     <script>
       const toolGrid = document.getElementById("tool-grid");
-      const obsGrid = document.getElementById("obs-grid");
+      const obsList = document.getElementById("obs-list");
+      const obsDetail = document.getElementById("obs-detail");
       const obsMode = document.getElementById("obs-mode");
       const obsStudent = document.getElementById("obs-student");
       const obsLimit = document.getElementById("obs-limit");
       const obsRefresh = document.getElementById("obs-refresh");
+      let currentEvents = [];
+      const formatCost = (value) => {
+        if (value === null || value === undefined || Number.isNaN(Number(value))) {
+          return "n/a";
+        }
+        return `$${Number(value).toFixed(4)}`;
+      };
+      const getTokenTotal = (usage) => {
+        if (!usage) return null;
+        if (usage.total_tokens !== undefined) return usage.total_tokens;
+        const input = usage.input_tokens || 0;
+        const output = usage.output_tokens || 0;
+        const total = input + output;
+        return total || null;
+      };
 
       const renderTools = (tools) => {
         if (!tools || !tools.length) {
@@ -118,32 +139,145 @@
             '<div class="card"><h4>Tool registry unavailable</h4><div class="meta">Start the backend to see live capabilities.</div></div>';
         });
 
-      const renderObservability = (events) => {
-        if (!events || !events.length) {
-          obsGrid.innerHTML =
-            '<div class="card"><h4>No events yet</h4><div class="meta">Trigger a chat or concierge request to populate.</div></div>';
+      const renderTraceDetail = (event) => {
+        if (!event) {
+          obsDetail.innerHTML =
+            '<div class="meta">Select an event to inspect the full trace.</div>';
           return;
         }
-        obsGrid.innerHTML = events
-          .map((event) => {
-            const tools = (event.tools_called || []).join(", ") || "none";
+        const intents = event.intents || {};
+        const signals = event.signals || {};
+        const tools = event.tools_called || [];
+        const filters = event.filters || {};
+        const counts = event.counts || {};
+        const tokenUsage = event.token_usage || {};
+        const costEstimate = event.cost_estimate || {};
+        const totalTokens = getTokenTotal(tokenUsage);
+        const totalCost = costEstimate.total_usd;
+        const model = event.model || "n/a";
+
+        const badge = (label, active) =>
+          `<span class="trace-pill ${active ? "active" : ""}">${label}</span>`;
+
+        obsDetail.innerHTML = `
+          <div class="trace-header">
+            <div>
+              <h4>${event.mode || "unknown"} · ${event.created_at || "n/a"}</h4>
+              <div class="meta">Event: ${event.event_id || "n/a"} · Student: ${
+          event.student_id || "n/a"
+        }</div>
+            </div>
+            <div class="trace-tags">
+              ${badge("recommendations", intents.recommendations)}
+              ${badge("availability", intents.availability)}
+              ${badge("history", intents.reading_history)}
+              ${badge("snapshot", intents.student_snapshot)}
+              ${badge("onboarding", intents.onboard_from_history)}
+              ${badge("hold", intents.reserve_hold)}
+            </div>
+          </div>
+          <div class="trace-section">
+            <div class="meta">User message</div>
+            <div class="trace-message">${event.message || "No message recorded."}</div>
+          </div>
+          <div class="trace-section">
+            <div class="meta">Tools called</div>
+            <div class="trace-row">
+              ${(tools.length ? tools : ["none"])
+                .map((item) => `<span class="trace-chip">${item}</span>`)
+                .join("")}
+            </div>
+          </div>
+          <div class="trace-section">
+            <div class="meta">Signals</div>
+            <div class="trace-row">
+              ${Object.keys(signals).length
+                ? Object.entries(signals)
+                    .map(
+                      ([key, value]) =>
+                        `<span class="trace-chip ${value ? "active" : ""}">${key}</span>`
+                    )
+                    .join("")
+                : '<span class="trace-chip">none</span>'}
+            </div>
+          </div>
+          <div class="trace-section">
+            <div class="meta">Filters</div>
+            <pre class="trace-code">${JSON.stringify(filters, null, 2)}</pre>
+          </div>
+          <div class="trace-section">
+            <div class="meta">Counts</div>
+            <pre class="trace-code">${JSON.stringify(counts, null, 2)}</pre>
+          </div>
+          <div class="trace-section">
+            <div class="meta">Token usage</div>
+            <div class="trace-row">
+              <span class="trace-chip">model ${model}</span>
+              <span class="trace-chip">input ${tokenUsage.input_tokens ?? "n/a"}</span>
+              <span class="trace-chip">output ${tokenUsage.output_tokens ?? "n/a"}</span>
+              <span class="trace-chip">total ${totalTokens ?? "n/a"}</span>
+            </div>
+            <div class="meta">Cost estimate</div>
+            <div class="trace-row">
+              <span class="trace-chip">input ${formatCost(costEstimate.input_usd)}</span>
+              <span class="trace-chip">output ${formatCost(costEstimate.output_usd)}</span>
+              <span class="trace-chip">total ${formatCost(totalCost)}</span>
+            </div>
+          </div>
+        `;
+      };
+
+      const renderObservability = (events) => {
+        currentEvents = events || [];
+        if (!currentEvents.length) {
+          obsList.innerHTML =
+            '<div class="card"><h4>No events yet</h4><div class="meta">Trigger a chat or concierge request to populate.</div></div>';
+          renderTraceDetail(null);
+          return;
+        }
+        obsList.innerHTML = currentEvents
+          .map((event, index) => {
             const counts = event.counts || {};
+            const tokenUsage = event.token_usage || {};
+            const totalTokens = getTokenTotal(tokenUsage);
+            const costEstimate = event.cost_estimate || {};
             const summary = [
               `recs ${counts.recommendations ?? 0}`,
               `avail ${counts.available_books ?? 0}`,
               `history ${counts.reading_history ?? 0}`,
-            ].join(" · ");
+              totalTokens ? `tokens ${totalTokens}` : null,
+              totalTokens !== null ? `cost ${formatCost(costEstimate.total_usd)}` : null,
+            ]
+              .filter(Boolean)
+              .join(" · ");
             return `
-              <div class="card">
-                <h4>${event.mode || "unknown"} · ${event.created_at || "n/a"}</h4>
+              <button class="trace-item" data-index="${index}">
+                <div class="trace-item-head">
+                  <span>${event.mode || "unknown"}</span>
+                  <span>${event.created_at || "n/a"}</span>
+                </div>
                 <div class="meta">Student: ${event.student_id || "n/a"}</div>
-                <div class="reason">${event.message || "No message recorded."}</div>
-                <div class="meta">Tools: ${tools}</div>
-                <div class="meta">Counts: ${summary}</div>
-              </div>
+                <div class="trace-item-msg">${event.message || "No message recorded."}</div>
+                <div class="meta">${summary}</div>
+              </button>
             `;
           })
           .join("");
+
+        obsList.querySelectorAll(".trace-item").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const index = Number(btn.dataset.index || 0);
+            renderTraceDetail(currentEvents[index]);
+            obsList.querySelectorAll(".trace-item").forEach((item) => {
+              item.classList.remove("active");
+            });
+            btn.classList.add("active");
+          });
+        });
+
+        renderTraceDetail(currentEvents[0]);
+        const firstItem = obsList.querySelector(".trace-item");
+        if (firstItem) firstItem.classList.add("active");
       };
 
       const loadObservability = () => {
@@ -159,8 +293,9 @@
           .then((res) => res.json())
           .then((data) => renderObservability(data.events || []))
           .catch(() => {
-            obsGrid.innerHTML =
+            obsList.innerHTML =
               '<div class="card"><h4>Observability unavailable</h4><div class="meta">Start the backend to see recent activity.</div></div>';
+            renderTraceDetail(null);
           });
       };
 

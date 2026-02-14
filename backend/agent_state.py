@@ -24,6 +24,7 @@ class ObservabilityEvent(BaseModel):
     event_id: str
     created_at: str
     mode: str
+    model: str | None = None
     message: str | None = None
     student_id: str | None = None
     intents: Dict[str, bool] = Field(default_factory=dict)
@@ -31,6 +32,8 @@ class ObservabilityEvent(BaseModel):
     tools_called: List[str] = Field(default_factory=list)
     filters: Dict[str, Any] = Field(default_factory=dict)
     counts: Dict[str, int] = Field(default_factory=dict)
+    token_usage: Dict[str, int] = Field(default_factory=dict)
+    cost_estimate: Dict[str, float] = Field(default_factory=dict)
 
     class Config:
         extra = "ignore"
@@ -153,3 +156,27 @@ def record_observability(event: Dict[str, Any], *, max_entries: int = 200) -> No
         handle.seek(0)
         handle.truncate()
         handle.write(json.dumps(state, indent=2, sort_keys=True))
+
+
+def update_observability(event_id: str, updates: Dict[str, Any]) -> bool:
+    if not event_id:
+        return False
+    with _locked_state_file() as handle:
+        payload = handle.read()
+        state = _parse_state_payload(payload)
+        events = state.get("observability", [])
+        updated = False
+        for idx, event in enumerate(events):
+            if event.get("event_id") == event_id:
+                merged = dict(event)
+                merged.update(updates)
+                events[idx] = _dump_model(_validate_event(merged))
+                updated = True
+                break
+        if not updated:
+            return False
+        state["observability"] = events
+        handle.seek(0)
+        handle.truncate()
+        handle.write(json.dumps(state, indent=2, sort_keys=True))
+        return True

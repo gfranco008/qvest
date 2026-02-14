@@ -9,11 +9,17 @@ from typing import Any, Dict, List
 from fastapi import APIRouter, HTTPException, Query
 from openai import OpenAI
 
-from ..agent_state import load_state, save_state
+from ..agent_state import load_state, save_state, update_observability
 from . import prompts
 from .engine import run_agent
 from .models import ConciergeRequest, FeedbackRequest, HoldRequest, OnboardingRequest
-from .utils import format_concierge_reply, next_id, now_iso
+from .utils import (
+    estimate_token_cost,
+    format_concierge_reply,
+    next_id,
+    now_iso,
+    parse_token_usage,
+)
 from ..tools import tool_metadata
 
 
@@ -68,6 +74,16 @@ def create_router(
                     ],
                 )
                 reply = response.output_text
+                usage = parse_token_usage(getattr(response, "usage", None))
+                if usage:
+                    update_observability(
+                        result.event_id,
+                        {
+                            "model": model,
+                            "token_usage": usage,
+                            "cost_estimate": estimate_token_cost(usage, model=model),
+                        },
+                    )
             except Exception:
                 reply = format_concierge_reply(
                     payload.message, result.recommendations, use_llm=False

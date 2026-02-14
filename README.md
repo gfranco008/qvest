@@ -6,6 +6,8 @@ A proof-of-concept recommender for a school district library system. It uses len
 - A collaborative-filtering style recommender based on historical co-borrowing.
 - Simple, explainable rationales that can be swapped for LLM-generated explanations later.
 - A minimal API plus a clean UI for demoing with partners.
+- An agent engine with a tool router (availability, reading history, onboarding from history, holds, series/author, snapshot).
+- Persistent agent state + observability for feedback loops.
 
 ## Architecture
 ```mermaid
@@ -31,6 +33,124 @@ flowchart LR
   D --> E
   E --> F
 ```
+The current demo runs a FastAPI backend with an agent engine + tool router, and serves the UI at `/ui`.
+
+### Agentic + Tools Architecture
+![Agentic Tools Architecture](assets/agentic-tools-architecture.png)
+
+### Agentic + Tools (Slide Version)
+```mermaid
+flowchart LR
+  UI[Frontend] --> API[FastAPI]
+  API --> AGENT[Agent Engine]
+  AGENT --> TOOLROUTER[Tool Router]
+  AGENT --> REC[Recommender]
+  AGENT --> LLM[(Optional LLM)]
+  TOOLROUTER --> TOOLS[Availability · Reading History · Onboard From History · Holds · Series/Author · Snapshot]
+  TOOLS --> DATA[(Catalog + Loans + Students)]
+  AGENT --> STATE[(agent_state.json + observability)]
+  REC --> DATA
+```
+
+### Production AI Architecture (Proposed)
+```mermaid
+flowchart LR
+  subgraph Clients
+    UI[Web + Mobile UI]
+    ADMIN[Librarian Console]
+  end
+
+  subgraph Edge
+    CDN[CDN + WAF]
+    AUTH[Auth / SSO]
+  end
+
+  subgraph API
+    GATEWAY[API Gateway]
+    APP[Recommendation + Agent API]
+    ORCH[Agent Orchestrator\n(policy + routing)]
+    PROMPTS[Prompt + Context Builder]
+  end
+
+  subgraph Tools
+    AVAIL[Availability Service]
+    HISTORY[Reading History Service]
+    HOLDS[Holds Service]
+    FEEDBACK[Feedback Service]
+    SNAPSHOT[Student Snapshot Service]
+    SEARCH[Catalog Search]
+  end
+
+  subgraph Intelligence
+    REC[Recommender Service]
+    RERANK[Reranker / Personalization]
+    LLM[(LLM Provider)]
+    SAFETY[Safety + Policy Filters]
+  end
+
+  subgraph DataPlatform
+    INGEST[Ingestion + Validation]
+    WAREHOUSE[(Analytics Warehouse)]
+    FEATURE[(Feature Store)]
+    VECTOR[(Vector / Semantic Index)]
+    REGISTRY[(Model Registry)]
+  end
+
+  subgraph Storage
+    CATALOG[(Catalog DB)]
+    LOANS[(Loans DB)]
+    STUDENTS[(Students DB)]
+    STATE[(Agent State DB)]
+    LOGS[(Observability Logs)]
+  end
+
+  subgraph Ops
+    EVAL[Offline Evaluation]
+    MON[Monitoring + Drift]
+    AB[A/B + Experimentation]
+  end
+
+  UI --> CDN --> AUTH --> GATEWAY
+  ADMIN --> AUTH --> GATEWAY
+  GATEWAY --> APP --> ORCH --> PROMPTS
+
+  ORCH --> AVAIL
+  ORCH --> HISTORY
+  ORCH --> HOLDS
+  ORCH --> FEEDBACK
+  ORCH --> SNAPSHOT
+  ORCH --> SEARCH
+  ORCH --> REC
+  ORCH --> RERANK
+  ORCH --> SAFETY
+  ORCH --> LLM
+
+  AVAIL --> CATALOG
+  HISTORY --> LOANS
+  HOLDS --> STATE
+  FEEDBACK --> STATE
+  SNAPSHOT --> STUDENTS
+  SEARCH --> CATALOG
+
+  INGEST --> CATALOG
+  INGEST --> LOANS
+  INGEST --> STUDENTS
+  INGEST --> WAREHOUSE
+  INGEST --> FEATURE
+  INGEST --> VECTOR
+
+  REC --> FEATURE
+  RERANK --> FEATURE
+  RERANK --> VECTOR
+  REC --> REGISTRY
+
+  APP --> LOGS
+  ORCH --> LOGS
+  LOGS --> MON
+  WAREHOUSE --> EVAL
+  EVAL --> REGISTRY
+  AB --> APP
+```
 
 ```mermaid
 sequenceDiagram
@@ -48,11 +168,16 @@ sequenceDiagram
 ```
 
 ## Repository layout
-- `backend/app.py` FastAPI service
+- `backend/app.py` FastAPI service (serves UI at `/ui`)
+- `backend/agents/` agent engine, prompts, router, and utilities
+- `backend/tools/` tool router + tool implementations
 - `backend/recommender.py` co-occurrence recommender
 - `backend/data_loader.py` CSV loader
+- `backend/agent_state.py` persisted agent state + observability
+- `backend/chat_memory.py` in-memory chat history
 - `data/` sample catalog, students, and loans
 - `frontend/` static demo UI
+- `assets/agentic-tools-architecture.png` exported system diagram
 
 ## Quickstart
 1. Create and activate the virtual environment:
@@ -82,7 +207,7 @@ uvicorn backend.app:app --reload --port 8000
 ```
 
 4. Open the frontend:
-- Open `frontend/index.html` in a browser.
+- Open `http://localhost:8000/ui/` in a browser (or `frontend/index.html`).
 
 ## API Examples
 ```bash
@@ -91,6 +216,10 @@ curl "http://localhost:8000/health"
 
 ```bash
 curl "http://localhost:8000/recommendations?student_id=S001&k=5"
+```
+
+```bash
+curl "http://localhost:8000/agents/tools"
 ```
 
 ## Agent Lab (demo)
@@ -104,6 +233,8 @@ Front-end pages:
 
 Agent endpoints:
 - `POST /agents/concierge`
+- `GET /agents/tools`
+- `GET /agents/observability`
 - `GET /agents/onboarding/{student_id}`
 - `POST /agents/onboarding`
 - `GET /agents/snapshot/{student_id}`
@@ -117,7 +248,7 @@ Agent endpoints:
 - `GET /agents/feedback/insights`
 - `GET /agents/feedback/recommendations`
 
-Agent state persistence lives in `data/agent_state.json`.
+Agent state persistence lives in `data/agent_state.json` (profiles, holds, feedback, observability). Chat history is in-memory per server process (`backend/chat_memory.py`).
 
 ## How the POC works
 - Build a student → books map from the loan history.

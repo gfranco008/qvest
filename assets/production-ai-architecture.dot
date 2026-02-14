@@ -1,0 +1,118 @@
+digraph G {
+  rankdir=LR;
+  graph [fontname="Helvetica", bgcolor="white", pad="0.2", nodesep="0.4", ranksep="0.7"];
+  node [fontname="Helvetica", shape=box, style="rounded,filled", fillcolor="#FFF6EA", color="#C17B37"];
+  edge [color="#6B4A2C", arrowsize=0.8];
+
+  subgraph cluster_clients {
+    label="Clients";
+    color="#E7D2B8";
+    UI [label="Web + Mobile UI"];
+    ADMIN [label="Librarian Console"];
+  }
+
+  subgraph cluster_edge {
+    label="Edge";
+    color="#E7D2B8";
+    CDN [label="CDN + WAF"];
+    AUTH [label="Auth / SSO"];
+  }
+
+  subgraph cluster_api {
+    label="API";
+    color="#E7D2B8";
+    GATEWAY [label="API Gateway"];
+    APP [label="Recommendation + Agent API"];
+    ORCH [label="Agent Orchestrator\n(policy + routing)"];
+    PROMPTS [label="Prompt + Context Builder"];
+  }
+
+  subgraph cluster_tools {
+    label="Tools";
+    color="#E7D2B8";
+    AVAIL [label="Availability Service"];
+    HISTORY [label="Reading History Service"];
+    HOLDS [label="Holds Service"];
+    FEEDBACK [label="Feedback Service"];
+    SNAPSHOT [label="Student Snapshot Service"];
+    SEARCH [label="Catalog Search"];
+  }
+
+  subgraph cluster_intel {
+    label="Intelligence";
+    color="#E7D2B8";
+    REC [label="Recommender Service"];
+    RERANK [label="Reranker / Personalization"];
+    SAFETY [label="Safety + Policy Filters"];
+    LLM [label="LLM Provider", shape=ellipse, fillcolor="#F7EFE4"];
+  }
+
+  subgraph cluster_data {
+    label="Data Platform";
+    color="#E7D2B8";
+    INGEST [label="Ingestion + Validation"];
+    WAREHOUSE [label="Analytics Warehouse", shape=cylinder, fillcolor="#F7EFE4"];
+    FEATURE [label="Feature Store", shape=cylinder, fillcolor="#F7EFE4"];
+    VECTOR [label="Vector / Semantic Index", shape=cylinder, fillcolor="#F7EFE4"];
+    REGISTRY [label="Model Registry", shape=cylinder, fillcolor="#F7EFE4"];
+  }
+
+  subgraph cluster_storage {
+    label="Storage";
+    color="#E7D2B8";
+    CATALOG [label="Catalog DB", shape=cylinder, fillcolor="#F7EFE4"];
+    LOANS [label="Loans DB", shape=cylinder, fillcolor="#F7EFE4"];
+    STUDENTS [label="Students DB", shape=cylinder, fillcolor="#F7EFE4"];
+    STATE [label="Agent State DB", shape=cylinder, fillcolor="#F7EFE4"];
+    LOGS [label="Observability Logs", shape=cylinder, fillcolor="#F7EFE4"];
+  }
+
+  subgraph cluster_ops {
+    label="Ops";
+    color="#E7D2B8";
+    EVAL [label="Offline Evaluation"];
+    MON [label="Monitoring + Drift"];
+    AB [label="A/B + Experimentation"];
+  }
+
+  UI -> CDN -> AUTH -> GATEWAY;
+  ADMIN -> AUTH -> GATEWAY;
+  GATEWAY -> APP -> ORCH -> PROMPTS;
+
+  ORCH -> AVAIL;
+  ORCH -> HISTORY;
+  ORCH -> HOLDS;
+  ORCH -> FEEDBACK;
+  ORCH -> SNAPSHOT;
+  ORCH -> SEARCH;
+  ORCH -> REC;
+  ORCH -> RERANK;
+  ORCH -> SAFETY;
+  ORCH -> LLM;
+
+  AVAIL -> CATALOG;
+  HISTORY -> LOANS;
+  HOLDS -> STATE;
+  FEEDBACK -> STATE;
+  SNAPSHOT -> STUDENTS;
+  SEARCH -> CATALOG;
+
+  INGEST -> CATALOG;
+  INGEST -> LOANS;
+  INGEST -> STUDENTS;
+  INGEST -> WAREHOUSE;
+  INGEST -> FEATURE;
+  INGEST -> VECTOR;
+
+  REC -> FEATURE;
+  RERANK -> FEATURE;
+  RERANK -> VECTOR;
+  REC -> REGISTRY;
+
+  APP -> LOGS;
+  ORCH -> LOGS;
+  LOGS -> MON;
+  WAREHOUSE -> EVAL;
+  EVAL -> REGISTRY;
+  AB -> APP;
+}
